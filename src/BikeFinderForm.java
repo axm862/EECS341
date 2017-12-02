@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class BikeFinderFormBound {
+public class BikeFinderForm {
     private JButton searchButton;
     private JComboBox comboBox1;
     private JComboBox comboBox2;

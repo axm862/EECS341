@@ -19,7 +19,7 @@ public class Handlebar extends QueryObject{
         return handleBarID;
     }
 
-    public double getWidth() {
+    public double getHandlebarWidth() {
         return width;
     }
 

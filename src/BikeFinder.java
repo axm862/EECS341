@@ -3,6 +3,10 @@ import javax.swing.*;
 public class BikeFinder {
 
     public static void main(String[] args) {
-        BikeFinderForm bikeFinderForm = new BikeFinderForm();
+        JFrame frame = new JFrame("Bike Selector 420");
+        frame.setContentPane(new BikeFinderForm().getPanel());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 }

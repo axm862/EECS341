@@ -5,6 +5,11 @@ import java.awt.event.ActionListener;
 
 public class BikeFinderForm {
     private JButton searchButton;
+
+    public JPanel getPanel() {
+        return panel;
+    }
+
     private JPanel panel;
     private JProgressBar progressBar1;
     private JComboBox comboBox1;
@@ -15,14 +20,6 @@ public class BikeFinderForm {
         comboBox1.addItem("");
         comboBox1.addItem("Jeff's Mom");
         comboBox1.addItem("Jeff's Dad");
-    }
-
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Bike Selector 420");
-        frame.setContentPane(new BikeFinderForm().panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
     }
 
     {

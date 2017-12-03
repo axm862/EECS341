@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class JPanelVarchar extends JPanelAttribute {
 
-    public JPanelVarchar(String name, String data){
-        super(name, data);
+    public JPanelVarchar(String name){
+        super(name);
     }
 
 

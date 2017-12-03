@@ -12,19 +12,8 @@ public abstract class JPanelAttribute extends JPanel{
 
     String name;
 
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(Object data) {
-        this.data = data;
-    }
-
-    Object data;
-
-    JPanelAttribute(String name, Object data){
+    JPanelAttribute(String name){
         this.name = name;
-        this.data = data;
     }
 
     public abstract void initPanel();

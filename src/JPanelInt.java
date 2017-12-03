@@ -1,7 +1,7 @@
 public class JPanelInt extends JPanelAttribute{
 
-    public JPanelInt(String name, int data) {
-        super(name, data);
+    public JPanelInt(String name) {
+        super(name);
     }
 
     @Override

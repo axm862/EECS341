@@ -7,8 +7,8 @@ CREATE TABLE Handlebar(
 
 CREATE TABLE Crankset(
 	cranksetID varchar(100) NOT NULL,
-	cranksetFamily ENUM('SRAM', 'Shimano') NOT NULL,
-	PRIMARY KEY(cranksetID, cranksetFamily)
+	cranksetLength int NOT NULL,
+	PRIMARY KEY(cranksetID)
 );
 
 CREATE TABLE Wheel(

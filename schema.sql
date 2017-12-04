@@ -1,6 +1,6 @@
 CREATE TABLE Handlebar(
 	handlebarID varchar(100) NOT NULL,
-	width varchar(100) NOT NULL,
+	width int NOT NULL,
 	handlebarMaterialType varchar(100) NOT NULL,
 	PRIMARY KEY(handlebarID)
 );
@@ -12,7 +12,7 @@ CREATE TABLE Crankset(
 
 CREATE TABLE Wheel(
 	wheelID varchar(100) NOT NULL,
-	wheelSize int NOT NULL,
+	wheelSize decimal NOT NULL,
 	PRIMARY KEY(wheelID)
 );
 
@@ -54,7 +54,7 @@ CREATE TABLE Derailleur(
 
 CREATE TABLE Manufacturer(
 	manufacturerName varchar(100) NOT NULL,
-	address varchar(100) NOT NULL,
+	address varchar(150) NOT NULL,
 	website varchar(150) NOT NULL,
 	PRIMARY KEY(manufacturerName)
 );

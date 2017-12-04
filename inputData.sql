@@ -27,15 +27,15 @@ VALUES
 ('HL MTB-AL-325BT', 680, 'Metal Alloy'),
 ('HL MTB-AL-312BT', 720, 'Metal Alloy'),
 ('Syncros M3.0', 680, 'Metal'),
-('Race Face Aeffect', '780mm', 'Metal'),
-('Race Face Chester', '780mm', 'Metal'),
-('All Terra AL6061 DB', '760mm', 'Metal Alloy'),
-('All Terra Riser Bar', '740mm', 'Metal'),
-('DB Pro Bar', '740mm', 'Metal'),
-('DB35 Alloy', '760mm', 'Metal Alloy'),
-('DB Laser Bar', '720mm', 'Metal'),
-('Diamondback Pro Bar', '740mm', 'Carbon'),
-('DB SL318B', '685mm', 'Metal');
+('Race Face Aeffect', 780, 'Metal'),
+('Race Face Chester', 780, 'Metal'),
+('All Terra AL6061 DB', 760, 'Metal Alloy'),
+('All Terra Riser Bar', 740, 'Metal'),
+('DB Pro Bar', 740, 'Metal'),
+('DB35 Alloy', 760, 'Metal Alloy'),
+('DB Laser Bar', 720, 'Metal'),
+('Diamondback Pro Bar', 740, 'Carbon'),
+('DB SL318B', 685, 'Metal');
 
 INSERT INTO Crankset(cranksetID)
 VALUES
@@ -79,25 +79,241 @@ INSERT INTO Wheel(wheelID, wheelSize)
 VALUES
 ('Fast Trak', 29),
 ('Butcher', 29),
-(),
+('Butcher', 27.5),
+('Purgatory', 29),
+('Purgatory', 27.5),
+('Bontrager XR2 Team Issue', 29),
+('Bontrager XR4 Team Issue', 29),
+('Bontrager XR1 Team Issue', 29),
+('Bontrager SE4 Team Issue', 29),
+('Bontrager Hodag', 27.5),
+('Bontrager SE4 Team Issue', 27.5),1
+('Schwalbe Nobby Nic Performance', 27.5),
+('Schwalbe Nobby Nic Performance', 25),
+('Bontrager G4 Team Issue', 27.5),
+('Maxxis Ardent EXO', 27.5),
+('Maxxis Minion DHF EXO', 29),
+('Maxxis Minion DHF 2.5', 26),
+('Maxxis Rekon EXO', 27.5),
+('WTB Vigilante', 29),
+('WTB Convict', 27.5),
+('Vee Tire Crown Gem', 27.5),
+('WTB Trail Boss', 29),
+('WTB Breakout', 27.5),
+('Vee Tire Crown Gem', 29),
+('Schwalbe Tough Tom', 27.5),
+('Maxxis Aspen', 29),
+('Schwalbe Jumbo Jim', 26),
+('Schwalbe Downhill Evolution Line', 27.5),
+('Kenda K-905', 26),
+('Kenda Slant', 26),
+('Maxxis Aspen', 27),
+('Schwalbe Magic Mary Bikepark', 27.5),
+('Schwalbe Magic Mary Snakeskin', 27.5),
+('Schwalbe Magic Mary Performance', 27.5),
+('WTB Ranger Comp', 27.5),
+('Schwalbe Rocket Ron Performance', 27.5),
+('WTB Trail Blazer', 27.5),
+('All Terra Cypher', 27.5),
+('Chaoyang Cruiser', 26),
+('Chaoyang Big Daddy', 27.5),
+('Schwalbe Rapid Rob', 27.5),
+('Kenda Honey Badger', 29),
+('Kenda Honey Badger', 27.5),
+('Kenda Nevegal Lite', 27.5),
+('Schwalbe Hans Dampf Performance', 27.5);
 
 
+INSERT INTO Frame(frameID, frameType, frameMaterialType)
+VALUES
+('S-Works FACT 12M', 'XC Geometry', 'Steel'),
+('S-Works FACT IS-X 11M', 'XC Geometry', 'Carbon'),
+('S-Works FACT 11M', 'XC Geometry', 'Carbon'),
+('S-Works FACT 9M', 'XC Geometry', 'Metal Alloy'),
+('S-Works FACT 11M', 'S3 Geometry', 'Carbon'),
+('S-Works M5 Alloy', 'S3 Geometry', 'Metal Alloy'),
+('OCLV Mountain Carbon', 'G2 Geometry', 'Carbon'),
+('Super Light OCLV Mountain Carbon', 'G2 Geometry', 'Carbon'),
+('Alpha Platinum Aluminum', 'G2 Geometry', 'Aluminum'),
+('High Modulus Yeti SB5', 'S3 Geometry', 'Carbon'),
+('High Modulus Yeti SB5.5', 'S3 Geometry', 'Carbon'),
+('High Modulus Yeti SB4.5', 'S3 Geometry', 'Carbon'),
+('Yeti SB6 Turq', 'XC Geometry', 'Metal Alloy'),
+('High Modulus Yeti SB6', 'XC Geometry', 'Carbon'),
+('High Modulus Beti SB5', 'S3 Geometry', 'Carbon'),
+('Series 7 Unidirectional', 'XC Geometry', 'Carbon'),
+('Series 4 6061', 'XC Geometry', 'Aluminum'),
+('Series 3 6061', 'XC Geometry', 'Aluminum'),
+('Double Butted CrMo', 'G2 Geometry', 'Steel'),
+('Series 2 6061', 'S3 Geometry', 'Aluminum'),
+('Spark RC Carbon', 'XC Geometry', 'Carbon'),
+('Big Jon Alloy 6061', 'XC Geometry', 'Metal Alloy'),
+('Genius Alloy 6061', 'XC Geometry', 'Metal Alloy'),
+('Gambler Alloy 6061', 'G2 Geometry', 'Metal Alloy'),
+('Voltage YZ 6061', 'S3 Geometry', 'Steel'),
+('Aspect 900 Series', 'XC Geometry', 'Metal Alloy'),
+('Contessa Sport 700 Series', 'XC Geometry', 'Aluminum'),
+('COR Downhill Design', 'S3 Geometry', 'Metal Alloy'),
+('COR Enduro Design', 'S3 Geometry', 'Metal Alloy'),
+('Hydroformed 6069', 'XC Geometry', 'Aluminum'),
+('T6 6061', 'XC Geometry', 'Aluminum'),
+('El Oso Butted T6 6061', 'XC Geometry', 'Aluminum'),
+('Lux 27.5 Butted T6 6061', 'XC Geometry', 'Aluminum'),
+('Diamondback AMMP XC MTB', 'G2 Geometry', 'Carbon'),
+('Diamondback Recoil T6 6061', 'XC Geometry', 'Aluminum'),
+('Overdrive Butted T6 6061', 'XC Geometry', 'Aluminum');
 
 
+INSERT INTO Shifter(shifterID, family)
+VALUES
+('Shimano XTR Di2', 'Trigger'),
+('SRAM XX1 Eagle', 'Trigger'),
+('SRAM GX', 'Trigger'),
+('SRAM X0 DH', 'Trigger'),
+('SRAM X01 Eagle', 'Trigger'),
+('SRAM X7', 'Trigger'),
+('SRAM GX Eagle', 'Trigger'),
+('Shimano SLX M7000', 'Trigger'),
+('Shimano Saint', 'Trigger'),
+('Shimano XT', 'Trigger'),
+('SRAM NX', 'Trigger'),
+('Shimano Deore', 'Twist'),
+('SRAM XX1', 'Trigger'),
+('SRAM X4', 'Trigger'),
+('Shimano ST-EF', 'Twist'),
+('Shimano SL-M2000-9R', 'Trigger'),
+('Shimano Alivio', 'Twist'),
+('SRAM X5', 'Trigger'),
+('Shimano Altus', 'Twist');
 
 
+INSERT INTO Brake(brakeID, brakeType)
+VALUES
+('Shimano XTR M9000', 'Mechanical'),
+('SRAM Level Ultimate', 'Hydraulic'),
+('SRAM Code RSC', 'Hydraulic'),
+('SRAM Guide RS Carbon', 'Hydraulic'),
+('SRAM Guide RS', 'Hydraulic'),
+('SRAM Level TL', 'Mechanical'), 
+('SRAM Level TLM', 'Hydraulic'),
+('SRAM Level Ultimate Carbon', 'Hydraulic'),
+('Shimano Deore M6000', 'Hydraulic'),
+('Shimano Saint', 'Hydraulic'),
+('SRAM Code R', 'Hydraulic'),
+('Shimano MT500', 'Hydraulic'),
+('SRAM Centerline 180', 'Mechanical'),
+('SRAM Guide RCS 180', 'Hydraulic'),
+('SRAM Guide R', 'Mechanical'),
+('Shimano SLX 180', 'Mechanical'),
+('Shimano BR-M315', 'Hydraulic'),
+('Shimano BR-M425', 'Hydraulic'),
+('Shimano BR-M365', 'Hydraulic'),
+('Shimano BR-M640', 'Hydraulic'),
+('Shimano M-396', 'Mechanical'),
+('Tektro Mech', 'Mechanical'),
+('Promax TX-107L', 'Mechanical'),
+('TRP Spyre', 'Mechanical'),
+('Tektro Auriga', 'Hydraulic'),
+('Tektro Aries', 'Mechanical');
 
 
+INSERT INTO FrontShock(frontShockID, fs_travel_mm)
+VALUES
+('Ohlins RXF 36', 110),
+('FOX 34 Factory 29', 120),
+('RockShox Reba RL 27.5', 130),
+('RockShox BoXXer WC 27.5', 200),
+('RockShox SID 29 Brain', 100),
+('RockShox Reba RL 29', 100),
+('FOX 32 Factory Float', 100),
+('FOX 36 Performance Float', 160),
+('Manitou Mastodon 34 Comp', 120),
+('RockShox Lyrik RCT3', 160),
+('RockShox Recon RL', 130),
+('FOX Factory 40 FIT RC2', 203),
+('FOX 34 Factory 29', 150),
+('FOX 34 Factory 29', 110)
+('FOX Float X2 Factory', 200),
+('RockShox Recon Gold RL', 130),
+('RockShox Revelation RC', 120),
+('CrMo', 110),
+('RockShox Recon Silver', 100),
+('Rigid Alloy', 150),
+('Suntour XCM', 100),
+('HL Zoom 565 VB', 100),
+('Suntour XCR-RL-R', 100),
+('RockShox Yari RC Boost', 170),
+('Suntour XCR 32', 120),
+('Suntour XCT', 100),
+('All Terra CH-525', 80),
+('DB El Oso Custom', 150),
+('RockShox Pike RC', 150);
 
 
+INSERT INTO RearShock(rearShockID, rs_travel_mm)
+VALUES
+('RockShox Specialized Micro Brain', 257),
+('Ohlins STX Custom', 216),
+('Ohlins STX Custom', 197),
+('FOX Factory Float', 205),
+('FOX Performance Float', 205),
+('Ohlins TTX Custom', 200),
+('RockShox Brain', 257),
+('FOX Specialized Van RC', 200),
+('RockShox Deluxe RT3', 230),
+('RockShox Deluxe RL', 205),
+('RockShox Deluxe RT', 210)
+('FOX Factory DHX 2 SLS', 210),
+('FOX Performance Beti', 210),
+('FOX 36 Factory Float', 110),
+('RockShox Monarch Plus RCT3', 200),
+('FOX Nude Trunnion Scott', 165),
+('FOX Factory Float', 185),
+('FOX Van R Coil', 267),
+('RockShox Vivid Coil', 225),
+('FOX Racing Shox Performance Elite', 265),
+('X-Fusion 02 Pro RL', 155),
+('All Terra AO-42 AR', 135),
+('Kindshock Coil', 190),
+('Suntour Raidon-R', 184);
 
 
+INSERT INTO Derailleur(derailleurID)
+VALUES
+('Shimano XTR M9050 Di2'),
+('SRAM XX1 Eagle 12-speed'),
+('SRAM GX 11-speed'),
+('SRAM X01 DH 7-speed'),
+('SRAM X01 Eagle 12-speed'),
+('SRAM GX Eagle 12-speed'),
+('Shimano Deore XT M8000'),
+('Shimano Saint'),
+('Shimano XT 11-speed'),
+('SRAM NX 11-speed'),
+('Shimano RD-M7000 11-speed'),
+('Shimano SLX GS 11-speed'),
+('Shimano Deore Shadow Plus 10-speed'),
+('Shimano Deore FD-M618-D 10-speed'),
+('E.thirteen LG-1 ISCG05 10-speed'),
+('Shimano RD-TY300 21-speed'),
+('Shimano Deore RD-M592 27-speed'),
+('Shimano Alivio RD-M4000 27-speed'),
+('Micro-Shift FD-M462 9-speed'),
+('Shimano Altus FD-M370 9-speed'),
+('SRAM X5 15-speed'),
+('SRAM X1 X-Horizon 11-speed'),
+('SRAM X5 9-speed');
 
 
-
-
-
-
+INSERT INTO Manufacturer(manufacturerName, address, website)
+VALUES
+('Specalized','15130 Concord Circle, Morgan Hill, CA 95037','https://www.specialized.com/us/en'),
+('Trek','801 W Madison Street, Waterloo, WI 53594','https://www.trekbikes.com/us/en_US/'),
+('Yeti','621 Corporate Cir, Golden, CO 80401','http://www.yeticycles.com/'),
+('Marin','265 Bel Marin Keys Blvd, Novato, CA 94949','https://www.marinbikes.com/'),
+('Scott','2735 E. Parleys Way Suite #203, Salt Lake City, UT 84109','https://www.scott-sports.com/global/en/sports/bike'),
+('GT','1 Cannondale Way, Wilton, CT 06897','http://www.gtbicycles.com/usa_en/'),
+('Diamondback','6004 South 190th Street Suite 101, Kent, WA 98032','https://www.diamondback.com/');
 
 
 

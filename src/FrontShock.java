@@ -6,6 +6,8 @@ public class FrontShock extends QueryObject{
     private int frontShockID;
     private int travel_mm;
 
+    public FrontShock(){}
+
     public FrontShock(int frontShockID, int travel_mm) {
         this.frontShockID = frontShockID;
         this.travel_mm = travel_mm;

@@ -1,7 +1,7 @@
 CREATE TABLE Handlebar(
 	handlebarID varchar(100) NOT NULL,
 	width int NOT NULL,
-	handlebarMaterialType ENUM('option1', 'option2', 'option3', 'option4') NOT NULL,
+	handlebarMaterialType ENUM('Carbon', 'Aluminum', 'Steel') NOT NULL,
 	PRIMARY KEY(handlebarID)
 );
 
@@ -18,25 +18,25 @@ CREATE TABLE Wheel(
 
 CREATE TABLE Frame(
 	frameID varchar(100) NOT NULL,
-	frameType varchar(100) NOT NULL,
-	frameMaterialType varchar(100) NOT NULL,
+	frameType ENUM('X3 Geometry', 'S3 Geometry', 'G2 Geometry') NOT NULL,
+	frameMaterialType ENUM('Carbon', 'Aluminum', 'Steel') NOT NULL,
 	PRIMARY KEY(frameID)
 );
 
 CREATE TABLE Shifter(
 	shifterID varchar(100) NOT NULL,
-	family varchar(100) NOT NULL,
+	family ENUM('SRAM', 'Shimano') NOT NULL,
 	PRIMARY KEY(shifterID)
 );
 
 CREATE TABLE Brake(
 	brakeID varchar(100) NOT NULL,
-	brakeType varchar(100) NOT NULL,
+	brakeType ENUM('Hydraulic', 'Mechanical') NOT NULL,
 	PRIMARY KEY(brakeID)
 );
 
 CREATE TABLE FrontShock(
-	frontShockID ENUM('option1', 'option2', 'option3', 'option4') NOT NULL,
+	frontShockID varchar(100) NOT NULL,
 	fs_travel_mm int NOT NULL,
 	PRIMARY KEY(frontShockID)
 );

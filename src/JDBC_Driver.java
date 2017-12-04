@@ -15,6 +15,7 @@ public class JDBC_Driver {
 
     // This method will take the type of attribute and find the name and type of each attribute
     // NOTE: This method only works if all attributes in individual relation are NOT NULL
+    // RETURN TYPE: This will return a list of JPanelAttributes if no error.  Or null if error.
     public static List<JPanelAttribute> attributeList(String fromRelation) {
         List<JPanelAttribute> attributes = new LinkedList<>();
         Connection conn;
@@ -57,9 +58,13 @@ public class JDBC_Driver {
         }
     }
 
-    private static void executeQuery(String query) {
+    // This will return the query of bikes.  It will always be 14 attributes per line
+    // RETURN TYPE: this will return a Linked List of String arrays if no error.  Else null if error.
+    //  - Each String array = tuple.  Each element of String array = individual data entry.
+    //INPUT TYPE: Should input the attribute query "Ex: SELECT RearShockID FROM RearShock WHERE RearShockID = 123"
+    public static List<String[]> bikeList(String query) {
 
-        List<QueryObject> bikeParts = new LinkedList<>();
+        List<String[]> bikeParts = new LinkedList<>();
         Connection conn;
         Statement stat;
         try {
@@ -72,35 +77,23 @@ public class JDBC_Driver {
             conn = DriverManager.getConnection(url, props);
 
             stat = conn.createStatement();
-            ResultSet rs = stat.executeQuery(query);
+            String updatedQuery = "SELECT * FROM BIKES WHERE EXISTS (" + query + ")";
+            ResultSet rs = stat.executeQuery(updatedQuery);
 
-            // This should return the
-            //rs.getMetaData().getColumnType(index)
-            //rs.getMetaData().getColumnName(index)
             while (rs.next()) {
-                //rs.columnType (to find which type it is)
+                String[] bike = new String[14];
                 for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
-                    //model
-                    //man.
-                    //...
-
-                    //QueryObject queryObject = sun.reflect.Reflection.
-
-                    //Field field =
-
-
-                    //outputString.append(rs.getString(i));
-                    // May want to change logic of this to format data better
-                    //if (i < rs.getMetaData().getColumnCount()) {
-                      //  outputString.append(", ");
-                    //}
+                    bike[i=1] = rs.getString(1);
                 }
+                bikeParts.add(bike);
 
             }
+            return bikeParts;
 
         }
         catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
 
     }

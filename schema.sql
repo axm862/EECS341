@@ -1,31 +1,32 @@
 CREATE TABLE Handlebar(
 	handlebarID varchar(100) NOT NULL,
 	width int NOT NULL,
-	handlebarMaterialType ENUM('Carbon', 'Aluminum', 'Steel') NOT NULL,
-	PRIMARY KEY(handlebarID)
+	handlebarMaterialType ENUM('Carbon', 'Metal', 'Metal Alloy') NOT NULL,
+	PRIMARY KEY(handlebarID, width)
 );
 
 CREATE TABLE Crankset(
 	cranksetID varchar(100) NOT NULL,
-	PRIMARY KEY(cranksetID)
+	cranksetFamily ENUM('SRAM', 'Shimano') NOT NULL,
+	PRIMARY KEY(cranksetID, cranksetFamily)
 );
 
 CREATE TABLE Wheel(
 	wheelID varchar(100) NOT NULL,
 	wheelSize decimal NOT NULL,
-	PRIMARY KEY(wheelID)
+	PRIMARY KEY(wheelID, wheelSize)
 );
 
 CREATE TABLE Frame(
 	frameID varchar(100) NOT NULL,
-	frameType ENUM('X3 Geometry', 'S3 Geometry', 'G2 Geometry') NOT NULL,
-	frameMaterialType ENUM('Carbon', 'Aluminum', 'Steel') NOT NULL,
+	frameType ENUM('XC Geometry', 'S3 Geometry', 'G2 Geometry') NOT NULL,
+	frameMaterialType ENUM('Carbon', 'Aluminum', 'Steel', 'Metal Alloy') NOT NULL,
 	PRIMARY KEY(frameID)
 );
 
 CREATE TABLE Shifter(
 	shifterID varchar(100) NOT NULL,
-	family ENUM('SRAM', 'Shimano') NOT NULL,
+	family ENUM('Twist', 'Trigger') NOT NULL,
 	PRIMARY KEY(shifterID)
 );
 
@@ -38,18 +39,19 @@ CREATE TABLE Brake(
 CREATE TABLE FrontShock(
 	frontShockID varchar(100) NOT NULL,
 	fs_travel_mm int NOT NULL,
-	PRIMARY KEY(frontShockID)
+	PRIMARY KEY(frontShockID, fs_travel_mm)
 );
 
 CREATE TABLE RearShock(
 	rearShockID varchar(100) NOT NULL,
 	rs_travel_mm int NOT NULL,
-	PRIMARY KEY(rearShockID)
+	PRIMARY KEY(rearShockID, rs_travel_mm)
 );
 
 CREATE TABLE Derailleur(
 	derailleurID varchar(100) NOT NULL,
-	PRIMARY KEY(derailleurID)
+	derailleurFamily ENUM('SRAM', 'Shimano') NOT NULL,
+	PRIMARY KEY(derailleurID, derailleurFamily)
 );
 
 CREATE TABLE Manufacturer(
@@ -84,5 +86,5 @@ CREATE TABLE Bike(
 	FOREIGN KEY(wheelID) references Wheel(wheelID),
 	FOREIGN KEY(cranksetID) references Crankset(cranksetID),
 	FOREIGN KEY(handlebarID) references Handlebar(handlebarID),
-	PRIMARY KEY(modelName)
+	PRIMARY KEY(modelName, manufacturerName)
 );

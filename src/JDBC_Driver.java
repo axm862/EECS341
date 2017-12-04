@@ -8,11 +8,6 @@ import java.util.Properties;
  */
 public class JDBC_Driver {
 
-    public static void main(String[] args) {
-
-
-    }
-
     // This method will take the type of attribute and find the name and type of each attribute
     // NOTE: This method only works if all attributes in individual relation are NOT NULL
     // RETURN TYPE: This will return a list of JPanelAttributes if no error.  Or null if error.
@@ -25,8 +20,8 @@ public class JDBC_Driver {
 
             String url = "jdbc:mysql://localhost/DatabaseProject"; // Name/port on localhost may need to change
             Properties props = new Properties();
-            props.setProperty("user", "mysql"); // May need to change username
-            props.setProperty("password", "123456");
+            props.setProperty("user", "root"); // May need to change username
+            props.setProperty("password", "");
             conn = DriverManager.getConnection(url, props);
 
             stat = conn.createStatement();

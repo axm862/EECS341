@@ -87,7 +87,7 @@ VALUES
 ('Bontrager XR1 Team Issue', 29),
 ('Bontrager SE4 Team Issue', 29),
 ('Bontrager Hodag', 27.5),
-('Bontrager SE4 Team Issue', 27.5),1
+('Bontrager SE4 Team Issue', 27.5),
 ('Schwalbe Nobby Nic Performance', 27.5),
 ('Schwalbe Nobby Nic Performance', 25),
 ('Bontrager G4 Team Issue', 27.5),
@@ -316,4 +316,14 @@ VALUES
 ('Diamondback','6004 South 190th Street Suite 101, Kent, WA 98032','https://www.diamondback.com/');
 
 
-
+INSERT INTO Bike(modelName, manufacturerName, derailleurID, rearShockID, frontShockID, brakeID, shifterID, frameID, wheelID, cranksetID, handlebarID, price, year, picture)
+VALUES
+('Epic XTR Di2', 'Specalized', 'Shimano XTR M9050 Di2', 'RockShox Specialized Micro Brain', 'RockShox SID 29 Brain', 'Shimano XTR M9000', 'Shimano XTR Di2', 'S-Works FACT 12M', 'Fast Trak', 'Race Face Next SL G4', 'S Works Carbon Mini Rise', 9999.99, 2018, 'Epic_XTR_Di2.PNG'),
+('', '', '', '', '', '', '', '', '', '', '', '', , , ''),
+('', '', '', '', '', '', '', '', '', '', '', '', , , ''),
+('', '', '', '', '', '', '', '', '', '', '', '', , , ''),
+('', '', '', '', '', '', '', '', '', '', '', '', , , ''),
+('', '', '', '', '', '', '', '', '', '', '', '', , , ''),
+('', '', '', '', '', '', '', '', '', '', '', '', , , ''),
+('', '', '', '', '', '', '', '', '', '', '', '', , , ''),
+('', '', '', '', '', '', '', '', '', '', '', '', , , ''),

@@ -71,7 +71,7 @@ CREATE TABLE Bike(
 	wheelID varchar(100) NOT NULL,
 	cranksetID varchar(100) NOT NULL,
 	handlebarID varchar(100) NOT NULL,
-	price int NOT NULL,
+	price decimal NOT NULL,
 	year int NOT NULL,
 	picture LONGBLOB NOT NULL,
 	FOREIGN KEY(manufacturerName) references Manufacturer(manufacturerName),

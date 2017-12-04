@@ -1,10 +1,17 @@
 import javax.swing.*;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by jeffeben on 12/2/17.
  */
 public abstract class QueryObject extends JFrame{
+
+    public static List<QueryObject> getQueryObjects() {
+        return queryObjects;
+    }
+
+    private static List<QueryObject> queryObjects = new LinkedList<>();
 
     List<JPanelAttribute> attributeList;
 
@@ -15,7 +22,7 @@ public abstract class QueryObject extends JFrame{
     private JCheckBox jCheckBox;
 
     public QueryObject(JCheckBox jCheckBox) {
-
+        queryObjects.add(this);
         this.jCheckBox = jCheckBox;
 
         attributeList = JDBC_Driver.attributeList(getName());

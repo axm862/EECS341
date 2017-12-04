@@ -88,6 +88,12 @@ public class BikeFinderForm {
                 Manufacturer manufacturer = new Manufacturer(manufacturerCheckBox);
             }
         });
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, QueryObject.getQueryObjects().size() + " modifiers selected.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        });
     }
 
     {

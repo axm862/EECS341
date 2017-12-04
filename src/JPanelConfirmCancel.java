@@ -20,6 +20,7 @@ public class JPanelConfirmCancel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 queryObject.getjCheckBox().setSelected(false);
+                QueryObject.getQueryObjects().remove(queryObject);
                 queryObject.dispatchEvent(new WindowEvent(queryObject, WindowEvent.WINDOW_CLOSING));
             }
         });

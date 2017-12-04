@@ -6,6 +6,9 @@ public class Brake extends QueryObject{
     private int brakeID;
     private String brakeType;
 
+    public Brake() {
+    }
+
     public Brake(int brakeID, String brakeType) {
         this.brakeID = brakeID;
         this.brakeType = brakeType;

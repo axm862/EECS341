@@ -9,6 +9,8 @@ public class Handlebar extends QueryObject{
 
     private String materialType;
 
+    public Handlebar(){}
+
     public Handlebar(int handleBarID, double width, String materialType) {
         this.handleBarID = handleBarID;
         this.width = width;

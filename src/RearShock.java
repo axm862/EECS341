@@ -6,6 +6,8 @@ public class RearShock extends QueryObject{
     private int rearShockID;
     private int travel_mm;
 
+    public RearShock(){}
+
     public RearShock(int rearShockID, int travel_mm) {
         this.rearShockID = rearShockID;
         this.travel_mm = travel_mm;

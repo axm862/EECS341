@@ -7,6 +7,8 @@ public class Manufacturer extends QueryObject{
     private String address;
     private String website;
 
+    public Manufacturer(){}
+
     public Manufacturer(String manufacturerName, String address, String website) {
         this.manufacturerName = manufacturerName;
         this.address = address;

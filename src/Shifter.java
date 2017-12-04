@@ -6,6 +6,8 @@ public class Shifter extends QueryObject{
     int shifterID;
     String family;
 
+    public Shifter(){}
+
     public Shifter(int shifterID, String family) {
         this.shifterID = shifterID;
         this.family = family;

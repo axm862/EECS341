@@ -7,6 +7,8 @@ public class Frame extends QueryObject{
     private String frameType;
     private String materialType;
 
+    public Frame(){}
+
     public Frame(int frameID, String frameType, String materialType) {
         this.frameID = frameID;
         this.frameType = frameType;

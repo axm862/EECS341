@@ -6,6 +6,8 @@ public class Wheel extends QueryObject {
     private int wheelID;
     private double wheelSize;
 
+    public Wheel(){}
+
     public Wheel(int wheelID, double wheelSize) {
         this.wheelID = wheelID;
         this.wheelSize = wheelSize;

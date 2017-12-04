@@ -5,6 +5,8 @@ public class Derailleur extends QueryObject{
 
     private int derailleurID;
 
+    public Derailleur(){}
+
     public Derailleur(int derailleurID) {
         this.derailleurID = derailleurID;
     }

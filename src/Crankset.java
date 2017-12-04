@@ -5,6 +5,8 @@ public class Crankset extends QueryObject{
 
     private int CranksetID;
 
+    public Crankset() {}
+
     public Crankset(int CranksetID) {
         this.CranksetID = CranksetID;
     }

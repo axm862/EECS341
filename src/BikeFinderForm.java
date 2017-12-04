@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class BikeFinderForm {
 
@@ -26,6 +28,13 @@ public class BikeFinderForm {
 
     public BikeFinderForm() {
 
+        shifterCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Shifter shifter = new Shifter();
+                shifter.setVisible(true);
+            }
+        });
     }
 
     {

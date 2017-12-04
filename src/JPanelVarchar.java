@@ -6,18 +6,24 @@ public class JPanelVarchar extends JPanelAttribute {
         super(name);
     }
 
+    JLabel name;
+    JTextField data;
 
     @Override
     public void initPanel() {
-        JLabel name = new JLabel();
+        name = new JLabel();
         name.setText(this.getName());
         this.add(name);
-        JComboBox combo = new JComboBox();
-        combo.addItem(">");
-        combo.addItem("<");
-        combo.addItem("=");
-        this.add(combo);
-        JTextField data = new JTextField();
+        data = new JTextField();
         this.add(data);
+    }
+
+    @Override
+    public String getAttributeQuery() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(getAttributeName());
+        stringBuilder.append(" = ");
+        stringBuilder.append(data.getText());
+        return stringBuilder.toString();
     }
 }

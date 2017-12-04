@@ -10,13 +10,13 @@ CREATE TABLE Crankset(
 	PRIMARY KEY(cranksetID)
 );
 
-CREATE TABLE Wheel( 
+CREATE TABLE Wheel(
 	wheelID varchar(50) NOT NULL,
 	wheelSize int NOT NULL,
 	PRIMARY KEY(wheelID)
 );
 
-CREATE TABLE Frame( 
+CREATE TABLE Frame(
 	frameID varchar(50) NOT NULL,
 	frameType ENUM('option1', 'option2', 'option3', 'option4') NOT NULL,
 	frameMaterialType ENUM('option1', 'option2', 'option3', 'option4') NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE Shifter(
 	PRIMARY KEY(shifterID)
 );
 
-CREATE TABLE Brake( 
+CREATE TABLE Brake(
 	brakeID varchar(50) NOT NULL,
 	brakeType ENUM('option1', 'option2', 'option3', 'option4') NOT NULL,
 	PRIMARY KEY(brakeID)
@@ -41,7 +41,7 @@ CREATE TABLE FrontShock(
 	PRIMARY KEY(frontShockID)
 );
 
-CREATE TABLE RearShock( 
+CREATE TABLE RearShock(
 	rearShockID varchar(50) NOT NULL,
 	rs_travel_mm int NOT NULL,
 	PRIMARY KEY(rearShockID)
@@ -52,7 +52,7 @@ CREATE TABLE Derailleur(
 	PRIMARY KEY(derailleurID)
 );
 
-CREATE TABLE Manufacturer( 
+CREATE TABLE Manufacturer(
 	manufacturerName varchar(50) NOT NULL,
 	address varchar(50) NOT NULL,
 	website varchar(150) NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE Bike(
 	handlebarID varchar(50) NOT NULL,
 	price int NOT NULL,
 	year int NOT NULL,
-	picture varbinary(MAX) NOT NULL,
+	picture LONGBLOB NOT NULL,
 	FOREIGN KEY(manufacturerName) references Manufacturer(manufacturerName),
 	FOREIGN KEY(derailleurID) references Derailleur(derailleurID),
 	FOREIGN KEY(rearShockID) references RearShock(rearShockID),
@@ -82,7 +82,7 @@ CREATE TABLE Bike(
 	FOREIGN KEY(shifterID) references Shifter(shifterID),
 	FOREIGN KEY(frameID) references Frame(frameID),
 	FOREIGN KEY(wheelID) references Wheel(wheelID),
-	FOREIGN KEY(cranksetID) references Crankset(cranksetID), 
+	FOREIGN KEY(cranksetID) references Crankset(cranksetID),
 	FOREIGN KEY(handlebarID) references Handlebar(handlebarID),
 	PRIMARY KEY(modelName)
 );

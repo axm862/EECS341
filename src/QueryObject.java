@@ -12,11 +12,17 @@ public abstract class QueryObject extends JFrame{
 
         attributeList = JDBC_Driver.attributeList(getName());
 
+        this.setTitle(getName());
+        this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
+
         for (JPanelAttribute j : attributeList) {
             j.initPanel();
             j.setTableName(getName());
             this.add(j);
         }
+
+        this.pack();
+        this.setVisible(true);
 
     }
 

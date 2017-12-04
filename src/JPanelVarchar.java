@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class JPanelVarchar extends JPanelAttribute {
 
@@ -11,8 +12,9 @@ public class JPanelVarchar extends JPanelAttribute {
 
     @Override
     public void initPanel() {
+        this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
         name = new JLabel();
-        name.setText(this.getName());
+        name.setText(this.getTableName());
         this.add(name);
         data = new JTextField();
         this.add(data);

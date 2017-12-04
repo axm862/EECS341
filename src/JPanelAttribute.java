@@ -1,9 +1,11 @@
 import javax.swing.*;
+import java.awt.*;
 
 public abstract class JPanelAttribute extends JPanel{
 
     JPanelAttribute(String attributeName){
         this.attributeName = attributeName;
+        System.out.println(attributeName);
     }
 
     public abstract void initPanel();

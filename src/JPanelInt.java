@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class JPanelInt extends JPanelAttribute{
 
@@ -12,8 +13,9 @@ public class JPanelInt extends JPanelAttribute{
 
     @Override
     public void initPanel() {
+        this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
         name = new JLabel();
-        name.setText(this.getName());
+        name.setText(this.getTableName());
         this.add(name);
         combo = new JComboBox();
         combo.addItem(">");
@@ -22,6 +24,7 @@ public class JPanelInt extends JPanelAttribute{
         this.add(combo);
         data = new JTextField();
         this.add(data);
+
     }
 
     @Override

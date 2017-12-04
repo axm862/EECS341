@@ -32,7 +32,12 @@ public class BikeFinderForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Shifter shifter = new Shifter();
-                shifter.setVisible(true);
+            }
+        });
+        handlebarCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Handlebar handlebar = new Handlebar();
             }
         });
     }

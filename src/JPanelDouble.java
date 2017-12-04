@@ -1,8 +1,8 @@
 import javax.swing.*;
 
-public class JPanelInt extends JPanelAttribute{
+public class JPanelDouble extends JPanelAttribute{
 
-    public JPanelInt(String name) {
+    public JPanelDouble(String name) {
         super(name);
     }
 

@@ -21,7 +21,7 @@ CREATE TABLE Frame(
 	frameID varchar(100) NOT NULL,
 	frameType ENUM('XC Geometry', 'S3 Geometry', 'G2 Geometry') NOT NULL,
 	frameMaterialType ENUM('Carbon', 'Aluminum', 'Steel', 'Metal Alloy') NOT NULL,
-	PRIMARY KEY(frameID)
+	PRIMARY KEY(frameID, frameType)
 );
 
 CREATE TABLE Shifter(
@@ -50,8 +50,9 @@ CREATE TABLE RearShock(
 
 CREATE TABLE Derailleur(
 	derailleurID varchar(100) NOT NULL,
-	derailleurFamily ENUM('SRAM', 'Shimano') NOT NULL,
-	PRIMARY KEY(derailleurID, derailleurFamily)
+	derailleurFamily ENUM('XTR', 'XX1', 'GX', 'X01', 'Deore', 'Saint', 'XT',
+	'NX', 'RD', 'SLX', 'LG', 'FD', 'X5', 'X1') NOT NULL,
+	PRIMARY KEY(derailleurID)
 );
 
 CREATE TABLE Manufacturer(

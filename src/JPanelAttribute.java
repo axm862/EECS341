@@ -5,13 +5,13 @@ public abstract class JPanelAttribute extends JPanel{
 
     JPanelAttribute(String attributeName){
         this.attributeName = attributeName;
-        System.out.println(attributeName);
+        System.out.println("Generating window for " + attributeName);
     }
 
     public abstract void initPanel();
 
     public String getAttributeName() {
-        return attributeName;
+        return AttributeName.toReadableString(this.attributeName);
     }
 
     public void setAttributeName(String name) {

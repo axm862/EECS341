@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /**
  * Created by jeffeben on 12/2/17.
  */
@@ -7,12 +9,14 @@ public class Frame extends QueryObject{
     private String frameType;
     private String materialType;
 
-    public Frame(){}
-
-    public Frame(int frameID, String frameType, String materialType) {
+/*    public Frame(int frameID, String frameType, String materialType) {
         this.frameID = frameID;
         this.frameType = frameType;
         this.materialType = materialType;
+    }*/
+
+    public Frame(JCheckBox jCheckBox) {
+        super(jCheckBox);
     }
 
     public int getFrameID() {

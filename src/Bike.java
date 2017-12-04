@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /**
  * Created by jeffeben on 12/2/17.
  */
@@ -18,7 +20,11 @@ public class Bike extends QueryObject{
     private int year;
     private String pictureBinary;
 
-    public Bike(String modelName, Manufacturer manufacturer, Derailleur derailleur, RearShock rearshock, FrontShock frontshock, Brake brake, Shifter shifter, Frame frame, Wheel wheel, Crankset crankset, Handlebar handlebar, int price, int year, String pictureBinary) {
+    public Bike(JCheckBox jCheckBox) {
+        super(jCheckBox);
+    }
+
+/*    public Bike(String modelName, Manufacturer manufacturer, Derailleur derailleur, RearShock rearshock, FrontShock frontshock, Brake brake, Shifter shifter, Frame frame, Wheel wheel, Crankset crankset, Handlebar handlebar, int price, int year, String pictureBinary) {
         this.modelName = modelName;
         this.manufacturer = manufacturer;
         this.derailleur = derailleur;
@@ -33,7 +39,7 @@ public class Bike extends QueryObject{
         this.price = price;
         this.year = year;
         this.pictureBinary = pictureBinary;
-    }
+    }*/
 
     public String getModelName() {
         return modelName;

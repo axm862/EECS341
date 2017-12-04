@@ -31,61 +31,61 @@ public class BikeFinderForm {
         shifterCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Shifter shifter = new Shifter();
+                Shifter shifter = new Shifter(shifterCheckBox);
             }
         });
         handlebarCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Handlebar handlebar = new Handlebar();
+                Handlebar handlebar = new Handlebar(handlebarCheckBox);
             }
         });
         cranksetCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Crankset crankset = new Crankset();
+                Crankset crankset = new Crankset(cranksetCheckBox);
             }
         });
         wheelCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Wheel wheel = new Wheel();
+                Wheel wheel = new Wheel(wheelCheckBox);
             }
         });
         frameCheckBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Frame frame = new Frame();
+                Frame frame = new Frame(frameCheckBox1);
             }
         });
         brakeCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Brake brake = new Brake();
+                Brake brake = new Brake(brakeCheckBox);
             }
         });
         frontShockCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FrontShock frontShock = new FrontShock();
+                FrontShock frontShock = new FrontShock(frontShockCheckBox);
             }
         });
         rearShockCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RearShock rearShock = new RearShock();
+                RearShock rearShock = new RearShock(rearShockCheckBox);
             }
         });
         derailleurCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Derailleur derailleur = new Derailleur();
+                Derailleur derailleur = new Derailleur(derailleurCheckBox);
             }
         });
         manufacturerCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Manufacturer manufacturer = new Manufacturer();
+                Manufacturer manufacturer = new Manufacturer(manufacturerCheckBox);
             }
         });
     }

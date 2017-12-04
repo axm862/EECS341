@@ -15,7 +15,7 @@ public class JPanelDouble extends JPanelAttribute{
     public void initPanel() {
         this.setLayout(new GridLayout());
         name = new JLabel();
-        name.setText(this.getTableName());
+        name.setText(this.getAttributeName());
         this.add(name);
         combo = new JComboBox<>();
         combo.addItem(">");

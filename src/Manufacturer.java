@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /**
  * Created by jeffeben on 12/2/17.
  */
@@ -7,13 +9,17 @@ public class Manufacturer extends QueryObject{
     private String address;
     private String website;
 
-    public Manufacturer(){}
+    public Manufacturer(JCheckBox jCheckBox) {
+        super(jCheckBox);
+    }
+
+/*    public Manufacturer(){}
 
     public Manufacturer(String manufacturerName, String address, String website) {
         this.manufacturerName = manufacturerName;
         this.address = address;
         this.website = website;
-    }
+    }*/
 
     public String getManufacturerName() {
         return manufacturerName;

@@ -8,7 +8,15 @@ public abstract class QueryObject extends JFrame{
 
     List<JPanelAttribute> attributeList;
 
-    public QueryObject() {
+    public JCheckBox getjCheckBox() {
+        return jCheckBox;
+    }
+
+    private JCheckBox jCheckBox;
+
+    public QueryObject(JCheckBox jCheckBox) {
+
+        this.jCheckBox = jCheckBox;
 
         attributeList = JDBC_Driver.attributeList(getName());
 
@@ -20,8 +28,9 @@ public abstract class QueryObject extends JFrame{
             j.setTableName(getName());
             this.add(j);
         }
+        this.add(new JPanelConfirmCancel(this));
         this.pack();
-        this.validate();
+        this.revalidate();
         this.setVisible(true);
 
     }

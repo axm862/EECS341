@@ -41,7 +41,6 @@ public class JDBC_Driver {
                     attributes.add(new JPanelDouble(rs.getMetaData().getColumnName(i)));
                 }
                 else {
-                    System.out.println(rs.getMetaData().getColumnType(i));
                     throw new Exception("Wrong data type returned.  Not Varchar , Integer, or Double");
                 }
             }

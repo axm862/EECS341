@@ -40,6 +40,54 @@ public class BikeFinderForm {
                 Handlebar handlebar = new Handlebar();
             }
         });
+        cranksetCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Crankset crankset = new Crankset();
+            }
+        });
+        wheelCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Wheel wheel = new Wheel();
+            }
+        });
+        frameCheckBox1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Frame frame = new Frame();
+            }
+        });
+        brakeCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Brake brake = new Brake();
+            }
+        });
+        frontShockCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrontShock frontShock = new FrontShock();
+            }
+        });
+        rearShockCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RearShock rearShock = new RearShock();
+            }
+        });
+        derailleurCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Derailleur derailleur = new Derailleur();
+            }
+        });
+        manufacturerCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Manufacturer manufacturer = new Manufacturer();
+            }
+        });
     }
 
     {

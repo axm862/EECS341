@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class JPanelInt extends JPanelAttribute{
@@ -13,7 +14,7 @@ public class JPanelInt extends JPanelAttribute{
 
     @Override
     public void initPanel() {
-        this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
+        this.setLayout(new GridLayout());
         name = new JLabel();
         name.setText(this.getTableName());
         this.add(name);

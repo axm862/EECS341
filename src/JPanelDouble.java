@@ -13,7 +13,7 @@ public class JPanelDouble extends JPanelAttribute{
 
     @Override
     public void initPanel() {
-        this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        this.setLayout(new GridLayout());
         name = new JLabel();
         name.setText(this.getTableName());
         this.add(name);

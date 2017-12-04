@@ -20,8 +20,8 @@ public abstract class QueryObject extends JFrame{
             j.setTableName(getName());
             this.add(j);
         }
-
         this.pack();
+        this.validate();
         this.setVisible(true);
 
     }

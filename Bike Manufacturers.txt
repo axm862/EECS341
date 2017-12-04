@@ -49,9 +49,9 @@ Specalized
 	brakeID : Shimano XTR M9000
 	shifterID : Shimano XTR Di2
 	frameID : S-Works FACT 12m, XC Geometry, threaded BB, 12x148mm rear spacing, internal cable routing, 100mm of travel
-	wheelID : Fast Trak, GRIPTON compound, 2Bliss Ready, 29 x 2.3""
-	cranksetID : Race Face Next SL G4, Boost - Alloy 30T
-	handlebarID : S-Works Carbon Mini Rise, 6-degree upsweep, 8-degree backsweep, 10mm rise, 720mm, 31.8mm
+	wheelID : Fast Trak, 29
+	cranksetID : Race Face Next SL G4
+	handlebarID : S Works Carbon Mini Rise, 720mm, Carbon
 	price : $9,999.99
 	year : 2018
 	picture : Epic_XTR_Di2.PNG
@@ -65,9 +65,9 @@ Specalized
 	brakeID : SRAM Level Ultimate
 	shifterID : SRAM XX1 Eagle, trigger, 12-speed
 	frameID : S-Works FACT 12m, XC Geometry, threaded BB, 12x148mm rear spacing, internal cable routing, 100mm of travel
-	wheelID : Fast Trak, GRIPTON compound, 2Bliss Ready, 29 x 2.3""
-	cranksetID : SRAM XX1 Eagle, Boost 148, 170/175mm crankarm, 24mm spindle
-	handlebarID : S-Works Carbon Mini Rise, 6-degree upsweep, 8-degree backsweep, 10mm rise, 720mm, 31.8mm
+	wheelID : Fast Trak, 29
+	cranksetID : SRAM XX1 Eagle
+	handlebarID : S Works Carbon Mini Rise, 720mm, Carbon
 	price : $9,499.99
 	year : 2018
 	picture : S_Works_Epic_XX1_Eagle.PNG
@@ -81,9 +81,9 @@ Specalized
 	brakeID : SRAM Code RSC, 4-piston caliper, hydraulic disc, metallic pads, 200mm front rotor, 180mm rear rotor
 	shifterID : SRAM XX1 Eagle, trigger, 12-speed
 	frameID : FACT IS-X 11m Carbon FSR 29/6Fattie chassis, 160mm of travel, 148mm rear dropouts
-	wheelID : Butcher, GRID casing, Gripton compound, 2Bliss Ready, 29 x 2.3""
-	cranksetID : SRAM XX1 Eagle, carbon, 24mm spindle, 52mm chainline, 30T chainring
-	handlebarID : 	Specialized DH, FACT carbon, 6-degree upsweep, 8-degree backsweep, 27mm rise, 800mm, 31.8mm
+	wheelID : Butcher, 29
+	cranksetID : SRAM XX1 Eagle
+	handlebarID : Specialized DH, 800mm, Carbon
 	price : $8,500.00
 	year : 2018
 	picture : S_Works_Enduro_29_6Fattie.PNG
@@ -97,9 +97,9 @@ Specalized
 	brakeID : SRAM Guide RS carbon, hydraulic disc, organic pads, carbon lever, Guide S4 4-piston caliper, 200/180mm rotor
 	shifterID : SRAM XX1 Eagle, trigger, 12-speed
 	frameID : S-Works FACT 11m, full carbon chassis and rear end, PF30 BB, 12x148mm dropouts, 150mm of travel
-	wheelID : Butcher, GRID casing, Gripton compound, 2Bliss Ready, 27.5 x 2.6""
-	cranksetID : SRAM XX1 Eagle, Boost™ 148, 170mm crankarm, 30mm spindle
-	handlebarID : Specialized Trail, FACT carbon, 6-degree upsweep, 8-degree backsweep, 27mm rise, 780mm, 31.8mm
+	wheelID : Butcher, 27.5
+	cranksetID : SRAM XX1 Eagle Boost
+	handlebarID : Specialized Trail, 780mm, Carbon
 	price : $8,200.00
 	year : 2016
 	picture : S_Works_Stumpjumper_27.5.PNG
@@ -114,8 +114,8 @@ Specalized
 	shifterID : SRAM XX1 Eagle, trigger, 12-speed
 	frameID : S-Works FACT 11m, PF30 BB, 12x142mm dropouts, 120mm of travel
 	wheelID : Purgatory, GRIPTON compound, 2Bliss Ready, 29 x 2.3"
-	cranksetID : SRAM XX1 Eagle, 175/170mm crankarm, 30mm spindle
-	handlebarID : Specialized Trail, FACT carbon, 6-degree upsweep, 8-degree backsweep, 27mm rise, 750mm, 31.8mm
+	cranksetID : SRAM XX1 Eagle
+	handlebarID : Specialized Trail, 780mm, Carbon
 	price : $8,200.00
 	year : 2018
 	picture : S_Works_Camber_29.PNG
@@ -130,8 +130,8 @@ Specalized
 	shifterID : SRAM GX, trigger, 11-speed
 	frameID : FACT 9m carbon front chassis w/ Specialized M5 Aluminum rear end, PF30 BB, 12x148mm dropouts, 130mm of travel
 	wheelID : Purgatory, Gripton compound, 2Bliss Ready, 27.5 x 2.3""
-	cranksetID : Race Face Aeffect crank, 170/175mm arms, PF30
-	handlebarID : Specialized, 6061 alloy, 6-degree upsweep, 8-degree backsweep, 27mm rise, 750mm width
+	cranksetID : Race Face Aeffect
+	handlebarID : Specialized 6061 Alloy, 750mm width, Metal Alloy
 	price : $3,500.00
 	year : 2017
 	picture : Camber_Comp_Carbon_27.5.PNG
@@ -146,8 +146,8 @@ Specalized
 	shifterID : SRAM X0 DH, 7-speed, trigger
 	frameID : S-Works FACT 11m, S3 Geometry, BB30, 135mm dropouts, 200mm of travel
 	wheelID : Butcher, DH casing, 27.5 b x2.5", 60 TPI, wire bead
-	cranksetID : SRAM X0 DH, carbon, 104 BCD spider, 165mm crankarm w/ Gamut bashguard
-	handlebarID : width 800, ID NULL
+	cranksetID : SRAM X0 DH
+	handlebarID : Specialized DH, 800mm, Carbon
 	price : $7,500.00
 	year : 2016
 	picture : S_Works_Demo_8.PNG
@@ -162,8 +162,8 @@ Specalized
 	shifterID : SRAM X01 Eagle, trigger, 12-speed
 	frameID : Specialized FACT 11m, full carbon frame, threaded BB, 12x148mm rear spacing, 100mm of travel
 	wheelID : Fast Trak, GRIPTON compound, 2Bliss Ready, 29 x 2.3""
-	cranksetID : Truvativ Stylo, carbon, Boost™ 148, 175/170mm 24mm spindle
-	handlebarID : Specialized Mini-rise, 7050 alloy, 10mm rise, 720mm width, 31.8mm clamp
+	cranksetID : Truvativ Stylo
+	handlebarID : Specialized 7050 Alloy, 720mm, Metal Alloy
 	price : $6,500.00
 	year : 2018
 	picture : Mens_Epic_Pro.PNG
@@ -178,8 +178,8 @@ Specalized
 	shifterID : SRAM GX, trigger, 11-speed
 	frameID : Specialized FACT 11m, full carbon frame, 12x148mm rear spacing, internal cable routing, 100mm of travel
 	wheelID : Fast Trak, GRIPTON compound, 2Bliss Ready, 29 x 2.3""
-	cranksetID : Race Face Aeffect, 6000 Series alloy
-	handlebarID : Specialized Mini-rise, 6000 alloy, 10mm rise, 720mm width, 31.8mm clamp
+	cranksetID : Race Face Aeffect
+	handlebarID : Specialized 6000 Alloy, 720mm, Metal Alloy
 	price : $4,400.00
 	year : 2017
 	picture : Womens_Epic_Comp_Carbon.PNG
@@ -194,8 +194,8 @@ Specalized
 	shifterID : SRAM X7, trigger
 	frameID : M5 alloy, carbon seatstay, BB30, 135mm dropouts, replaceable derailleur hanger, 200mm of travel
 	wheelID : Butcher, DH casing, 27.5 b x2.5"", 60 TPI, wire bead
-	cranksetID : Custom SRAM Descendant, BB30, 7050 alloy arms w/ Gamut bashguard, 165mm
-	handlebarID : Specialized DH, 7050 alloy, 8-degree backsweep, 6-degree upsweep, 27mm rise, 800mm, 31.8mm clamp
+	cranksetID : Custom SRAM Descendant BB30
+	handlebarID : Specialized DH, 800mm, Carbon
 	price : $3,500.00
 	year : 2018
 	picture : Demo_8_I_Alloy.PNG
@@ -212,8 +212,8 @@ Trek
 	shifterID : SRAM XX1 Eagle, 12 speed
 	frameID : OCLV Mountain Carbon main frame & stays, ABP, E2 tapered head tube, Carbon Armor, PF92, 100mm travel
 	wheelID : Bontrager XR2 Team Issue, Tubeless Ready, 120 tpi, aramid bead, 29x2.20˝ 
-	cranksetID : SRAM XX1 Eagle, 34T Direct Mount X-Sync
-	handlebarID : Bontrager XXX, OCLV Carbon, 31.8mm, zero rise
+	cranksetID : SRAM XX1 Eagle
+	handlebarID : Bontrager XXX, 780mm, Carbon
 	price : $8,999.99
 	year : 2018
 	picture : Top_Fuel_9.9_Race_Shop_Limited.PNG
@@ -228,8 +228,8 @@ Trek
 	shifterID : SRAM XX1 Eagle, 12 speed
 	frameID : OCLV Mountain Carbon main frame, ABP, Full Floater, Carbon Armor, PF92, ISCG 05, G2 Geometry, 130mm travel
 	wheelID : Bontrager XR4 Team Issue, Tubeless Ready, Inner Strength sidewalls, aramid bead, 29x2.40˝
-	cranksetID : SRAM XX1 Eagle, 32T Direct Mount X-Sync
-	handlebarID : Bontrager Line Pro, OCLV Carbon, 35mm, 15mm rise, 750mm width
+	cranksetID : SRAM XX1 Eagle
+	handlebarID : Bontrager Line Pro, 750mm, Carbon
 	price : $8,899.99
 	year : 2018
 	picture : Fuel_EX_9.9_29.PNG
@@ -244,8 +244,8 @@ Trek
 	shifterID : SRAM XX1 Eagle, 12 speed
 	frameID : Super Light OCLV Mountain Carbon, IsoSpeed, E2 tapered head tube, MicroTruss, Boost148 & G2 Geometry on 29ers
 	wheelID : Bontrager XR1 Team Issue, Tubeless Ready, Inner Strength sidewalls, 120tpi, aramid bead, 29x2.20˝ 
-	cranksetID : SRAM XX1 Eagle, 34T Direct Mount X-Sync
-	handlebarID : Bontrager XXX, OCLV Carbon, 31.8mm, zero rise
+	cranksetID : SRAM XX1 Eagle
+	handlebarID : Bontrager XXX, 780mm, Carbon
 	price : $8,499.99
 	year : 2018
 	picture : Procaliber_9.9_SL_Race_Shop_Limited.PNG
@@ -260,8 +260,8 @@ Trek
 	shifterID : SRAM GX Eagle, 12 speed
 	frameID : OCLV Mountain Carbon main frame, 1x-specific alloy chainstay, E2 tapered head tube, Mino Link, Carbon Armor, PF92, ISCG 05, G2 Geometry, 150mm travel
 	wheelID : Bontrager SE4 Team Issue, Tubeless Ready, Core Strength sidewalls, aramid bead, 29x2.40˝
-	cranksetID : SRAM Descendant 7k Eagle, 32T Direct Mount X-Sync w/MRP AMG V2 chainguide
-	handlebarID : Bontrager Line Pro, OCLV Carbon, 35mm, 27.5mm rise, 780mm width
+	cranksetID : SRAM Descendant 7k Eagle
+	handlebarID : Bontrager Line Pro, 750mm, Carbon
 	price : $5,499.99
 	year : 2018
 	picture : Slash_9.8.PNG
@@ -276,8 +276,8 @@ Trek
 	shifterID : SRAM GX Eagle, 12 speed
 	frameID : OCLV Mountain Carbon main frame, alloy stays, E2 tapered head tube, Carbon Armor, 120mm travel
 	wheelID : Bontrager Hodag, Tubeless Ready, Inner Strength sidewalls, aramid bead, 27.5x3.80˝
-	cranksetID : SRAM Stylo Carbon, 30T Direct Mount X-Sync
-	handlebarID : Bontrager Line Pro, OCLV Carbon, 35mm, 15mm rise, 750mm width
+	cranksetID : SRAM Stylo Carbon
+	handlebarID : Bontrager Line Pro, 750mm, Carbon
 	price : $5,499.99
 	year : 2018
 	picture : Farley_EX_9.8.PNG
@@ -292,8 +292,8 @@ Trek
 	shifterID : SRAM GX Eagle, 12 speed
 	frameID : OCLV Mountain Carbon main frame, alloy seatstay, EVO link, E2 tapered head tube, Carbon Armor, 150mm travel
 	wheelID : Bontrager SE4 Team Issue, Tubeless Ready, Core Strength sidewalls, aramid bead, 27.5x2.40˝
-	cranksetID : SRAM Descendant 7k Eagle, 32T Direct Mount X-Sync
-	handlebarID : Bontrager Line Pro, OCLV Carbon, 35mm, 27.5mm rise, 780mm width
+	cranksetID : SRAM Descendant 7k Eagle
+	handlebarID : Bontrager Line Pro v2, 780mm width, Carbon
 	price : $4,999.99
 	year : 2018
 	picture : Remedy_9.8_27.5.PNG
@@ -308,8 +308,8 @@ Trek
 	shifterID : Shimano SLX M7000, 11 speed
 	frameID : Alpha Platinum Aluminum, ABP, EVO link, E2 tapered head tube, 130mm travel
 	wheelID : Schwalbe Nobby Nic Performance w/Addix compound, Tubeless, 27.5x2.80˝
-	cranksetID : Race Aeffect, 15T w/chainguard
-	handlebarID : Bontrager alloy, 31.8mm, 5mm rise, 750mm width
+	cranksetID : Race Face Aeffect
+	handlebarID : Bontrager Alloy, 750mm, Metal Alloy
 	price : $4,999.99
 	year : 2018
 	picture : Powerfly_7_FS_Plus.PNG
@@ -324,8 +324,8 @@ Trek
 	shifterID : Shimano Saint, 10 speed
 	frameID : OCLV Mountain Carbon w/InTension main frame, E2 tapered head tube, Carbon Armor, 210mm travel
 	wheelID : Bontrager G4 Team Issue, 27.5x2.35"
-	cranksetID : Shimano Saint, 36T
-	handlebarID : Bontrager Rhythm Pro, OCLV Carbon, 31.8mm, 15mm rise
+	cranksetID : Shimano Saint
+	handlebarID : Bontrager Rhythm Pro, 780mm, Carbon
 	price : $4,999.99
 	year : 2016
 	picture : Session_9.9.PNG
@@ -340,8 +340,8 @@ Trek
 	shifterID : SRAM X0 DH, 7 speed
 	frameID : Alpha Platinum Aluminum, EVO Link, E2 tapered head tube, ISCG Mount, 210mm travel
 	wheelID : Bontrager G4 Team Issue, 27.5x2.35"
-	cranksetID : Truvativ Descendant, 36T
-	handlebarID : Bontrager Line, 35mm, 27.5mm rise, 820mm width
+	cranksetID : Truvativ Descendant
+	handlebarID : Bontrager Line, 820mm, Metal
 	price : $3,999.99
 	year : 2017
 	picture : Session_88_DH_27.5.PNG
@@ -356,8 +356,8 @@ Trek
 	shifterID : Shimano SLX M7000, 11 speed
 	frameID : Alpha Platinum Aluminum, IsoSpeed, E2 tapered head tube, PF92, Boost148, G2 Geometry on 29ers
 	wheelID : Bontrager XR2 Team Issue, Tubeless Ready, 120 tpi, aramid bead, 29x2.20˝
-	cranksetID : Race Face Next R, 36/26
-	handlebarID : Bontrager Race Lite, 31.8mm, 5mm rise, 720mm width
+	cranksetID : Race Face Next R
+	handlebarID : Bontrager Race Lite, 720mm, Metal
 	price : 2018
 	year : $2,099.99
 	picture : Procaliber_8.PNG
@@ -373,8 +373,8 @@ Yeti
 	shifterID : SRAM XX1 Eagle 12 speed
 	frameID : High modulus carbon fiber Yeti SB5 27.5” frame and swing arm, Internal cable routing, 5” travel
 	wheelID : Maxxis Ardent EXO/TR 2.4 Tubeless
-	cranksetID : SRAM XO1 Carbon Eagle 30t
-	handlebarID : Yeti Carbon 35 x 760mm
+	cranksetID : SRAM XO1 Carbon Eagle
+	handlebarID : Yeti Carbon, 760mm, Carbon
 	price : $7,999.00
 	year : 2018
 	picture : SB5_Turq_XX1_Eagle.PNG
@@ -389,8 +389,8 @@ Yeti
 	shifterID : SRAM X01 Eagle
 	frameID : SB5 T-series (Carbon frame T-series features the very best of Yeti's carbon)
 	wheelID : Maxxis Ardent 2.4/2.25 EXO TR
-	cranksetID : SRAM X01 Carbon Eagle 30T
-	handlebarID : Yeti Carbon 35x760mm
+	cranksetID : SRAM X01 Carbon Eagle
+	handlebarID : Yeti Carbon, 760mm, Carbon
 	price : $6,999.00
 	year : 2018
 	picture : SB5_Turq_X01_Eagle.PNG
@@ -405,8 +405,8 @@ Yeti
 	shifterID : SHIMANO XT
 	frameID : T-Series High modulus carbon fiber Yeti SB5.5 29er frame and swing arm, Switch Infinity suspension system
 	wheelID : Maxxis Minion DHF EXO 2.5 Tubeless
-	cranksetID : RACE FACE TURBINE 30T
-	handlebarID : YETI CARBON 35x800mm
+	cranksetID : Race Face Turbine
+	handlebarID : Yeti Long Carbon, 800mm, Carbon
 	price : $6,599.00
 	year : 2018
 	picture : SB5.5_Turq_XT.PNG
@@ -421,8 +421,8 @@ Yeti
 	shifterID : SRAM X01 Eagle 12 speed
 	frameID : High modulus carbon fiber Yeti SB4.5 29er frame and swing arm, Switch Infinity suspension system
 	wheelID : Maxxis Ardent EXO/TR 2.4 Tubeless
-	cranksetID : SRAM X01Carbon Eagle 12 speed 30t
-	handlebarID : Yeti Carbon 35 x 760mm
+	cranksetID : SRAM X01 Carbon Eagle
+	handlebarID : Yeti Carbon, 760mm, Carbon
 	price : $6,999.00
 	year : 2018
 	picture : SB4.5_Turq_X01.PNG
@@ -437,8 +437,8 @@ Yeti
 	shifterID : SRAM GX EAGLE
 	frameID : C-Series High modulus carbon fiber Yeti SB5.5 29er frame and swing arm, Switch Infinity suspension system
 	wheelID : Maxxis Minion DHF EXO 2.5 Tubeless
-	cranksetID : SRAM GX EAGLE 30T
-	handlebarID : Race Face Respond 785mm
+	cranksetID : SRAM GX Eagle
+	handlebarID : Race Face Respond, 785mm, Metal
 	price : $5,399.00
 	year : 2018
 	picture : SB5.5_Carbon_GX.PNG
@@ -453,8 +453,8 @@ Yeti
 	shifterID : SRAM X01 Eagle
 	frameID : SB6 Turq
 	wheelID : Maxxis Minion DHF 2.5/ Aggressor 2.3
-	cranksetID : SRAM X01 Carbon Eagle 30T
-	handlebarID : Yeti Carbon 35x800mm
+	cranksetID : SRAM X01 Carbon Eagle
+	handlebarID : Yeti Long Carbon, 800mm, Carbon
 	price : $7,199.00
 	year : 2018
 	picture : SB6_Turq_X01.PNG
@@ -469,8 +469,8 @@ Yeti
 	shifterID : SRAM GX Eagle
 	frameID : SB6 Carbon
 	wheelID : Maxxis Minion DHF 2.5/ Aggressor 2.3
-	cranksetID : SRAM X01 Eagle 30T
-	handlebarID : Race Face Respond 785mm
+	cranksetID : SRAM X01 Eagle
+	handlebarID : Race Face Respond, 785mm, Metal
 	price : $5,399.00
 	year : 2018
 	picture : SB6_Carbon_GX_Eagle.PNG
@@ -485,8 +485,8 @@ Yeti
 	shifterID : Shimano SLX 11 speed
 	frameID : Carbon Series Yeti SB4.5 29er frame and swing arm, Switch Infinity suspension system, Internal cable routing
 	wheelID : Maxxis Ardent EXO/TR 2.4 Tubeless
-	cranksetID : Race Face Aeffect 30t
-	handlebarID : Race Face Evolve 750mm
+	cranksetID : Race Face Aeffect
+	handlebarID : Race Face Evolve, 750mm, Metal
 	price : $4,799.00
 	year : 2018
 	picture : SB4.5_Carbon_XT_SLX.PNG
@@ -501,8 +501,8 @@ Yeti
 	shifterID : SHIMANO SLX
 	frameID : C-series High modulus carbon fiber main frame and swing arm
 	wheelID : Maxxis Rekon EXO 2.8” EXO/TR
-	cranksetID : RACE FACE AFFECT 30
-	handlebarID : Race Face Evolve 750mm
+	cranksetID : Race Face Aeffect
+	handlebarID : Race Face Evolve, 750mm, Metal
 	price : $4,799.00
 	year : 2018
 	picture : SB5+_Carbon_XT_SLX_Storm.PNG
@@ -517,8 +517,8 @@ Yeti
 	shifterID : SRAM GX Eagle
 	frameID : Beti SB5 Carbon
 	wheelID : Maxxis Ardent 2.4/2.25
-	cranksetID : SRAM GX Eagle 30T 170mm
-	handlebarID : Race Face Evolve 750mm
+	cranksetID : SRAM GX Eagle
+	handlebarID : Race Face Evolve, 750mm, Metal
 	price : $5,199.00
 	year : 2017
 	picture : Beti_SB5_Carbon_GX_Eagle.PNG
@@ -535,8 +535,8 @@ Marin
 	shifterID : SRAM XX1 Eagle, 1x12-Speed
 	frameID : Full Unidirectional Carbon Fiber Frame, 160mm Travel, 148mm Boost Rear Spacing, Naild 12-3-9 
 	wheelID : WTB Vigilante 29x2.3" , TCS Light/Fast, Tubeless Compatible
-	cranksetID : Truvativ Descendant Carbon, Direct Mount 12-Speed 34T, Boost Spacing
-	handlebarID : Deity DC31 Mohawk Carbon Bar, 787mm Width, 15mm Rise, Custom Color
+	cranksetID : Truvativ Descendant
+	handlebarID : Deity DC31 Mohawk, 787mm, Carbon
 	price : $8,599.99
 	year : 2018
 	picture : Wolf_Ridge_Pro.PNG
@@ -551,8 +551,8 @@ Marin
 	shifterID : SRAM GX Eagle 1x12-Speed
 	frameID : Series 4 6061 Aluminum Frame, 27.5” Wheels, 150mm Travel QUAD 3 Suspension Platform, 148x12mm Boost Thru-Axle
 	wheelID : WTB Convict, 27.5x2.5", TCS Tough, Tubeless Compatible
-	cranksetID : SRAM Descendant 6K Aluminum, Direct Mount 12-Speed 34T, Boost Spacing
-	handlebarID : Deity Blacklabel, 800mm Width, 25mm Rise, Custom Color
+	cranksetID : SRAM Descendant 6K Aluminum
+	handlebarID : Deity Blacklabel, 800mm, Metal
 	price : $4,199.99
 	year : 2018
 	picture : Attack_Trail_8.PNG
@@ -567,8 +567,8 @@ Marin
 	shifterID : SRAM NX 1x11-Speed
 	frameID : Series 3 6061 Aluminum Frame, 27.5+” Wheels, 120mm Travel MultiTrac Suspension Platform, 148x12mm Boost
 	wheelID : Vee Tire, Crown Gem 27.5x2.8", Dual Control Compound, Folding Bead, Tubeless Compatible
-	cranksetID : FSA Comet, Modular 1x, 30T Direct Mount Chainring, MegaTooth Technology, Boost Spacing
-	handlebarID : Marin Mini-Riser, 6061 Double Butted Aluminum, 15mm Rise, 780mm Width
+	cranksetID : FSA Comet
+	handlebarID : Marin Mini-Riser, 780mm, Metal Alloy
 	price : $2,099.99
 	year : 2017
 	picture : B_17_1.PNG
@@ -583,8 +583,8 @@ Marin
 	shifterID : Shimano SL-7000R 1x11-Speed
 	frameID : Series 3 6061 Aluminum Frame, 29” Wheels, 120mm Travel MultiTrac Suspension Platform, 148x12mm Boost
 	wheelID : WTB Trail Boss, 29x2.4", TCS Light/Fast, Tubeless Compatible
-	cranksetID : FSA V-Drive, Modular 1x, 30T Direct Mount Chainring, MegaTooth Technology, Boost Spacing
-	handlebarID : Marin Mini-Riser, 6061 Double Butted Aluminum, 780mm Width
+	cranksetID : FSA V-Drive
+	handlebarID : Marin Mini-Riser, 780mm, Metal Alloy
 	price : $2,649.99
 	year : 2018
 	picture : Rift_Zone_3.PNG
@@ -599,8 +599,8 @@ Marin
 	shifterID : Shimano SL-7000R 1x11-Speed
 	frameID : Series 3 6061 Aluminum Frame, 27.5” Wheels, 120mm Travel, MultiTrac Suspension Platform, 148x12mm Boost
 	wheelID : WTB Breakout 27.5x2.35", TCS Light/Fast, Tubeless Compatible
-	cranksetID : FSA V-Drive, Modular 1x, 32T Direct Mount Chainring, MegaTooth Technology, Boost Spacing
-	handlebarID : Marin Mini-Riser, 6061 Double Butted Aluminum, 780mm Width
+	cranksetID : FSA V-Drive
+	handlebarID : Marin Mini-Riser, 780mm, Metal Alloy
 	price : $2,649.99
 	year : 2018
 	picture : Hawk_Hill_3.PNG
@@ -615,8 +615,8 @@ Marin
 	shifterID : Shimano Deore 1x10-Speed
 	frameID : Double Butted CrMo, 27.5+ Wheels, Boost 141x9mm Open Dropouts
 	wheelID : Vee Tire, Crown Gem 27.5x2.8", Dual Control Compound, Folding Bead, Tubeless Compatible
-	cranksetID : Marin Forged Alloy 1x10, Direct Mount Steel Forged Narrow-Wide 32T Chainring, Boost Spacing
-	handlebarID : Marin Mini-Riser, 6061 Double Butted Aluminum, 15mm Rise, 780mm Width
+	cranksetID : Marin Forged Alloy
+	handlebarID : Marin Mini-Riser, 780mm, Metal Alloy
 	price : 2016
 	year : $989.99
 	picture : Pine_Mountain.PNG
@@ -631,8 +631,8 @@ Marin
 	shifterID : Shimano SL-M7000 1x11 Speed
 	frameID : Series 3 6061 Aluminum, 27.5” or 29" Wheels, Double Butted Frame, 148x12mm Boost Thru-Axle
 	wheelID : Vee Tire Crown Gem Dual Tread Compound, 29" x 2.35", Tubeless Compatible
-	cranksetID : FSA Comet, Modular 1x, 30T Direct Mount Chainring, MegaTooth Technology, Boost Spacing
-	handlebarID : Marin Mini-Riser, 6061 Double Butted Aluminum, 780mm Width
+	cranksetID : FSA Comet
+	handlebarID : Marin Mini-Riser, 780mm, Metal Alloy
 	price : $1,799.99
 	year : 2017
 	picture : Nail_Trail_7.PNG
@@ -647,8 +647,8 @@ Marin
 	shifterID : Shimano Deore 1x10-Speed
 	frameID : Series 2 6061 Aluminum, 27.5” or 29" Wheels, 68mm BB shell, 135mm Forged Dropouts, IS Chainstay Disc Mount
 	wheelID : Schwalbe Tough Tom, 27.5” x 2.25"
-	cranksetID : Marin Forged Alloy 1x10, Hollow Spindle, Steel Narrow-Wide 32T Chainring, 76mm BCD
-	handlebarID : Marin Mini-Riser, 10mm Rise, 720mm Width
+	cranksetID : Marin Forged Alloy
+	handlebarID : Marin Mini-Riser Small, 720mm, Metal Alloy
 	price : $989.99
 	year : 2018
 	picture : Bobcat_Trail_5.PNG
@@ -663,8 +663,8 @@ Marin
 	shifterID : Shimano Deore 1x10-Speed
 	frameID : Series 2 6061 Aluminum, Women’s Specific Frame, 27.5” Wheels, 68mm BB shell, 135mm Forged Dropouts
 	wheelID : Schwalbe Tough Tom, 27.5”x2.25”
-	cranksetID : Marin Forged Alloy 1x10, Hollow Spindle, Steel Narrow-Wide 32T Chainring, 76mm BCD
-	handlebarID : Marin Mini-Riser, 10mm Rise, 720mm Width
+	cranksetID : Marin Forged Alloy
+	handlebarID : Marin Mini-Riser Small, 720mm, Metal Alloy
 	price : $989.99
 	year : 2018
 	picture : Wildcat_Trail_5.PNG
@@ -679,8 +679,8 @@ Marin
 	shifterID : SRAM GX Eagle 1x12-Speed
 	frameID : Full Unidirectional Carbon Fiber Frame, 160mm Travel, 148mm Boost Rear Spacing
 	wheelID : F: WTB Vigilante 29x2.3", TCS Light/Fast, Tubeless Compatible
-	cranksetID : SRAM Descendant 6K Aluminum, Direct Mount 12-Speed 34T, Boost Spacing
-	handlebarID : Marin Mini-Riser, 6061 Double Butted Aluminum, 25mm Rise, 780mm Width
+	cranksetID : SRAM Descendant 6K Aluminum
+	handlebarID : Marin Mini-Riser, 780mm, Metal Alloy
 	price : $5,199.99
 	year : 2018
 	picture : Wolf_Ridge_8.PNG
@@ -697,8 +697,8 @@ Scott
 	shifterID : Sram XX1 Trigger
 	frameID : Spark RC Carbon, HMX SL 1x optimized, BB92, Carbon swingarm, SW dropouts for Boost 12x148mm
 	wheelID : Maxxis Aspen, 29x2.25", 120TPI Kevlar Bead, TR Tubeless Ready 
-	cranksetID : Sram XX1 Eagle GXP Boost PF Carbon crankarm QF 168
-	handlebarID : Syncros FL1.0 SL Carbon T-Bar T shape flat, 720mm
+	cranksetID : SRAM XX1 Eagle Boost
+	handlebarID : Syncros FL1.0 SL, 720mm, Carbon
 	price : $8,999.99 
 	year : 2018 
 	picture : Spark_RC_900_SL.PNG
@@ -713,8 +713,8 @@ Scott
 	shifterID : Shimano Deore SL-M610, Rapidfire plus 2 way release, w/gear indicator
 	frameID : Big Jon Alloy 6061 Custom Butted Tubing, Tapered HT, BB100, 4.8" Tire clearance 197x12mm Dropout
 	wheelID : Schwalbe Jumbo Jim EVO, 4.8x26" 127EPI Kevlar Bead 
-	cranksetID : Race Face RXC Double 36x22 T, Chainline 74.8mm
-	handlebarID : Syncros FL2.0 mini Riser, Alloy 6061 D.B. 12mm rise, 740mm
+	cranksetID : Race Face RXC Double
+	handlebarID : Syncros FL2.0 Mini Riser, 740mm, Metal Alloy
 	price : $1599.99
 	year : 2016
 	picture : Big_John_Bike.PNG
@@ -729,8 +729,8 @@ Scott
 	shifterID : Sram GX Trigger
 	frameID : Genius Alloy 6061, Hydroformed tubes, BB92 / IDS SL DM dropout for 142x12mm
 	wheelID : Schwalbe Nobby Nic Performance, 2.35x25"
-	cranksetID : Sram X1 1000 Eagle GXP Boost PF QF 168, 32T
-	handlebarID : Syncros FL2.0 mini Riser, Alloy 6061D.B. 12mm rise, 760mm Syncros Pro lock-on grips
+	cranksetID : SRAM X01 Eagle
+	handlebarID : Syncros FL2.0 Mini Riser, 740mm, Metal Alloy
 	price : $2999.99
 	year : 2017
 	picture : Genius_940.PNG
@@ -745,8 +745,8 @@ Scott
 	shifterID : Sram X4 Trigger Shifter
 	frameID : Gambler Alloy 6061, Hydroformed, IDS-X DH 12x150mm Dropout, 210mm rear travel
 	wheelID : Schwalbe Downhill Evolution Line, Magic Mary 27.5x2.35 Addix Ultra Soft
-	cranksetID : Truvativ Ruktion 1.0 36T chainring, 165mm
-	handlebarID : Syncros DH1.5 35mm, 800mm, Rise Syncros Pro DH dual lock-on grips
+	cranksetID : Truvativ Ruktion
+	handlebarID : Syncros DH1.5, 800mm, Metal
 	price : $2999.99
 	year : 2017
 	picture : Gambler_730.PNG
@@ -761,8 +761,8 @@ Scott
 	shifterID : Shimano ST-EF 41 L / 7R / EZ-fire plus
 	frameID : Voltage YZ 6061 Alloy Hydroformed tubing Disc Dropout
 	wheelID : Kenda K-905 26x2.3, 30 TPI
-	cranksetID : Shimano FC-TY501 42x34x24 w/CG
-	handlebarID : HL MTB- AL-325BT, Alloy 680mm, 20mm uprise
+	cranksetID : Shimano FC-TY501
+	handlebarID : HL MTB-AL-325BT, 680mm, Metal Alloy
 	price : $1299.99
 	year : 2018
 	picture : Voltage_YZ_20.PNG
@@ -777,8 +777,8 @@ Scott
 	shifterID : Shimano ST-EF 41 L, 7R, EZ-fire plus
 	frameID : Aspect 900 series Alloy 6061, Performance geometry
 	wheelID : Kenda Slant 6 2.35, 30TPI
-	cranksetID : Shimano FC-TY301 42x34x24 w/CG
-	handlebarID : HL MTB-AL-312BT, 720mm, black, 12mm rise
+	cranksetID : Shimano FC-TY301
+	handlebarID : HL MTB-AL-312BT, 720mm, Metal Alloy
 	price : $599.99
 	year : 2016
 	picture : Aspect_980.PNG
@@ -793,8 +793,8 @@ Scott
 	shifterID : Sram X01 Trigger
 	frameID : Spark RC Carbon, IMP technology, HMX 1x optimized, BB92, Carbon swingarm SW dropouts for Boost 148x12mm
 	wheelID : Maxxis Aspen, 2.25x27", 120TPI Kevlar Bead TR Tubeless Ready, 3C maxx Speed
-	cranksetID : Sram X1 Carbon Eagle GXP Boost PF QF 168, 30T
-	handlebarID : Syncros FL1.0 Carbon T-Bar T shape flat, 700mm Syncros Pro lock-on grips
+	cranksetID : SRAM XO1 Carbon Eagle
+	handlebarID : Syncros FL1.0 SL, 720mm, Carbon
 	price : $3499.99
 	year : 2018
 	picture : Contessa_Spark_RC_900.PNG
@@ -809,8 +809,8 @@ Scott
 	shifterID : Shimano SL-M2000-9R R-fire plus
 	frameID : Contessa Sport 700/900 series 6061 Alloy D.B., internal cable routing solution geometry
 	wheelID : Kenda Slant 6 2.35x26", 30TPI
-	cranksetID : Shimano FC-M3000 40x30x22
-	handlebarID : Syncros M3.0, 680mm black, 31,8mm, 12mm rise, 9° BS
+	cranksetID : Shimano FC-M3000
+	handlebarID : Syncros M3.0, 680mm, Metal
 	price : $549.99
 	year : 2018
 	picture : Contessa_Scale_40.PNG
@@ -825,8 +825,8 @@ Scott
 	shifterID : Sram X01 Trigger
 	frameID : Scale RC Carbon, IMP technology, SW dropouts for Boost 12x148mm SDS2 Shock
 	wheelID : Maxxis Aspen, 2.25x29", 120TPI Kevlar Bead TR Tubeless Ready, EXO, 3C maxx Speed
-	cranksetID : Sram XX1 Eagle GXP Boost PF Carbon crankarm QF 168 / 32T
-	handlebarID : Syncros FL1.0 Carbon T-Bar T shape flat, 9°, 720mm Syncros Pro lock-on grips
+	cranksetID : SRAM XX1 Eagle Boost
+	handlebarID : Syncros FL1.0 SL, 720mm, Carbon
 	price : $5499.99
 	year : 2018
 	picture : Scale_RC_900_World_Cup.PNG
@@ -841,8 +841,8 @@ Scott
 	shifterID : Shimano SL-M2000-9R R-fire plus
 	frameID : Contessa Active 700 series 6061 Alloy, internal cable routing Solution geometry
 	wheelID : Kenda Slant 6 2.35x26", 30TPI
-	cranksetID : Shimano FC-M2000 40X-30x22
-	handlebarID : Syncros M3.0, 640mm black, 31,8mm, 12mm rise, 9° BS
+	cranksetID : Shimano FC-M2000
+	handlebarID : Syncros M3.0, 680mm, Metal
 	price : 2017
 	year : $3899.99
 	picture : Contessa_Spark_710.PNG
@@ -859,8 +859,8 @@ GT
 	shifterID : SRAM GX DH Trigger
 	frameID : COR Downhill Design, 6069-T6 Alloy 27.5 Frame, 210mm Travel Independent Drivetrain, 1.5" Head Tube
 	wheelID : Schwalbe Magic Mary Bikepark 27.5x2.35" 
-	cranksetID : RaceFace Chester, 165mm, w/ 36T Ring
-	handlebarID : RaceFace Respond, 785mm Width, 1.5" Rise, 31.8 Clamp
+	cranksetID : Race Face Chester
+	handlebarID : Race Face Respond, 785mm, Metal
 	price : 2017
 	year : $4,499.99
 	picture : Fury_Pro.PNG
@@ -875,8 +875,8 @@ GT
 	shifterID : Shimano SLX, SL-M7000, Rapid Fire, Right Side Only
 	frameID : COR Enduro Design, 6069-T6 Alloy 27.5 Frame, 160mm Travel Suspension, Pivots, 1.5" Head Tube
 	wheelID : Schwalbe Magic Mary Snakeskin, Folding, TL-Easy, 27.5x2.35" 
-	cranksetID : RaceFace Aeffect, 32T Narrow Wide
-	handlebarID : RaceFace Aeffect, 20mm Rise, 780mm Width
+	cranksetID : Race Face Aeffect
+	handlebarID : Race Face Aeffect, 780mm, Metal
 	price : $4199.99
 	year : 2017
 	picture : Sanction_Pro.PNG
@@ -891,8 +891,8 @@ GT
 	shifterID : SRAM GX 1x11 Speed Trigger, Right Side Only
 	frameID : COR Enduro Design, 6069-T6 Alloy 27.5 Frame, 160mm Travel Independent Suspension, Pivots, 1.5" Head Tube
 	wheelID : Schwalbe Magic Mary Performance, TL-Ready, 27.5x2.35"
-	cranksetID : RaceFace Ride, 32T Narrow Wide
-	handlebarID : RaceFace Chester, 20mm Rise, 780mm Width
+	cranksetID : Race Face Ride
+	handlebarID : Race Face Chester, 780mm, Metal
 	price : $3399.99
 	year : 2017
 	picture : Sanction_Expert.PNG
@@ -907,8 +907,8 @@ GT
 	shifterID : SRAM NX 1x11 Trigger, Right Side Only
 	frameID : 6069 Hydroformed Aluminum Frame, 130mm AOS Suspension System Integrated Head Tube, 135mm QR Dropouts
 	wheelID : Schwalbe Nobby Nic Performance, Folding TL-Ready, 27.5x2.35"
-	cranksetID : Race Face Ride 32T
-	handlebarID : All Terra AL6061 DB, 760mm, 15 Rise
+	cranksetID : Race Face Ride
+	handlebarID : All Terra AL6061 DB, 760mm, Metal Alloy
 	price : $3,200.00
 	year : 2017
 	picture : Sensor_Elite.PNG
@@ -923,8 +923,8 @@ GT
 	shifterID : Shimano SLX SL-M7000, Right Side Only
 	frameID : 6061-T6 Aluminum Frame, 120mm Travel Drivetrain w/Forged Linkage, Pivots, Integrated Head Tube, 135mm
 	wheelID : Schwalbe Nobby Nic Performance 27.5x2.25"
-	cranksetID : FSA Comet Megaexo, 30T
-	handlebarID : All Terra Riser, Butted, 760mm Width, 15mm Rise, 31.8mm Clamp
+	cranksetID : FSA Comet
+	handlebarID : All Terra AL6061 DB, 760mm, Metal Alloy
 	price : $1699.99
 	year : 2016
 	picture : Verb_Expert.PNG
@@ -939,8 +939,8 @@ GT
 	shifterID : Shimano Deore, SL-M6000, Rapid Fire, Right Side Only
 	frameID : 6061-T6 Aluminum Frame, 120mm Travel Independent Drivetrain, Pivots, Integrated Head Tube, and 135mm
 	wheelID : WTB Ranger Comp 27.5X2.25"
-	cranksetID : All Terra Charm, 32T
-	handlebarID : All Terra 6061 Aluminum Riser, 760mm Width, 15mm Rise, 31.8mm Clamp
+	cranksetID : All Terra Charm
+	handlebarID : All Terra AL6061 DB, 760mm, Metal Alloy
 	price : $1299.99
 	year : 2018
 	picture : Verb_Elite.PNG
@@ -955,8 +955,8 @@ GT
 	shifterID : Shimano SLX 11spd
 	frameID : 6061 T6 Aluminum Frame, Replaceable Derailleur Hanger, and Zerostack tapered Head Tube, 27.5
 	wheelID : Schwalbe Rocket Ron Performance, Folding, 27.5x2.8"
-	cranksetID : Comet Modular 1X Direct Mount MegaExo Boost148, 30T with BB-7100
-	handlebarID : All Terra Riser Bar, Double Butted, 740mm Width, 15mm Rise, 31.8mm Clamp
+	cranksetID : FSA Comet
+	handlebarID : All Terra Riser Bar, 740mm, Metal
 	price : $1299.99
 	year : 2017
 	picture : Pantera_Elite.PNG
@@ -971,8 +971,8 @@ GT
 	shifterID : Shimano Alivio, SL-M4000
 	frameID : 6061 T6 Aluminum Frame, Replaceable Derailleur Hanger, and Zerostack tapered Head Tube, 27.5
 	wheelID : WTB Trail Blazer 27.5X2.8", Comp, 27tpi
-	cranksetID : All-Terra Boost Z-501 36/22t
-	handlebarID : All Terra Riser Bar, Double Butted, 710mm Width, 15mm Rise, 31.8mm Clamp
+	cranksetID : All Terra Boost Z-501
+	handlebarID : All Terra Riser Bar, 740mm, Metal
 	price : $899.99
 	year : 2017
 	picture : Pantera_Comp.PNG
@@ -987,8 +987,8 @@ GT
 	shifterID : Shimano SL-M2000, Rapid Fire
 	frameID : 6061 T6 Aluminum Frame, Replaceable Derailleur Hanger, Zerostack tapered Head Tube, 27.5/29 Design
 	wheelID : All Terra Cypher, 30tpi, 27.5/29X2.10"
-	cranksetID : All-Terra V-401, 44/32/22T
-	handlebarID : 6061 Aluminum Riser, 680mm Width, 12mm Rise, 31.8mm Clamp, Double Butted
+	cranksetID : All Terra V-401
+	handlebarID : Specialized 6061 Alloy, 750mm, Metal Alloy
 	price : $649.99
 	year : 2017
 	picture : Avalanche_Sport.PNG
@@ -1003,8 +1003,8 @@ GT
 	shifterID : Shimano SL-EF505, 8 Speed
 	frameID : 6061-T6 Aluminum Triple Triangle Frame, Replaceable Derailleur Hanger, and 1 1/8" Head Tube 27.5 Design
 	wheelID : All Terra Cypher 27.5X2.10"
-	cranksetID : All-Terra Forged Alloy 42/34/24T
-	handlebarID : 6061 Aluminum Riser, 640mm Width, 12mm Rise, 31.8mm Clamp, Double Butted
+	cranksetID : All Terra Forged Alloy
+	handlebarID : Specialized 6061 Alloy, 750mm, Metal Alloy
 	price : $549.99
 	year : 2017
 	picture : Aggressor_Expert.PNG
@@ -1021,8 +1021,8 @@ Diamondback
 	shifterID : SRAM X5 10 speed
 	frameID : El Oso Butted 6061-T6 Aluminum w/ Formed Top, 1.5" Tapered Machined Headtube, 197mm Thru Axle
 	wheelID : Chaoyang Cruiser 26"x4.9"
-	cranksetID : FSA Comet Mega Exo, 36/26T
-	handlebarID : DB Pro Bar740mm width, 15mm rise, 31.8mm barbore
+	cranksetID : FSA Comet
+	handlebarID : DB Pro Bar, 740mm, Metal
 	price : $1399.99
 	year : 2018
 	picture : El_Oso_Grande.PNG
@@ -1038,7 +1038,7 @@ Diamondback
 	frameID : 6061-T6 Weapons Grade Aluminum, Tapered Head Tube, ISCG-05 Tabs, 148x12mm Boost 
 	wheelID : Chaoyang Big Daddy 27.5x3.5"
 	cranksetID : SRAM Powerspline
-	handlebarID : DB35 Alloy, 760mm Wide, 15mm Rise, 35mm Bar Bore
+	handlebarID : DB35 Alloy, 760mm, Metal Alloy
 	price : $999.99
 	year : 2017
 	picture : Rely_Trail.PNG
@@ -1053,8 +1053,8 @@ Diamondback
 	shifterID : SRAM X1, 11 Speed X-Actuation Trigger
 	frameID : 6061-T6 Weapons Grade Aluminum, Tapered Head Tube, 148x12mm Boost Spec Dropouts
 	wheelID : Chaoyang Big Daddy 27.5x3.5"
-	cranksetID : Race Face Ãffect Cinch w/ 30T "Narrow Wide"
-	handlebarID : Raceface Ãffect, 760mm Wide, 10mm Rise, 35mm Bar Bore
+	cranksetID : Race Face Aeffect
+	handlebarID : Race Face Aeffect, 780mm, Metal
 	price : $2499.99
 	year : 2018
 	picture : Mason_Pro.PNG
@@ -1069,8 +1069,8 @@ Diamondback
 	shifterID : SRAM NX 11 Speed X-Actuation Trigger
 	frameID : Lux 27.5 Women's Specific Double Butted 6061-T6 Aluminum, Formed Top / Down Tube
 	wheelID : Schwalbe Rapid Rob 27.5x2.25" w/ Kevlar Gaurd
-	cranksetID : SRAM NX 1x, w/ X-Sync 30T Chain Ring
-	handlebarID : DB Laser Bar, Devine Women's-Specific Width 720mm, 15mm Rise, 31.8mm Bar Bore
+	cranksetID : SRAM NX
+	handlebarID : DB Laser Bar, 720mm, Metal
 	price : $999.99
 	year : 2017
 	picture : Lux_Comp.PNG
@@ -1085,8 +1085,8 @@ Diamondback
 	shifterID : SRAM NX 11 Speed X-Actuation Trigger
 	frameID : DB AMMP XC MTB Carbon Technology, 142x12 Carbon Drop Outs, w/ Taper Headtube, Press-Fit 30 BB
 	wheelID : Kenda Honey Badger 29x2.2"
-	cranksetID : SRAM NX 1x, w/ X-Sync 32T Chain Ring
-	handlebarID : Diamondback "Pro Bar", 740mm Wide, 15mm Rise, 31.8 Bar Bore
+	cranksetID : SRAM NX
+	handlebarID : Diamondback Pro Bar, 740mm, Carbon
 	price : $2299.99
 	year : 2017
 	picture : Overdrive_Carbon_Comp_29.PNG
@@ -1101,8 +1101,8 @@ Diamondback
 	shifterID : SRAM X4 9 Speed
 	frameID : 6061-T6 Butted Alloy for 27.5", Head Tube, Formed Top/Down Tube, Progressive Geometry
 	wheelID : Schwalbe Tough Tom 27x2.35"
-	cranksetID : Alloy Arm w/ 32T Alloy Single Ring
-	handlebarID : Diamondback "Pro Bar", 720mm Wide, 15mm Rise, 31.8 Bar Bore
+	cranksetID : Marin Forged Alloy
+	handlebarID : Diamondback Pro Bar, 740mm, Carbon
 	price : $849.99
 	year : 2016
 	picture : Line.PNG
@@ -1117,8 +1117,8 @@ Diamondback
 	shifterID : Shimano Altus M310, 3x8 Speed Rapidfire
 	frameID : DB Recoil 6061 T-6 Aluminum Trail w/ 4" travel, Machine Formed Top Tube, Formed Down Tube
 	wheelID : Kenda Honey Badger 29x 2.2"
-	cranksetID : SR Suntour XCC, 42/32/22T
-	handlebarID : DB SL318B, 685mm Wide, 15mm Rise, 31.8mm Bar Bore
+	cranksetID : SR Suntour XCC
+	handlebarID : DB SL318B, 685mm, Metal
 	price : $699.99
 	year : 2017
 	picture : Recoil_29.PNG
@@ -1133,8 +1133,8 @@ Diamondback
 	shifterID : SRAM NX 11 Speed X-Actuation Trigger
 	frameID : Overdrive 27.5" Butted 6061-T6 Aluminum, Formed Top / Down Tube, Machined Headtube, Forged Drop Outs
 	wheelID : Kenda Honey Badger 27.5x2.2"
-	cranksetID : SRAM NX 1x, w/ X-Sync 30T Chain Ring
-	handlebarID : Diamondback "Pro Bar", 740mm Wide, 15mm Rise, 31.8 Bar Bore
+	cranksetID : SRAM NX
+	handlebarID : Diamondback Pro Bar, 740mm, Carbon
 	price : $999.99
 	year : 2018
 	picture : Overdrive_Comp_27.5.PNG
@@ -1149,8 +1149,8 @@ Diamondback
 	shifterID : SRAM X4 9 Speed
 	frameID : 6061 T-6 Aluminum 27.5 Trail w/ 4" travel, Tapered Steerer, Machine Formed Top Tube, Aggressive Geometry
 	wheelID : Kenda Nevegal Lite, 27.5x2.35"
-	cranksetID : Alloy Arm w/ 32T Alloy Single Ring
-	handlebarID : Diamondback "Pro Bar", 750mm Wide, 31.8 Bar Bore
+	cranksetID : Marin Forged Alloy
+	handlebarID : Diamondback Pro Bar, 740mm, Carbon
 	price : $999.99
 	year : 2017
 	picture : Atroz.PNG
@@ -1165,8 +1165,8 @@ Diamondback
 	shifterID : SRAM GX 11 Speed X-Actuation Trigger
 	frameID : Clutch 27.5, 130mm Travel, Hydroformed Tubing, Boost 148x12mm Maxle Drop Out, 1.5" Tapered Headtube
 	wheelID : Schwalbe Hans Dampf, Performance, 27.5x2.35"
-	cranksetID : Race Face Æfect SL, 30T Direct Mount "Narrow Wide" Single Ring, Boost Compatible
-	handlebarID : DB35 Alloy, 760mm Wide, 15mm Rise, 35mm Bar Bore
+	cranksetID : Race Face Aeffect
+	handlebarID : DB35 Alloy, 760mm, Metal Alloy
 	price : $3499.99
 	year : 2018
 	picture : Clutch_2.PNG

@@ -1,12 +1,12 @@
 CREATE TABLE Handlebar(
-	handlebarID varchar(50) NOT NULL,
+	handlebarID varchar(100) NOT NULL,
 	width varchar(50) NOT NULL,
-	handlebarMaterialType ENUM('option1', 'option2', 'option3', 'option4') NOT NULL,
+	handlebarMaterialType ENUM('Carbon', 'Metal Alloy', 'Metal') NOT NULL,
 	PRIMARY KEY(handlebarID)
 );
 
 CREATE TABLE Crankset(
-	cranksetID varchar(50) NOT NULL,
+	cranksetID varchar(100) NOT NULL,
 	PRIMARY KEY(cranksetID)
 );
 

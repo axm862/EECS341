@@ -8,6 +8,8 @@ import java.util.Properties;
  */
 public class JDBC_Driver {
 
+    private List<String> subQueries = new LinkedList<>();
+
     // This method will take the type of attribute and find the name and type of each attribute
     // NOTE: This method only works if all attributes in individual relation are NOT NULL
     // RETURN TYPE: This will return a list of JPanelAttributes if no error.  Or null if error.
@@ -40,6 +42,11 @@ public class JDBC_Driver {
                 else if (rs.getMetaData().getColumnType(i) == Types.DOUBLE) {
                     attributes.add(new JPanelDouble(rs.getMetaData().getColumnName(i)));
                 }
+                // ENUM interpreted as type 1 (CHAR)
+                else if (rs.getMetaData().getColumnType(i) == 1) {
+                    System.out.println("Not implemented yet (Enums)");
+                    //attributes.add(new JPanelEnum(rs.getMetaData().getColumnName(i)));
+                }
                 else {
                     throw new Exception("Wrong data type returned.  Not Varchar , Integer, or Double");
                 }
@@ -58,7 +65,8 @@ public class JDBC_Driver {
     // RETURN TYPE: this will return a Linked List of String arrays if no error.  Else null if error.
     //  - Each String array = tuple.  Each element of String array = individual data entry.
     //INPUT TYPE: Should input the attribute query "Ex: SELECT RearShockID FROM RearShock WHERE RearShockID = 123"
-    public static List<String[]> bikeList(String query) {
+    public List<String[]> bikeList(String subQuery) {
+        subQueries.add(subQuery);
 
         List<String[]> bikeParts = new LinkedList<>();
         Connection conn;
@@ -73,8 +81,20 @@ public class JDBC_Driver {
             conn = DriverManager.getConnection(url, props);
 
             stat = conn.createStatement();
-            String updatedQuery = "SELECT * FROM BIKES WHERE EXISTS (" + query + ")";
-            ResultSet rs = stat.executeQuery(updatedQuery);
+            StringBuilder query = new StringBuilder();
+            // Can add in NOT easily later by splitting up string and using a flag
+            query.append("SELECT * FROM BIKES WHERE EXISTS ((");
+            boolean start = true;
+            for (String nestedSubQuery : subQueries) {
+                if (!start) {
+                    query.append(" AND (");
+                }
+                query.append(subQuery);
+                query.append(")");
+                start = false;
+            }
+            query.append(")");
+            ResultSet rs = stat.executeQuery(query.toString());
 
             while (rs.next()) {
                 String[] bike = new String[14];

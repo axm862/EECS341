@@ -28,6 +28,9 @@ public class JPanelDouble extends JPanelAttribute{
 
     @Override
     public String getAttributeQuery() {
+        if(data.getText().length() <= 0){
+            return "";
+        }
         try{
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append(getAttributeName());
@@ -37,7 +40,7 @@ public class JPanelDouble extends JPanelAttribute{
             String input = data.getText();
             double value = Double.parseDouble(input);
             stringBuilder.append(value);
-            return stringBuilder.toString();
+            return stringBuilder.toString().toLowerCase();
         } catch(NullPointerException | NumberFormatException e1) {
             JOptionPane.showMessageDialog(null, "Must be a real number", "Error", JOptionPane.ERROR_MESSAGE);
             return null;

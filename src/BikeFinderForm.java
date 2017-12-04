@@ -5,6 +5,17 @@ import java.awt.event.ActionListener;
 
 public class BikeFinderForm {
 
+    private Shifter shifter;
+    private Handlebar handlebar;
+    private Crankset crankset;
+    private Wheel wheel;
+    private Frame frame;
+    private Brake brake;
+    private FrontShock frontShock;
+    private RearShock rearShock;
+    private Derailleur derailleur;
+    private Manufacturer manufacturer;
+
     public JPanel getPanel() {
         return panel;
     }
@@ -31,67 +42,120 @@ public class BikeFinderForm {
         shifterCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Shifter shifter = new Shifter(shifterCheckBox);
+                if (shifterCheckBox.isSelected()) {
+                    shifter = new Shifter(shifterCheckBox);
+                } else {
+                    QueryObject.getQueryObjects().remove(shifter);
+                }
             }
         });
         handlebarCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Handlebar handlebar = new Handlebar(handlebarCheckBox);
+                if (handlebarCheckBox.isSelected()) {
+                    handlebar = new Handlebar(handlebarCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(handlebar);
+                }
             }
         });
         cranksetCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Crankset crankset = new Crankset(cranksetCheckBox);
+                if (cranksetCheckBox.isSelected()) {
+                    crankset = new Crankset(cranksetCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(crankset);
+                }
             }
         });
         wheelCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Wheel wheel = new Wheel(wheelCheckBox);
+                if (wheelCheckBox.isSelected()) {
+                    wheel = new Wheel(wheelCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(wheel);
+                }
             }
         });
         frameCheckBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Frame frame = new Frame(frameCheckBox1);
+                if (frameCheckBox1.isSelected()) {
+                    frame = new Frame(frameCheckBox1);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(frame);
+                }
             }
         });
         brakeCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Brake brake = new Brake(brakeCheckBox);
+                if (brakeCheckBox.isSelected()) {
+                    brake = new Brake(brakeCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(brake);
+                }
             }
         });
         frontShockCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FrontShock frontShock = new FrontShock(frontShockCheckBox);
+                if (frontShockCheckBox.isSelected()) {
+                    frontShock = new FrontShock(frontShockCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(frontShock);
+                }
             }
         });
         rearShockCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RearShock rearShock = new RearShock(rearShockCheckBox);
+                if (rearShockCheckBox.isSelected()) {
+                    rearShock = new RearShock(rearShockCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(rearShock);
+                }
             }
         });
         derailleurCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Derailleur derailleur = new Derailleur(derailleurCheckBox);
+                if (derailleurCheckBox.isSelected()) {
+                    derailleur = new Derailleur(derailleurCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(derailleur);
+                }
             }
         });
         manufacturerCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Manufacturer manufacturer = new Manufacturer(manufacturerCheckBox);
+                if (manufacturerCheckBox.isSelected()) {
+                    manufacturer = new Manufacturer(manufacturerCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(manufacturer);
+                }
             }
         });
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, QueryObject.getQueryObjects().size() + " modifiers selected.", "Error", JOptionPane.ERROR_MESSAGE);
+                for (QueryObject qo : QueryObject.getQueryObjects()) {
+                    System.out.println(qo.getQuery());
+                    BikeFinder.getJdbc_driver().bikeList(qo.getQuery());
+                }
+
             }
         });
     }

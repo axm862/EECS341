@@ -47,15 +47,19 @@ public abstract class QueryObject extends JFrame{
     }
 
     public String getQuery() {
+        int attributes = 0;
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("SELECT * FROM ");
         stringBuilder.append(getName());
         stringBuilder.append(" WHERE");
+        String and = " ";
         for (JPanelAttribute j : attributeList) {
-            stringBuilder.append(" ");
+            attributes++;
+            stringBuilder.append(and);
             stringBuilder.append(j.getAttributeQuery());
+            and = " AND ";
         }
-        return stringBuilder.toString();
+        return attributes > 0 ? stringBuilder.toString() : "";
     }
 
 }

@@ -22,10 +22,13 @@ public class JPanelVarchar extends JPanelAttribute {
 
     @Override
     public String getAttributeQuery() {
+        if(data.getText().length() <= 0){
+            return "";
+        }
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(getAttributeName());
         stringBuilder.append(" = ");
         stringBuilder.append(data.getText());
-        return stringBuilder.toString();
+        return stringBuilder.toString().toLowerCase();
     }
 }

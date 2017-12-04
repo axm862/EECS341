@@ -27,7 +27,7 @@ public class JPanelConfirmCancel extends JPanel{
         confirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO: return query
+                queryObject.dispatchEvent(new WindowEvent(queryObject, WindowEvent.WINDOW_CLOSING));
             }
         });
     }

@@ -54,10 +54,12 @@ public abstract class QueryObject extends JFrame{
         stringBuilder.append(" WHERE");
         String and = " ";
         for (JPanelAttribute j : attributeList) {
-            attributes++;
-            stringBuilder.append(and);
-            stringBuilder.append(j.getAttributeQuery());
-            and = " AND ";
+            if(j.getAttributeQuery().length() > 0) {
+                attributes++;
+                stringBuilder.append(and);
+                stringBuilder.append(j.getAttributeQuery());
+                and = " AND ";
+            }
         }
         return attributes > 0 ? stringBuilder.toString() : "";
     }

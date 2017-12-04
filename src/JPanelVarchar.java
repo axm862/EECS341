@@ -14,7 +14,7 @@ public class JPanelVarchar extends JPanelAttribute {
     public void initPanel() {
         this.setLayout(new GridLayout());
         name = new JLabel();
-        name.setText(this.getAttributeName());
+        name.setText(AttributeName.toReadableString(this.getAttributeName()));
         this.add(name);
         data = new JTextField();
         this.add(data);

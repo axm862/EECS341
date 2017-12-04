@@ -11,7 +11,7 @@ public abstract class JPanelAttribute extends JPanel{
     public abstract void initPanel();
 
     public String getAttributeName() {
-        return AttributeName.toReadableString(this.attributeName);
+        return this.attributeName;
     }
 
     public void setAttributeName(String name) {

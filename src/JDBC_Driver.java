@@ -76,14 +76,15 @@ public class JDBC_Driver {
 
             String url = "jdbc:mysql://localhost/DatabaseProject"; // Name/port on localhost may need to change
             Properties props = new Properties();
-            props.setProperty("user", "mysql"); // May need to change username
-            props.setProperty("password", "123456");
+            props.setProperty("user", "root"); // May need to change username
+            props.setProperty("password", "");
+            props.setProperty("useSSL", "false");
             conn = DriverManager.getConnection(url, props);
 
             stat = conn.createStatement();
             StringBuilder query = new StringBuilder();
             // Can add in NOT easily later by splitting up string and using a flag
-            query.append("SELECT * FROM BIKES WHERE EXISTS ((");
+            query.append("SELECT * FROM BIKE WHERE EXISTS ((");
             boolean start = true;
             for (String nestedSubQuery : subQueries) {
                 if (!start) {

@@ -22,6 +22,7 @@ public class JDBC_Driver {
             Properties props = new Properties();
             props.setProperty("user", "root"); // May need to change username
             props.setProperty("password", "");
+            props.setProperty("useSSL", "false");
             conn = DriverManager.getConnection(url, props);
 
             stat = conn.createStatement();
@@ -40,6 +41,7 @@ public class JDBC_Driver {
                     attributes.add(new JPanelDouble(rs.getMetaData().getColumnName(i)));
                 }
                 else {
+                    System.out.println(rs.getMetaData().getColumnType(i) Types.);
                     throw new Exception("Wrong data type returned.  Not Varchar , Integer, or Double");
                 }
             }

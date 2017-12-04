@@ -64,7 +64,7 @@ CREATE TABLE Bike(
 	manufacturerName varchar(100) NOT NULL,
 	derailleurID varchar(100) NOT NULL,
 	rearShockID varchar(100) NOT NULL,
-	frontShockID ENUM('option1', 'option2', 'option3', 'option4') NOT NULL,
+	frontShockID varchar(100) NOT NULL,
 	brakeID varchar(100) NOT NULL,
 	shifterID varchar(100) NOT NULL,
 	frameID varchar(100) NOT NULL,

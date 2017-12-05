@@ -358,8 +358,8 @@ Trek
 	wheelID : Bontrager XR2 Team Issue, 29
 	cranksetID : Race Face Next R
 	handlebarID : Bontrager Race Lite, 720, Metal
-	price : 2018
-	year : $2,099.99
+	price : $2,099.99
+	year : 2018
 	picture : Procaliber_8.PNG
 
 Yeti
@@ -617,8 +617,8 @@ Marin
 	wheelID : Vee Tire Crown Gem, 27.5
 	cranksetID : Marin Forged Alloy
 	handlebarID : Marin Mini-Riser, 780, Metal Alloy
-	price : 2016
-	year : $989.99
+	price : $989.99
+	year : 2016
 	picture : Pine_Mountain.PNG
 
 7) Nail Trail 7
@@ -678,7 +678,7 @@ Marin
 	brakeID : Shimano XTR M9000, Mechanical
 	shifterID : SRAM GX Eagle, Trigger
 	frameID : Series 7 Unidirectional, XC Geometry, Carbon
-	wheelID : F: WTB Vigilante, 29
+	wheelID : WTB Vigilante, 29
 	cranksetID : SRAM Descendant 6K Aluminum
 	handlebarID : Marin Mini-Riser, 780, Metal Alloy
 	price : $5,199.99
@@ -787,7 +787,7 @@ Scott
 	modelName : Contessa Spark RC 900
 	manufacturerName : Scott
 	derailleurID : SRAM X01 Eagle 12-speed
-	rearShockID : FOX Nude Trunnion Scott', 165
+	rearShockID : FOX Nude Trunnion Scott, 165
 	frontShockID : RockShox SID 29 Brain, 100
 	brakeID : SRAM Level TL, Mechanical
 	shifterID : SRAM X01 Eagle, Trigger
@@ -843,8 +843,8 @@ Scott
 	wheelID : Kenda Slant, 26
 	cranksetID : Shimano FC-M2000
 	handlebarID : Syncros M3.0, 680, Metal
-	price : 2017
-	year : $3899.99
+	price : 3899.99
+	year : 2017
 	picture : Contessa_Spark_710.PNG
 
 
@@ -861,8 +861,8 @@ GT
 	wheelID : Schwalbe Magic Mary Bikepark, 27.5 
 	cranksetID : Race Face Chester
 	handlebarID : Race Face Respond, 785, Metal
-	price : 2017
-	year : $4,499.99
+	price : 4,499.99
+	year : 2017
 	picture : Fury_Pro.PNG
 
 2) Sanction Pro

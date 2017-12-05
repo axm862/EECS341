@@ -7,6 +7,7 @@ public class JPanelEnumCrankset extends JPanelEnum{
     JPanelEnumCrankset(String attributeName) {
         super(attributeName);
         combo = new JComboBox<>();
+        combo.addItem("");
         combo.addItem("SRAM");
         combo.addItem("Shimano");
         setCombo(combo);

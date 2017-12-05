@@ -40,7 +40,7 @@ public class JPanelDouble extends JPanelAttribute{
             String input = data.getText();
             double value = Double.parseDouble(input);
             stringBuilder.append(value);
-            return stringBuilder.toString().toLowerCase();
+            return stringBuilder.toString();
         } catch(NullPointerException | NumberFormatException e1) {
             JOptionPane.showMessageDialog(null, "Must be a real number", "Error", JOptionPane.ERROR_MESSAGE);
             return null;

@@ -7,6 +7,7 @@ public class JPanelEnumBrake extends JPanelEnum {
     JPanelEnumBrake(String attributeName) {
         super(attributeName);
         combo = new JComboBox<>();
+        combo.addItem("");
         combo.addItem("Hydraulic");
         combo.addItem("Mechanical");
         setCombo(combo);

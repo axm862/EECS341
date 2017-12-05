@@ -1,3 +1,4 @@
+import javax.management.Query;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,6 +16,9 @@ public class BikeFinderForm {
     private RearShock rearShock;
     private Derailleur derailleur;
     private Manufacturer manufacturer;
+    private Year year;
+    private Price price;
+    private ModelName modelName;
 
     public JPanel getPanel() {
         return panel;
@@ -148,16 +152,52 @@ public class BikeFinderForm {
                 }
             }
         });
+        yearCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (yearCheckBox.isSelected()) {
+                    year = new Year(yearCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(year);
+                }
+            }
+        });
+        priceCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (priceCheckBox.isSelected()) {
+                    price = new Price(priceCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(price);
+                }
+            }
+        });
+        modelNameCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (modelNameCheckBox.isSelected()) {
+                    modelName = new ModelName(modelNameCheckBox);
+                }
+                else {
+                    QueryObject.getQueryObjects().remove(modelName);
+                }
+            }
+        });
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                /*
                 for (QueryObject qo : QueryObject.getQueryObjects()) {
                     System.out.println(qo.getQuery());
                     BikeFinder.getJdbc_driver().bikeList(qo.getQuery());
                 }
-
+                */
+                BikeFinder.displayOutput(BikeFinder.getJdbc_driver().bikeList(QueryObject.getQueryObjects()));
             }
         });
+
     }
 
     {

@@ -7,6 +7,7 @@ public class JPanelEnumHandlebar extends JPanelEnum{
     JPanelEnumHandlebar(String attributeName) {
         super(attributeName);
         combo = new JComboBox<>();
+        combo.addItem("");
         combo.addItem("Carbon");
         combo.addItem("Metal");
         combo.addItem("Metal Alloy");

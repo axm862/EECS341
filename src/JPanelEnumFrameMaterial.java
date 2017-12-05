@@ -7,6 +7,7 @@ public class JPanelEnumFrameMaterial extends JPanelEnum {
     JPanelEnumFrameMaterial(String attributeName) {
         super(attributeName);
         combo = new JComboBox<>();
+        combo.addItem("");
         combo.addItem("Carbon");
         combo.addItem("Aluminum");
         combo.addItem("Steel");

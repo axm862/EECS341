@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.LinkedList;
 
 public abstract class NerfedQueryObject extends QueryObject {
@@ -29,7 +31,7 @@ public abstract class NerfedQueryObject extends QueryObject {
 
         addAttributes();
 
-        this.setTitle(getName());
+        this.setTitle(AttributeName.toReadableString(getName()));
         this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
 
         for (JPanelAttribute j : attributeList) {
@@ -38,6 +40,7 @@ public abstract class NerfedQueryObject extends QueryObject {
             this.add(j);
         }
         this.add(new JPanelConfirmCancel(this));
+
         this.pack();
         this.revalidate();
         this.setVisible(true);

@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,6 +23,16 @@ public abstract class QueryObject extends JFrame{
 
     private JCheckBox jCheckBox;
 
+    public String getPrimaryKey() {
+        return primaryKey;
+    }
+
+    public void setPrimaryKey(String primaryKey) {
+        this.primaryKey = primaryKey;
+    }
+
+    private String primaryKey;
+
     public QueryObject(JCheckBox jCheckBox) {
         queryObjects.add(this);
         this.jCheckBox = jCheckBox;
@@ -31,7 +43,7 @@ public abstract class QueryObject extends JFrame{
     public void initFrame() {
         attributeList = JDBC_Driver.attributeList(getName());
 
-        this.setTitle(getName());
+        this.setTitle(AttributeName.toReadableString(getName()));
         this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
 
         for (JPanelAttribute j : attributeList) {
@@ -40,6 +52,7 @@ public abstract class QueryObject extends JFrame{
             this.add(j);
         }
         this.add(new JPanelConfirmCancel(this));
+
         this.pack();
         this.revalidate();
         this.setVisible(true);
@@ -52,28 +65,22 @@ public abstract class QueryObject extends JFrame{
     public String getQuery() {
         int attributes = 0;
         StringBuilder stringBuilder = new StringBuilder();
-        String or = "";
+        String and = "";
+
+        stringBuilder.append("(SELECT ");
+        stringBuilder.append(getPrimaryKey());
+        stringBuilder.append(" FROM ");
+        stringBuilder.append(getName());
+        stringBuilder.append(" WHERE ");
         for (JPanelAttribute j : attributeList) {
             if(j.getAttributeQuery().length() > 0) {
-                stringBuilder.append(j.getAttributeName());
-                stringBuilder.append(" NOT IN ((SELECT ");
-                stringBuilder.append(j.getPrimaryKey());
-                stringBuilder.append(" FROM ");
-                stringBuilder.append(getName());
-                stringBuilder.append(") EXCEPT ");
-                stringBuilder.append("(SELECT ");
-                stringBuilder.append(j.getAttributeName());
-                stringBuilder.append(" FROM ");
-                stringBuilder.append(getName());
-                stringBuilder.append(" WHERE ");
                 stringBuilder.append(j.getAttributeQuery());
-                stringBuilder.append(")");
-                stringBuilder.append(or);
-                or = " OR ";
+                stringBuilder.append(and);
+                and = " AND ";
                 attributes++;
-
             }
         }
+        stringBuilder.append(")");
         return attributes > 0 ? stringBuilder.toString() : "";
     }
 

@@ -21,6 +21,8 @@ public class AttributeName {
         put("rs_travel_mm".toLowerCase(), "Travel");
         put("derailleurID".toLowerCase(), "Derailleur Name");
         put("manufacturerName".toLowerCase(), "Manufacturer");
+        put("derailleurfamily".toLowerCase(), "Derailleur Family");
+        put("modelname".toLowerCase(), "Model Name");
     }};
 
     public static String toReadableString(String attributeName){

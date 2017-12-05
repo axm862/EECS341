@@ -24,7 +24,7 @@ public class BikeFinder {
 
     public static void displayOutput(List<String[]> bikes){
         OutputJFrame frame = new OutputJFrame();
-        System.out.println("Found + " + bikes.size() + " bikes.");
+        System.out.println("Found " + bikes.size() + " bikes.");
         String[] header = bikes.get(0);
         for (int i = 0; i < header.length; i++) {
             header[i] = AttributeName.toReadableString(header[i]);
@@ -39,6 +39,7 @@ public class BikeFinder {
             }
             i++;
         }
+
 
         frame.setData(data);
 

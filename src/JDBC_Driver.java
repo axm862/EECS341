@@ -18,11 +18,11 @@ public class JDBC_Driver {
         Connection conn;
         Statement stat;
         try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Class.forName("org.postgresql.Driver").newInstance();
 
-            String url = "jdbc:mysql://localhost/DatabaseProject"; // Name/port on localhost may need to change
+            String url = "jdbc:postgresql://localhost/databaseproject"; // Name/port on localhost may need to change
             Properties props = new Properties();
-            props.setProperty("user", "root"); // May need to change username
+            props.setProperty("user", "postgres"); // May need to change username
             props.setProperty("password", "");
             props.setProperty("useSSL", "false");
             conn = DriverManager.getConnection(url, props);
@@ -99,11 +99,11 @@ public class JDBC_Driver {
         Connection conn;
         Statement stat;
         try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Class.forName("org.postgresql.Driver").newInstance();
 
-            String url = "jdbc:mysql://localhost/DatabaseProject"; // Name/port on localhost may need to change
+            String url = "jdbc:postgresql://localhost/databaseproject"; // Name/port on localhost may need to change
             Properties props = new Properties();
-            props.setProperty("user", "root"); // May need to change username
+            props.setProperty("user", "postgres"); // May need to change username
             props.setProperty("password", "");
             props.setProperty("useSSL", "false");
             conn = DriverManager.getConnection(url, props);

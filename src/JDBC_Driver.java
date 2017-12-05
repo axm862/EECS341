@@ -8,8 +8,6 @@ import java.util.Properties;
  */
 public class JDBC_Driver {
 
-    private final static int ENUM = 1;
-
     // This method will take the type of attribute and find the name and type of each attribute
     // NOTE: This method only works if all attributes in individual relation are NOT NULL
     // RETURN TYPE: This will return a list of JPanelAttributes if no error.  Or null if error.
@@ -35,41 +33,38 @@ public class JDBC_Driver {
             for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
                 String name = rs.getMetaData().getColumnName(i);
                 int type = rs.getMetaData().getColumnType(i);
+                System.out.println(type);
                 if (type == Types.VARCHAR) {
-                    attributes.add(new JPanelVarchar(name));
+                    name = name.toLowerCase();
+                    //enums
+                    switch(name){
+                        case "handlebarmaterialtype":
+                            attributes.add(new JPanelEnumHandlebar(name));
+                            break;
+                        case "frametype":
+                            attributes.add(new JPanelEnumFrameGeometry(name));
+                            break;
+                        case "framematerialtype":
+                            attributes.add(new JPanelEnumFrameMaterial(name));
+                            break;
+                        case "family":
+                            attributes.add(new JPanelEnumShifter(name));
+                            break;
+                        case "braketype":
+                            attributes.add(new JPanelEnumBrake(name));
+                            break;
+                        case "derailleurfamily":
+                            attributes.add(new JPanelEnumDerailleur(name));
+                            break;
+                        default:
+                            attributes.add(new JPanelVarchar(name));
+                    }
                 }
                 else if (type == Types.INTEGER) {
                     attributes.add(new JPanelInt(name));
                 }
                 else if (type == Types.DOUBLE) {
                     attributes.add(new JPanelDouble(name));
-                }
-                // ENUM interpreted as type 1 (CHAR)
-                else if (type == ENUM) {
-                    System.out.println("Not implemented yet (Enums)");
-                    switch(name){
-                        case "handlebarMaterialType":
-                            attributes.add(new JPanelEnumHandlebar(name));
-                            break;
-                        case "frameType":
-                            attributes.add(new JPanelEnumFrameGeometry(name));
-                            break;
-                        case "frameMaterialType":
-                            attributes.add(new JPanelEnumFrameMaterial(name));
-                            break;
-                        case "family":
-                            attributes.add(new JPanelEnumShifter(name));
-                            break;
-                        case "brakeType":
-                            attributes.add(new JPanelEnumBrake(name));
-                            break;
-                        case "derailleurFamily":
-                            attributes.add(new JPanelEnumDerailleur(name));
-                            break;
-                        case "default":
-                            attributes.add(new JPanelVarchar(name));
-                    }
-                    //attributes.add(new JPanelEnum(rs.getMetaData().getColumnName(i)));
                 }
                 else {
                     throw new Exception("Wrong data type returned.  Not Varchar , Integer, Double, or Enum");
@@ -111,11 +106,11 @@ public class JDBC_Driver {
             stat = conn.createStatement();
             StringBuilder query = new StringBuilder();
             // Can add in NOT easily later by splitting up string and using a flag
-            query.append("SELECT * FROM Bike WHERE EXISTS (");
+            query.append("SELECT * FROM Bike WHERE ");
             boolean start = true;
             for (QueryObject nestedSubQuery : queries) {
                 if (!start) {
-                    query.append(" AND EXISTS (");
+                    query.append(" OR ");
                 }
                 query.append(nestedSubQuery.getQuery());
                 query.append(")");

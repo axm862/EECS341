@@ -32,4 +32,13 @@ public abstract class JPanelAttribute extends JPanel{
 
     public abstract String getAttributeQuery();
 
+    public void setPrimaryKey(String primaryKey) {
+        this.primaryKey = primaryKey;
+    }
+
+    String primaryKey;
+
+    public String getPrimaryKey() {
+        return primaryKey;
+    }
 }

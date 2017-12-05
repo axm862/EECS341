@@ -24,7 +24,7 @@ public abstract class QueryObject extends JFrame{
     public QueryObject(JCheckBox jCheckBox) {
         queryObjects.add(this);
         this.jCheckBox = jCheckBox;
-        this.initFrame();
+        initFrame();
 
     }
 

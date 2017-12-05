@@ -10,6 +10,8 @@ public class JDBC_Driver {
 
     private List<String> subQueries = new LinkedList<>();
 
+    private final static int ENUM = 1;
+
     // This method will take the type of attribute and find the name and type of each attribute
     // NOTE: This method only works if all attributes in individual relation are NOT NULL
     // RETURN TYPE: This will return a list of JPanelAttributes if no error.  Or null if error.
@@ -33,18 +35,36 @@ public class JDBC_Driver {
 
             // Indexing starts at 1 for SQL I believe
             for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
-                if (rs.getMetaData().getColumnType(i) == Types.VARCHAR) {
-                    attributes.add(new JPanelVarchar(rs.getMetaData().getColumnName(i)));
+                String name = rs.getMetaData().getColumnName(i);
+                int type = rs.getMetaData().getColumnType(i);
+                if (type == Types.VARCHAR) {
+                    attributes.add(new JPanelVarchar(name));
                 }
-                else if (rs.getMetaData().getColumnType(i) == Types.INTEGER) {
-                    attributes.add(new JPanelInt(rs.getMetaData().getColumnName(i)));
+                else if (type == Types.INTEGER) {
+                    attributes.add(new JPanelInt(name));
                 }
-                else if (rs.getMetaData().getColumnType(i) == Types.DOUBLE) {
-                    attributes.add(new JPanelDouble(rs.getMetaData().getColumnName(i)));
+                else if (type == Types.DOUBLE) {
+                    attributes.add(new JPanelDouble(name));
                 }
                 // ENUM interpreted as type 1 (CHAR)
-                else if (rs.getMetaData().getColumnType(i) == 1) {
+                else if (type == ENUM) {
                     System.out.println("Not implemented yet (Enums)");
+                    switch(name){
+                        case "handlebarMaterialType":
+                            attributes.add(new JPanelEnumHandlebar(name));
+                        case "frameType":
+                            attributes.add(new JPanelEnumFrameGeometry(name));
+                        case "frameMaterialType":
+                            attributes.add(new JPanelEnumFrameMaterial(name));
+                        case "family":
+                            attributes.add(new JPanelEnumShifter(name));
+                        case "brakeType":
+                            attributes.add(new JPanelEnumBrake(name));
+                        case "derailleurFamily":
+                            attributes.add(new JPanelEnumDerailleur(name));
+                        case "default":
+                            attributes.add(new JPanelVarchar(name));
+                    }
                     //attributes.add(new JPanelEnum(rs.getMetaData().getColumnName(i)));
                 }
                 else {

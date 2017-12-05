@@ -8,6 +8,8 @@ import java.util.Properties;
  */
 public class JDBC_Driver {
 
+    private static int PRIMARY_KEY_INDEX = 4;
+
     // This method will take the type of attribute and find the name and type of each attribute
     // NOTE: This method only works if all attributes in individual relation are NOT NULL
     // RETURN TYPE: This will return a list of JPanelAttributes if no error.  Or null if error.
@@ -20,7 +22,7 @@ public class JDBC_Driver {
 
             String url = "jdbc:postgresql://localhost/databaseproject"; // Name/port on localhost may need to change
             Properties props = new Properties();
-            props.setProperty("user", "postgres"); // May need to change username
+            props.setProperty("user", "jeffeben"); // May need to change username
             props.setProperty("password", "");
             props.setProperty("useSSL", "false");
             conn = DriverManager.getConnection(url, props);
@@ -97,20 +99,43 @@ public class JDBC_Driver {
 
             String url = "jdbc:postgresql://localhost/databaseproject"; // Name/port on localhost may need to change
             Properties props = new Properties();
-            props.setProperty("user", "postgres"); // May need to change username
+            props.setProperty("user", "jeffeben"); // May need to change username
             props.setProperty("password", "");
             props.setProperty("useSSL", "false");
             conn = DriverManager.getConnection(url, props);
 
+            // Find primary key
+            ResultSet keys;
+            stat = conn.createStatement();
+            DatabaseMetaData dbmd = conn.getMetaData();
+            for (QueryObject subQuery : queries) {
+                keys = dbmd.getPrimaryKeys(conn.getCatalog(), "public", subQuery.getName().toLowerCase());
+                keys.next();
+/*                for (JPanelAttribute attribute : subQuery.attributeList) {
+                    System.out.println(keys.getString(PRIMARY_KEY_INDEX));
+                    attribute.setPrimaryKey(keys.getString(PRIMARY_KEY_INDEX));
+                }*/
+                subQuery.setPrimaryKey(keys.getString(PRIMARY_KEY_INDEX));
+            }
+
             stat = conn.createStatement();
             StringBuilder query = new StringBuilder();
             // Can add in NOT easily later by splitting up string and using a flag
-            query.append("SELECT * FROM Bike WHERE ");
+            query.append("SELECT b.* FROM Bike b WHERE ");
             boolean start = true;
             for (QueryObject nestedSubQuery : queries) {
                 if (!start) {
-                    query.append(" OR ");
+                    query.append(" AND ");
                 }
+                query.append("NOT EXISTS ((SELECT x.");
+                query.append(nestedSubQuery.getPrimaryKey());
+                query.append(" FROM ");
+                query.append(nestedSubQuery.getName().toLowerCase());
+                query.append(" x WHERE x.");
+                query.append(nestedSubQuery.getPrimaryKey());
+                query.append(" = b.");
+                query.append(nestedSubQuery.getPrimaryKey());
+                query.append(") EXCEPT ");
                 query.append(nestedSubQuery.getQuery());
                 query.append(")");
                 start = false;

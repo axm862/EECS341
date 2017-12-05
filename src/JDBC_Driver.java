@@ -95,6 +95,7 @@ public class JDBC_Driver {
         List<String[]> bikeParts = new LinkedList<>();
         String[] firstRow = new String[]{"modelName", "manufacturerName", "derailleurID", "rearShockID", "frontShockID", "brakeID", "shifterID",
         "frameID", "wheelID", "cranksetID", "handlebarID", "price", "year", "picture"};
+        bikeParts.add(firstRow);
         Connection conn;
         Statement stat;
         try {

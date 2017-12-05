@@ -42,7 +42,7 @@ public class JPanelInt extends JPanelAttribute{
             String input = data.getText();
             int value = Integer.parseInt(input);
             stringBuilder.append(value);
-            return stringBuilder.toString().toLowerCase();
+            return stringBuilder.toString();
         } catch(NullPointerException | NumberFormatException e1) {
             JOptionPane.showMessageDialog(null, "Must be a real number", "Error", JOptionPane.ERROR_MESSAGE);
             return null;

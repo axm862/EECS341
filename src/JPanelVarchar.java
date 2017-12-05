@@ -27,8 +27,9 @@ public class JPanelVarchar extends JPanelAttribute {
         }
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(getAttributeName());
-        stringBuilder.append(" = ");
+        stringBuilder.append(" = \'");
         stringBuilder.append(data.getText());
-        return stringBuilder.toString().toLowerCase();
+        stringBuilder.append("\'");
+        return stringBuilder.toString();
     }
 }

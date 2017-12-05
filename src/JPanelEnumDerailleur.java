@@ -7,6 +7,7 @@ public class JPanelEnumDerailleur extends JPanelEnum{
     JPanelEnumDerailleur(String attributeName) {
         super(attributeName);
         combo = new JComboBox<>();
+        combo.addItem("");
         combo.addItem("XTR");
         combo.addItem("XX1");
         combo.addItem("GX");

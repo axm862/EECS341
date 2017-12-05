@@ -26,10 +26,11 @@ public class JPanelEnum extends JPanelAttribute {
         }
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(getAttributeName());
-        stringBuilder.append(" = ");
+        stringBuilder.append(" = \'");
         String input = String.valueOf(combo.getSelectedItem());
         stringBuilder.append(input);
-        return stringBuilder.toString().toLowerCase();
+        stringBuilder.append("\'");
+        return stringBuilder.toString();
     }
 
     public void setCombo(JComboBox<String> combo) {

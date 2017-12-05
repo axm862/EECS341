@@ -74,7 +74,7 @@ public class JDBC_Driver {
                     //attributes.add(new JPanelEnum(rs.getMetaData().getColumnName(i)));
                 }
                 else {
-                    throw new Exception("Wrong data type returned.  Not Varchar , Integer, or Double");
+                    throw new Exception("Wrong data type returned.  Not Varchar , Integer, Double, or Enum");
                 }
             }
 

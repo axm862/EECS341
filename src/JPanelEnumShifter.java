@@ -7,6 +7,7 @@ public class JPanelEnumShifter extends JPanelEnum{
     JPanelEnumShifter(String attributeName) {
         super(attributeName);
         combo = new JComboBox<>();
+        combo.addItem("");
         combo.addItem("Twist");
         combo.addItem("Trigger");
         setCombo(combo);

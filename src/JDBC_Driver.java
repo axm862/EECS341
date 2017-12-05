@@ -35,9 +35,8 @@ public class JDBC_Driver {
                 int type = rs.getMetaData().getColumnType(i);
                 System.out.println(type);
                 if (type == Types.VARCHAR) {
-                    name = name.toLowerCase();
                     //enums
-                    switch(name){
+                    switch(name.toLowerCase()){
                         case "handlebarmaterialtype":
                             attributes.add(new JPanelEnumHandlebar(name));
                             break;

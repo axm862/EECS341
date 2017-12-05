@@ -1,0 +1,1002 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.4.14
+-- Dumped by pg_dump version 9.4.14
+-- Started on 2017-12-04 19:16:04 EST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 1 (class 3079 OID 11893)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 2143 (class 0 OID 0)
+-- Dependencies: 1
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+--
+-- TOC entry 553 (class 1247 OID 32889)
+-- Name: btype; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE btype AS ENUM (
+    'Hydraulic',
+    'Mechanical'
+);
+
+
+ALTER TYPE btype OWNER TO postgres;
+
+--
+-- TOC entry 559 (class 1247 OID 32909)
+-- Name: dtype; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE dtype AS ENUM (
+    'XTR',
+    'XX1',
+    'GX',
+    'X01',
+    'Deore',
+    'Saint',
+    'XT',
+    'NX',
+    'RD',
+    'SLX',
+    'LG',
+    'FD',
+    'X5',
+    'X1'
+);
+
+
+ALTER TYPE dtype OWNER TO postgres;
+
+--
+-- TOC entry 577 (class 1247 OID 33044)
+-- Name: fmtype; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE fmtype AS ENUM (
+    'Carbon',
+    'Aluminum',
+    'Steel',
+    'Metal Alloy'
+);
+
+
+ALTER TYPE fmtype OWNER TO postgres;
+
+--
+-- TOC entry 541 (class 1247 OID 32856)
+-- Name: fmtypes; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE fmtypes AS ENUM (
+    'Carbon',
+    'Aluminum',
+    'Steel',
+    'Metal Alloy'
+);
+
+
+ALTER TYPE fmtypes OWNER TO postgres;
+
+--
+-- TOC entry 574 (class 1247 OID 33037)
+-- Name: ftype; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE ftype AS ENUM (
+    'XC Geometry',
+    'S3 Geometry',
+    'G2 Geometry'
+);
+
+
+ALTER TYPE ftype OWNER TO postgres;
+
+--
+-- TOC entry 544 (class 1247 OID 32866)
+-- Name: ftypes; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE ftypes AS ENUM (
+    'XC Geometry',
+    'S3 Geometry',
+    'G2 Geometry'
+);
+
+
+ALTER TYPE ftypes OWNER TO postgres;
+
+--
+-- TOC entry 535 (class 1247 OID 32820)
+-- Name: handletypes; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE handletypes AS ENUM (
+    'Carbon',
+    'Metal',
+    'Metal Alloy'
+);
+
+
+ALTER TYPE handletypes OWNER TO postgres;
+
+--
+-- TOC entry 587 (class 1247 OID 33128)
+-- Name: htype; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE htype AS ENUM (
+    'Carbon',
+    'Metal',
+    'Metal Alloy'
+);
+
+
+ALTER TYPE htype OWNER TO postgres;
+
+--
+-- TOC entry 547 (class 1247 OID 32879)
+-- Name: shifttype; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE shifttype AS ENUM (
+    'Twist',
+    'Trigger'
+);
+
+
+ALTER TYPE shifttype OWNER TO postgres;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 183 (class 1259 OID 33140)
+-- Name: bike; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE bike (
+    modelname character varying(100) NOT NULL,
+    manufacturername character varying(100) NOT NULL,
+    derailleurid character varying(100) NOT NULL,
+    rearshockid character varying(100) NOT NULL,
+    frontshockid character varying(100) NOT NULL,
+    brakeid character varying(100) NOT NULL,
+    shifterid character varying(100) NOT NULL,
+    frameid character varying(100) NOT NULL,
+    wheelid character varying(100) NOT NULL,
+    cranksetid character varying(100) NOT NULL,
+    handlebarid character varying(100) NOT NULL,
+    price numeric NOT NULL,
+    year integer NOT NULL,
+    picture bytea NOT NULL
+);
+
+
+ALTER TABLE bike OWNER TO postgres;
+
+--
+-- TOC entry 175 (class 1259 OID 32893)
+-- Name: brake; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE brake (
+    brakeid character varying(100) NOT NULL,
+    braketype btype NOT NULL
+);
+
+
+ALTER TABLE brake OWNER TO postgres;
+
+--
+-- TOC entry 173 (class 1259 OID 32832)
+-- Name: crankset; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE crankset (
+    cranksetid character varying(100) NOT NULL,
+    cranksetlength integer NOT NULL
+);
+
+
+ALTER TABLE crankset OWNER TO postgres;
+
+--
+-- TOC entry 176 (class 1259 OID 32937)
+-- Name: derailleur; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE derailleur (
+    derailleurid character varying(100) NOT NULL,
+    derailleurfamily dtype NOT NULL
+);
+
+
+ALTER TABLE derailleur OWNER TO postgres;
+
+--
+-- TOC entry 180 (class 1259 OID 33053)
+-- Name: frame; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE frame (
+    frameid character varying(100) NOT NULL,
+    frametype ftype NOT NULL,
+    framematerialtype fmtype NOT NULL
+);
+
+
+ALTER TABLE frame OWNER TO postgres;
+
+--
+-- TOC entry 179 (class 1259 OID 32993)
+-- Name: frontshock; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE frontshock (
+    frontshockid character varying(100) NOT NULL,
+    fs_travel_mm integer NOT NULL
+);
+
+
+ALTER TABLE frontshock OWNER TO postgres;
+
+--
+-- TOC entry 182 (class 1259 OID 33135)
+-- Name: handlebar; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE handlebar (
+    handlebarid character varying(100) NOT NULL,
+    width integer NOT NULL,
+    handlebarmaterialtype htype NOT NULL
+);
+
+
+ALTER TABLE handlebar OWNER TO postgres;
+
+--
+-- TOC entry 177 (class 1259 OID 32942)
+-- Name: manufacturer; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE manufacturer (
+    manufacturername character varying(100) NOT NULL,
+    address character varying(150) NOT NULL,
+    website character varying(150) NOT NULL
+);
+
+
+ALTER TABLE manufacturer OWNER TO postgres;
+
+--
+-- TOC entry 178 (class 1259 OID 32965)
+-- Name: rearshock; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE rearshock (
+    rearshockid character varying(100) NOT NULL,
+    rs_travel_mm integer NOT NULL
+);
+
+
+ALTER TABLE rearshock OWNER TO postgres;
+
+--
+-- TOC entry 174 (class 1259 OID 32883)
+-- Name: shifter; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE shifter (
+    shifterid character varying(100) NOT NULL,
+    family shifttype NOT NULL
+);
+
+
+ALTER TABLE shifter OWNER TO postgres;
+
+--
+-- TOC entry 181 (class 1259 OID 33058)
+-- Name: wheel; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE wheel (
+    wheelid character varying(100) NOT NULL,
+    wheelsize numeric NOT NULL
+);
+
+
+ALTER TABLE wheel OWNER TO postgres;
+
+--
+-- TOC entry 2135 (class 0 OID 33140)
+-- Dependencies: 183
+-- Data for Name: bike; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY bike (modelname, manufacturername, derailleurid, rearshockid, frontshockid, brakeid, shifterid, frameid, wheelid, cranksetid, handlebarid, price, year, picture) FROM stdin;
+Epic XTR Di2	Specalized	Shimano XTR M9050 Di2	RockShox Specialized Micro Brain	RockShox SID 29 Brain	Shimano XTR M9000	Shimano XTR Di2	S-Works FACT 12M	Fast Trak	Race Face Next SL G4	S Works Carbon Mini Rise	9999.99	2018	\\x457069635f5854525f4469322e504e47
+S-Works Epic XX1 Eagle	Specalized	SRAM XX1 Eagle 12-speed	RockShox Specialized Micro Brain	RockShox SID 29 Brain	SRAM Level Ultimate	SRAM XX1 Eagle	S-Works FACT 12M	Fast Trak	SRAM XX1 Eagle	S Works Carbon Mini Rise	9499.99	2018	\\x535f576f726b735f457069635f5858315f4561676c652e504e47
+S-Works Enduro 29/6Fattie	Specalized	SRAM XX1 Eagle 12-speed	Ohlins STX Custom	Ohlins RXF 36	SRAM Code RSC	SRAM XX1 Eagle	S-Works FACT IS-X 11M	Butcher	SRAM XX1 Eagle	Specialized DH	8500.00	2018	\\x535f576f726b735f456e6475726f5f32395f364661747469652e504e47
+S-Works Stumpjumper 27.5	Specalized	SRAM XX1 Eagle 12-speed	FOX Factory Float	FOX 34 Factory 29	SRAM Level Ultimate	SRAM XX1 Eagle	S-Works FACT 11M	Purgatory	SRAM XX1 Eagle	Specialized Trail	8200.00	2018	\\x535f576f726b735f43616d6265725f32392e504e47
+Camber Comp Carbon 27.5	Specalized	SRAM GX 11-speed	RockShox Brain	RockShox Reba RL 27.5	SRAM Level TL	SRAM GX	S-Works FACT 9M	Purgatory	Race Face Aeffect	Specialized 6061 Alloy	3500.00	2017	\\x43616d6265725f436f6d705f436172626f6e5f32372e352e504e47
+S-Works Demo 8	Specalized	SRAM X01 DH 7-speed	Ohlins TTX Custom	RockShox BoXXer WC 27.5	SRAM Code RSC	SRAM X0 DH	S-Works FACT 11M	Butcher	SRAM X0 DH	Specialized DH	7500.00	2016	\\x535f576f726b735f44656d6f5f382e504e47
+Mens Epic Pro	Specalized	SRAM X01 Eagle 12-speed	RockShox Specialized Micro Brain	RockShox SID 29 Brain	SRAM Level TLM	SRAM X01 Eagle	S-Works FACT 11M	Fast Trak	Truvativ Stylo	Specialized 7050 Alloy	6500.00	2018	\\x4d656e735f457069635f50726f2e504e47
+Womens Epic Comp Carbon	Specalized	SRAM GX 11-speed	RockShox Brain	RockShox Reba RL 29	SRAM Level TL	SRAM GX	S-Works FACT 11M	Fast Trak	Race Face Aeffect	Specialized 6000 Alloy	4400.00	2017	\\x576f6d656e735f457069635f436f6d705f436172626f6e2e504e47
+Demo 8 I Alloy	Specalized	SRAM GX 11-speed	FOX Specialized Van RC	RockShox BoXXer WC 27.5	SRAM Guide RS Carbon	SRAM X7	S-Works M5 Alloy	Butcher	Custom SRAM Descendant BB30	Specialized DH	3500.00	2018	\\x44656d6f5f385f495f416c6c6f792e504e47
+S-Works Camber 29	Specalized	SRAM XX1 Eagle 12-speed	FOX Factory Float	FOX 34 Factory 29	SRAM Level Ultimate	SRAM XX1 Eagle	S-Works FACT 11M	Purgatory	SRAM XX1 Eagle	Specialized Trail	8200.00	2018	\\x535f576f726b735f43616d6265725f32392e504e47
+Top Fuel 9.9 Race Shop Limited	Trek	SRAM XX1 Eagle 12-speed	FOX Factory Float	FOX 32 Factory Float	SRAM Level Ultimate Carbon	SRAM XX1 Eagle	OCLV Mountain Carbon	Bontrager XR2 Team Issue	SRAM XX1 Eagle	Bontrager XXX	8999.99	2018	\\x546f705f4675656c5f392e395f526163655f53686f705f4c696d697465642e504e47
+Fuel EX 9.9 29	Trek	SRAM XX1 Eagle 12-speed	FOX Factory Float	FOX 34 Factory 29	SRAM Level Ultimate Carbon	SRAM XX1 Eagle	OCLV Mountain Carbon	Bontrager XR4 Team Issue	SRAM XX1 Eagle	Bontrager Line Pro	8899.99	2018	\\x4675656c5f45585f392e395f32392e504e47
+Procaliber 9.9 SL Race Shop Limited	Trek	SRAM XX1 Eagle 12-speed	Hardtail	FOX 32 Factory Float	SRAM Level Ultimate Carbon	SRAM XX1 Eagle	Super Light OCLV Mountain Carbon	Bontrager XR1 Team Issue	SRAM XX1 Eagle	Bontrager XXX	8499.99	2018	\\x50726f63616c696265725f392e395f534c5f526163655f53686f705f4c696d697465642e504e47
+Slash 9.8	Trek	SRAM GX Eagle 12-speed	RockShox Deluxe RT3	FOX 36 Performance Float	SRAM Guide RS	SRAM GX Eagle	OCLV Mountain Carbon	Bontrager SE4 Team Issue	SRAM Descendant 7k Eagle	Bontrager Line Pro	5499.99	2018	\\x536c6173685f392e382e504e47
+Farley EX 9.8	Trek	SRAM GX Eagle 12-speed	FOX 36 Performance Float	Manitou Mastodon 34 Comp	SRAM Guide RS	SRAM GX Eagle	OCLV Mountain Carbon	Bontrager Hodag	SRAM Stylo Carbon	Bontrager Line Pro	5499.99	2018	\\x4661726c65795f45585f392e382e504e47
+Remedy 9.8 27.5	Trek	SRAM GX Eagle 12-speed	RockShox Deluxe RT3	RockShox Lyrik RCT3	SRAM Guide RS	SRAM GX Eagle	OCLV Mountain Carbon	Bontrager SE4 Team Issue	SRAM Descendant 7k Eagle	Bontrager Line Pro v2	4999.99	2018	\\x52656d6564795f392e385f32372e352e504e47
+Powerfly 7 FS Plus	Trek	Shimano Deore XT M8000	RockShox Deluxe RL	RockShox Recon RL	Shimano Deore M6000	Shimano SLX M7000	Alpha Platinum Aluminum	Schwalbe Nobby Nic Performance	Race Face Aeffect	Bontrager Alloy	4999.99	2018	\\x506f776572666c795f375f46535f506c75732e504e47
+Session 9.9	Trek	Shimano Saint	FOX Factory DHX 2 SLS	FOX Factory 40 FIT RC2	Shimano Saint	Shimano Saint	OCLV Mountain Carbon	Bontrager G4 Team Issue	Shimano Saint	Bontrager Rhythm Pro	4999.99	2016	\\x53657373696f6e5f392e392e504e47
+Session 88 DH 27.5	Trek	SRAM X01 DH 7-speed	FOX 36 Performance Float	RockShox BoXXer WC 27.5	SRAM Code R	SRAM X0 DH	Alpha Platinum Aluminum	Bontrager G4 Team Issue	Truvativ Descendant	Bontrager Line	3999.99	2017	\\x53657373696f6e5f38385f44485f32372e352e504e47
+Procaliber 8	Trek	Shimano Deore XT M8000	Hardtail	RockShox Reba RL 29	Shimano MT500	Shimano SLX M7000	Alpha Platinum Aluminum	Bontrager XR2 Team Issue	Race Face Next R	Bontrager Race Lite	2099.99	2018	\\x50726f63616c696265725f382e504e47
+SB5 Turq XX1 Eagle	Yeti	SRAM XX1 Eagle 12-speed	FOX Factory Float	FOX 34 Factory 29	SRAM Code RSC	SRAM XX1 Eagle	High Modulus Yeti SB5	Maxxis Ardent EXO	SRAM X01 Carbon Eagle	Yeti Carbon	7999.00	2018	\\x5342355f547572715f5858315f4561676c652e504e47
+SB5 Turq X01 Eagle	Yeti	SRAM X01 Eagle 12-speed	FOX 36 Performance Float	FOX 34 Factory 29	SRAM Centerline 180	SRAM X01 Eagle	High Modulus Yeti SB5	Maxxis Ardent EXO	SRAM X01 Carbon Eagle	Yeti Carbon	6999.00	2018	\\x5342355f547572715f5830315f4561676c652e504e47
+SB5.5 Turq XT	Yeti	Shimano Deore XT M8000	FOX 36 Performance Float	FOX 36 Performance Float	Shimano XTR M9000	Shimano XT	High Modulus Yeti SB5.5	Maxxis Minion DHF EXO	Race Face Turbine	Yeti Long Carbon	6599.00	2018	\\x5342352e355f547572715f58542e504e47
+SB4.5 Turq X01	Yeti	SRAM X01 Eagle 12-speed	FOX Factory Float	FOX 34 Factory 29	SRAM Guide RCS 180	SRAM X01 Eagle	High Modulus Yeti SB4.5	Maxxis Ardent EXO	SRAM X01 Carbon Eagle	Yeti Carbon	6999.00	2018	\\x5342342e355f547572715f5830312e504e47
+SB5.5 Carbon GX	Yeti	SRAM GX Eagle 12-speed	FOX 36 Performance Float	FOX 36 Performance Float	SRAM Guide R	SRAM GX Eagle	High Modulus Yeti SB5.5	Maxxis Minion DHF EXO	SRAM GX Eagle	Race Face Respond	5399.00	2018	\\x5342352e355f436172626f6e5f47582e504e47
+SB6 Turq X01	Yeti	SRAM X01 Eagle 12-speed	FOX 36 Performance Float	FOX 36 Performance Float	SRAM Centerline 180	SRAM X01 Eagle	Yeti SB6 Turq	Maxxis Minion DHF 2.5	SRAM X01 Carbon Eagle	Yeti Long Carbon	7199.00	2018	\\x5342365f547572715f5830312e504e47
+SB6 Carbon GX Eagle	Yeti	SRAM X01 Eagle 12-speed	FOX 36 Performance Float	FOX 36 Performance Float	SRAM Centerline 180	SRAM GX Eagle	High Modulus Yeti SB6	Maxxis Minion DHF 2.5	SRAM X01 Eagle	Race Face Respond	5399.00	2018	\\x5342365f436172626f6e5f47585f4561676c652e504e47
+SB4.5 Carbon XT/SLX	Yeti	Shimano XT 11-speed	FOX 36 Performance Float	FOX 34 Factory 29	Shimano SLX 180	Shimano SLX M7000	High Modulus Yeti SB4.5	Maxxis Minion DHF EXO	Race Face Aeffect	Race Face Evolve	4799.00	2018	\\x5342342e355f436172626f6e5f58545f534c582e504e47
+SB5+ Carbon XT/SLX Storm	Yeti	Shimano XT 11-speed	FOX 36 Performance Float	FOX 34 Factory 29	Shimano SLX 180	Shimano SLX M7000	High Modulus Yeti SB5	Maxxis Rekon EXO	Race Face Aeffect	Race Face Evolve	4799.00	2018	\\x5342352b5f436172626f6e5f58545f534c585f53746f726d2e504e47
+Beti SB5 Carbon GX Eagle	Yeti	SRAM X01 DH 7-speed	FOX Performance Beti	FOX 34 Factory 29	SRAM Guide R	SRAM GX Eagle	High Modulus Beti SB5	Maxxis Ardent EXO	SRAM GX Eagle	Race Face Evolve	5199.00	2017	\\x426574695f5342355f436172626f6e5f47585f4561676c652e504e47
+Wolf Ridge Pro	Marin	SRAM XX1 Eagle 12-speed	FOX 36 Factory Float	FOX Float X2 Factory	SRAM Level Ultimate Carbon	SRAM XX1 Eagle	Series 7 Unidirectional	WTB Vigilante	Truvativ Descendant	Deity DC31 Mohawk	8599.99	2018	\\x576f6c665f52696467655f50726f2e504e47
+Attack Trail 8	Marin	SRAM GX Eagle 12-speed	RockShox Monarch Plus RCT3	RockShox Lyrik RCT3	Shimano Deore M6000	SRAM GX Eagle	Series 4 6061	WTB Convict	SRAM Descendant 6K Aluminum	Deity Blacklabel	4199.99	2018	\\x41747461636b5f547261696c5f382e504e47
+B-17 1	Marin	SRAM NX 11-speed	RockShox Monarch Plus RCT3	RockShox Recon Gold RL	Shimano BR-M315	SRAM NX	Series 3 6061	Vee Tire Crown Gem	FSA Comet	Marin Mini-Riser	2099.99	2017	\\x425f31375f312e504e47
+Rift Zone 3	Marin	Shimano RD-M7000 11-speed	RockShox Deluxe RT	RockShox Revelation RC	Shimano Deore M6000	Shimano SLX M7000	Series 3 6061	WTB Trail Boss	FSA V-Drive	Marin Mini-Riser	2649.99	2018	\\x526966745f5a6f6e655f332e504e47
+Hawk Hill 3	Marin	Shimano SLX GS 11-speed	RockShox Monarch Plus RCT3	RockShox Revelation RC	Shimano Deore M6000	Shimano SLX M7000	Series 3 6061	WTB Breakout	FSA V-Drive	Marin Mini-Riser	2649.99	2018	\\x4861776b5f48696c6c5f332e504e47
+Pine Mountain	Marin	Shimano Deore Shadow Plus 10-speed	Hardtail	CrMo	Shimano BR-M425	Shimano Deore	Double Butted CrMo	Vee Tire Crown Gem	Marin Forged Alloy	Marin Mini-Riser	989.99	2016	\\x50696e655f4d6f756e7461696e2e504e47
+Nail Trail 7	Marin	Shimano SLX GS 11-speed	Hardtail	RockShox Revelation RC	Shimano MT500	Shimano SLX M7000	Series 3 6061	Vee Tire Crown Gem	FSA Comet	Marin Mini-Riser	1799.99	2017	\\x4e61696c5f547261696c5f372e504e47
+Bobcat Trail 5	Marin	Shimano Deore Shadow Plus 10-speed	Hardtail	RockShox Recon Silver	Shimano BR-M315	Shimano Deore	Series 2 6061	Schwalbe Tough Tom	Marin Forged Alloy	Marin Mini-Riser Small	989.99	2018	\\x426f626361745f547261696c5f352e504e47
+Wildcat Trail 5	Marin	Shimano Deore Shadow Plus 10-speed	Hardtail	RockShox Recon Silver	Shimano BR-M365	Shimano Deore	Series 2 6061	Schwalbe Tough Tom	Marin Forged Alloy	Marin Mini-Riser Small	989.99	2018	\\x57696c646361745f547261696c5f352e504e47
+Wolf Ridge 8	Marin	SRAM GX Eagle 12-speed	RockShox Monarch Plus RCT3	RockShox Lyrik RCT3	Shimano XTR M9000	SRAM GX Eagle	Series 7 Unidirectional	WTB Vigilante	SRAM Descendant 6K Aluminum	Marin Mini-Riser	5199.99	2018	\\x576f6c665f52696467655f382e504e47
+Spark RC 900 SL	Scott	SRAM XX1 Eagle 12-speed	FOX Nude Trunnion Scott	FOX 32 Factory Float	SRAM Level Ultimate	SRAM XX1	Spark RC Carbon	Maxxis Aspen	SRAM XX1 Eagle Boost	Syncros FL1.0 SL	8999.99	2018	\\x537061726b5f52435f3930305f534c2e504e47
+Big Jon Bike	Scott	Shimano Deore FD-M618-D 10-speed	Hardtail	Rigid Alloy	Shimano M-396	Shimano Deore	Big Jon Alloy 6061	Schwalbe Jumbo Jim	Race Face RXC Double	Syncros FL2.0 Mini Riser	1599.99	2016	\\x4269675f4a6f686e5f42696b652e504e47
+Genius 940	Scott	SRAM GX Eagle 12-speed	FOX Factory Float	FOX 34 Factory 29	Shimano MT500	SRAM GX	Genius Alloy 6061	Schwalbe Nobby Nic Performance	SRAM X01 Eagle	Syncros FL2.0 Mini Riser	2999.99	2017	\\x47656e6975735f3934302e504e47
+Gambler 730	Scott	E.thirteen LG-1 ISCG05 10-speed	FOX Van R Coil	RockShox BoXXer WC 27.5	Shimano Deore M6000	SRAM X4	Gambler Alloy 6061	Schwalbe Downhill Evolution Line	Truvativ Ruktion	Syncros DH1.5	2999.99	2017	\\x47616d626c65725f3733302e504e47
+Voltage YZ 20	Scott	Shimano RD-TY300 21-speed	Hardtail	Suntour XCM	Tektro Mech	Shimano ST-EF	Voltage YZ 6061	Kenda K-905	Shimano FC-TY501	HL MTB-AL-325BT	1299.99	2018	\\x566f6c746167655f595a5f32302e504e47
+Aspect 980	Scott	Shimano RD-TY300 21-speed	Hardtail	HL Zoom 565 VB	Promax TX-107L	Shimano ST-EF	Aspect 900 Series	Kenda Slant	Shimano FC-TY301	HL MTB-AL-312BT	599.99	2016	\\x4173706563745f3938302e504e47
+Contessa Spark RC 900	Scott	SRAM X01 Eagle 12-speed	FOX Nude Trunnion Scott	RockShox SID 29 Brain	SRAM Level TL	SRAM X01 Eagle	Spark RC Carbon	Maxxis Aspen	SRAM X01 Carbon Eagle	Syncros FL1.0 SL	3499.99	2018	\\x436f6e74657373615f537061726b5f52435f3930302e504e47
+Contessa Scale 40	Scott	Shimano Deore RD-M592 27-speed	Hardtail	Suntour XCR-RL-R	Shimano BR-M315	Shimano SL-M2000-9R	Contessa Sport 700 Series	Kenda Slant	Shimano FC-M3000	Syncros M3.0	549.99	2018	\\x436f6e74657373615f5363616c655f34302e504e47
+Scale RC 900 World Cup	Scott	SRAM XX1 Eagle 12-speed	Hardtail	RockShox SID 29 Brain	SRAM Level TLM	SRAM X01 Eagle	Spark RC Carbon	Maxxis Aspen	SRAM XX1 Eagle Boost	Syncros FL1.0 SL	5499.99	2018	\\x5363616c655f52435f3930305f576f726c645f4375702e504e47
+Contessa Spark 710	Scott	Shimano Alivio RD-M4000 27-speed	Hardtail	Suntour XCM	Shimano BR-M315	Shimano SL-M2000-9R	Contessa Sport 700 Series	Kenda Slant	Shimano FC-M2000	Syncros M3.0	3899.99	2017	\\x436f6e74657373615f537061726b5f3731302e504e47
+Fury Pro	GT	SRAM GX Eagle 12-speed	RockShox Vivid Coil	RockShox BoXXer WC 27.5	SRAM Guide R	SRAM GX Eagle	COR Downhill Design	Schwalbe Magic Mary Bikepark	Race Face Chester	Race Face Respond	4499.99	2017	\\x467572795f50726f2e504e47
+Sanction Pro	GT	Shimano Deore Shadow Plus 10-speed	FOX Racing Shox Performance Elite	FOX 36 Performance Float	Shimano BR-M640	Shimano SLX M7000	COR Enduro Design	Schwalbe Magic Mary Snakeskin	Race Face Aeffect	Race Face Aeffect	4199.99	2017	\\x53616e6374696f6e5f50726f2e504e47
+Sanction Expert	GT	SRAM GX 11-speed	RockShox Monarch Plus RCT3	RockShox Yari RC Boost	SRAM Guide R	SRAM GX	COR Enduro Design	Schwalbe Magic Mary Performance	Race Face Ride	Race Face Chester	3399.99	2017	\\x53616e6374696f6e5f4578706572742e504e47
+Sensor Elite	GT	SRAM NX 11-speed	RockShox Deluxe RL	RockShox Recon RL	Shimano BR-M425	SRAM NX	Hydroformed 6069	Schwalbe Nobby Nic Performance	Race Face Ride	All Terra AL6061 DB	3200.00	2017	\\x53656e736f725f456c6974652e504e47
+Verb Expert	GT	Shimano Deore Shadow Plus 10-speed	X-Fusion 02 Pro RL	RockShox Recon RL	Shimano BR-M425	Shimano SLX M7000	T6 6061	Schwalbe Nobby Nic Performance	FSA Comet	All Terra AL6061 DB	1699.99	2016	\\x566572625f4578706572742e504e47
+Verb Elite	GT	Shimano Deore FD-M618-D 10-speed	All Terra AO-42 AR	Suntour XCR 32	Shimano BR-M315	Shimano Deore	T6 6061	WTB Ranger Comp	All Terra Charm	All Terra AL6061 DB	1299.99	2018	\\x566572625f456c6974652e504e47
+Pantera Elite	GT	Shimano RD-M7000 11-speed	Hardtail	RockShox Recon Silver	Shimano BR-M365	Shimano SLX M7000	T6 6061	Schwalbe Rocket Ron Performance	FSA Comet	All Terra Riser Bar	1299.99	2017	\\x50616e746572615f456c6974652e504e47
+Pantera Comp	GT	Micro-Shift FD-M462 9-speed	Hardtail	Suntour XCR 32	Shimano BR-M315	Shimano Alivio	T6 6061	WTB Trail Blazer	All Terra Boost Z-501	All Terra Riser Bar	899.99	2017	\\x50616e746572615f436f6d702e504e47
+Avalanche Sport	GT	Shimano Altus FD-M370 9-speed	Hardtail	Suntour XCT	Shimano BR-M315	Shimano SL-M2000-9R	T6 6061	All Terra Cypher	All Terra V-401	Specialized 6061 Alloy	649.99	2017	\\x4176616c616e6368655f53706f72742e504e47
+Aggressor Expert	GT	Shimano RD-TY300 21-speed	Hardtail	All Terra CH-525	Shimano Saint	Shimano ST-EF	T6 6061	All Terra Cypher	All Terra Forged Alloy	Specialized 6061 Alloy	549.99	2017	\\x416767726573736f725f4578706572742e504e47
+El Oso Grande	Diamondback	SRAM X5 15-speed	Hardtail	DB El Oso Custom	TRP Spyre	SRAM X5	El Oso Butted T6 6061	Chaoyang Cruiser	FSA Comet	DB Pro Bar	1399.99	2018	\\x456c5f4f736f5f4772616e64652e504e47
+Rely Trail	Diamondback	Shimano Deore Shadow Plus 10-speed	Hardtail	Suntour XCR 32	Tektro Auriga	Shimano Deore	T6 6061	Chaoyang Big Daddy	SRAM Powerspline	DB35 Alloy	999.99	2017	\\x52656c795f547261696c2e504e47
+Mason Pro	Diamondback	SRAM X1 X-Horizon 11-speed	Hardtail	FOX 36 Performance Float	Shimano Deore M6000	Shimano Deore	T6 6061	Chaoyang Big Daddy	Race Face Aeffect	Race Face Aeffect	2499.99	2018	\\x4d61736f6e5f50726f2e504e47
+Lux Comp	Diamondback	SRAM X1 X-Horizon 11-speed	Hardtail	RockShox Recon Silver	Shimano BR-M315	SRAM NX	Lux 27.5 Butted T6 6061	Schwalbe Rapid Rob	SRAM NX	DB Laser Bar	999.99	2017	\\x4c75785f436f6d702e504e47
+Overdrive Carbon Comp 29	Diamondback	SRAM X1 X-Horizon 11-speed	Hardtail	RockShox Recon Gold RL	Shimano BR-M315	SRAM NX	Diamondback AMMP XC MTB	Kenda Honey Badger	SRAM NX	Diamondback Pro Bar	2299.99	2017	\\x4f76657264726976655f436172626f6e5f436f6d705f32392e504e47
+Line	Diamondback	SRAM X5 9-speed	Hardtail	Suntour XCR 32	Tektro Auriga	SRAM X4	T6 6061	Schwalbe Tough Tom	Marin Forged Alloy	Diamondback Pro Bar	849.99	2016	\\x4c696e652e504e47
+Recoil 29	Diamondback	Shimano Altus FD-M370 9-speed	Kindshock Coil	Suntour XCT	Tektro Aries	Shimano Altus	Diamondback Recoil T6 6061	Kenda Honey Badger	SR Suntour XCC	DB SL318B	699.99	2017	\\x5265636f696c5f32392e504e47
+Overdrive Comp 27.5	Diamondback	SRAM X1 X-Horizon 11-speed	Hardtail	RockShox Recon Silver	Shimano BR-M425	SRAM NX	Overdrive Butted T6 6061	Kenda Honey Badger	SRAM NX	Diamondback Pro Bar	999.99	2018	\\x4f76657264726976655f436f6d705f32372e352e504e47
+Atroz	Diamondback	SRAM X5 9-speed	Suntour Raidon-R	Suntour XCM	Tektro Auriga	SRAM X4	T6 6061	Kenda Nevegal Lite	Marin Forged Alloy	Diamondback Pro Bar	999.99	2017	\\x4174726f7a2e504e47
+Clutch 2	Diamondback	SRAM GX 11-speed	RockShox Monarch Plus RCT3	RockShox Pike RC	SRAM Level TL	SRAM GX Eagle	COR Enduro Design	Schwalbe Hans Dampf Performance	Race Face Aeffect	DB35 Alloy	3499.99	2018	\\x436c757463685f322e504e47
+\.
+
+
+--
+-- TOC entry 2127 (class 0 OID 32893)
+-- Dependencies: 175
+-- Data for Name: brake; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY brake (brakeid, braketype) FROM stdin;
+Shimano XTR M9000	Mechanical
+SRAM Level Ultimate	Hydraulic
+SRAM Code RSC	Hydraulic
+SRAM Guide RS Carbon	Hydraulic
+SRAM Guide RS	Hydraulic
+SRAM Level TL	Mechanical
+SRAM Level TLM	Hydraulic
+SRAM Level Ultimate Carbon	Hydraulic
+Shimano Deore M6000	Hydraulic
+Shimano Saint	Hydraulic
+SRAM Code R	Hydraulic
+Shimano MT500	Hydraulic
+SRAM Centerline 180	Mechanical
+SRAM Guide RCS 180	Hydraulic
+SRAM Guide R	Mechanical
+Shimano SLX 180	Mechanical
+Shimano BR-M315	Hydraulic
+Shimano BR-M425	Hydraulic
+Shimano BR-M365	Hydraulic
+Shimano BR-M640	Hydraulic
+Shimano M-396	Mechanical
+Tektro Mech	Mechanical
+Promax TX-107L	Mechanical
+TRP Spyre	Mechanical
+Tektro Auriga	Hydraulic
+Tektro Aries	Mechanical
+\.
+
+
+--
+-- TOC entry 2125 (class 0 OID 32832)
+-- Dependencies: 173
+-- Data for Name: crankset; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY crankset (cranksetid, cranksetlength) FROM stdin;
+Race Face Next SL G4	165
+SRAM XX1 Eagle	170
+SRAM XX1 Eagle Boost	170
+Race Face Aeffect	180
+SRAM X0 DH	155
+Truvativ Stylo	165
+Custom SRAM Descendant BB30	155
+SRAM Descendant 7k Eagle	160
+SRAM Stylo Carbon	175
+Shimano Saint	155
+Truvativ Descendant	175
+Race Face Next R	170
+SRAM X01 Carbon Eagle	170
+Race Face Turbine	155
+SRAM GX Eagle	170
+SRAM X01 Eagle	165
+SRAM Descendant 6K Aluminum	145
+FSA Comet	160
+FSA V-Drive	150
+Marin Forged Alloy	180
+Race Face RXC Double	175
+Truvativ Ruktion	155
+Shimano FC-TY501	160
+Shimano FC-TY301	160
+Shimano FC-M3000	165
+Shimano FC-M2000	155
+Race Face Chester	145
+Race Face Ride	170
+All Terra Charm	170
+All Terra Boost Z-501	145
+All Terra V-401	160
+All Terra Forged Alloy	175
+SRAM Powerspline	180
+SRAM NX	170
+SR Suntour XCC	165
+\.
+
+
+--
+-- TOC entry 2128 (class 0 OID 32937)
+-- Dependencies: 176
+-- Data for Name: derailleur; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY derailleur (derailleurid, derailleurfamily) FROM stdin;
+Shimano XTR M9050 Di2	XTR
+SRAM XX1 Eagle 12-speed	XX1
+SRAM GX 11-speed	GX
+SRAM X01 DH 7-speed	X01
+SRAM X01 Eagle 12-speed	X01
+SRAM GX Eagle 12-speed	GX
+Shimano Deore XT M8000	Deore
+Shimano Saint	Saint
+Shimano XT 11-speed	XT
+SRAM NX 11-speed	NX
+Shimano RD-M7000 11-speed	RD
+Shimano SLX GS 11-speed	SLX
+Shimano Deore Shadow Plus 10-speed	Deore
+Shimano Deore FD-M618-D 10-speed	Deore
+E.thirteen LG-1 ISCG05 10-speed	LG
+Shimano RD-TY300 21-speed	RD
+Shimano Deore RD-M592 27-speed	Deore
+Shimano Alivio RD-M4000 27-speed	RD
+Micro-Shift FD-M462 9-speed	FD
+Shimano Altus FD-M370 9-speed	FD
+SRAM X5 15-speed	X5
+SRAM X1 X-Horizon 11-speed	X1
+SRAM X5 9-speed	X5
+\.
+
+
+--
+-- TOC entry 2132 (class 0 OID 33053)
+-- Dependencies: 180
+-- Data for Name: frame; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY frame (frameid, frametype, framematerialtype) FROM stdin;
+S-Works FACT 12M	XC Geometry	Steel
+S-Works FACT IS-X 11M	XC Geometry	Carbon
+S-Works FACT 11M	XC Geometry	Carbon
+S-Works FACT 9M	XC Geometry	Metal Alloy
+S-Works FACT 11MS	S3 Geometry	Carbon
+S-Works M5 Alloy	S3 Geometry	Metal Alloy
+OCLV Mountain Carbon	G2 Geometry	Carbon
+Super Light OCLV Mountain Carbon	G2 Geometry	Carbon
+Alpha Platinum Aluminum	G2 Geometry	Aluminum
+High Modulus Yeti SB5	S3 Geometry	Carbon
+High Modulus Yeti SB5.5	S3 Geometry	Carbon
+High Modulus Yeti SB4.5	S3 Geometry	Carbon
+Yeti SB6 Turq	XC Geometry	Metal Alloy
+High Modulus Yeti SB6	XC Geometry	Carbon
+High Modulus Beti SB5	S3 Geometry	Carbon
+Series 7 Unidirectional	XC Geometry	Carbon
+Series 4 6061	XC Geometry	Aluminum
+Series 3 6061	XC Geometry	Aluminum
+Double Butted CrMo	G2 Geometry	Steel
+Series 2 6061	S3 Geometry	Aluminum
+Spark RC Carbon	XC Geometry	Carbon
+Big Jon Alloy 6061	XC Geometry	Metal Alloy
+Genius Alloy 6061	XC Geometry	Metal Alloy
+Gambler Alloy 6061	G2 Geometry	Metal Alloy
+Voltage YZ 6061	S3 Geometry	Steel
+Aspect 900 Series	XC Geometry	Metal Alloy
+Contessa Sport 700 Series	XC Geometry	Aluminum
+COR Downhill Design	S3 Geometry	Metal Alloy
+COR Enduro Design	S3 Geometry	Metal Alloy
+Hydroformed 6069	XC Geometry	Aluminum
+T6 6061	XC Geometry	Aluminum
+El Oso Butted T6 6061	XC Geometry	Aluminum
+Lux 27.5 Butted T6 6061	XC Geometry	Aluminum
+Diamondback AMMP XC MTB	G2 Geometry	Carbon
+Diamondback Recoil T6 6061	XC Geometry	Aluminum
+Overdrive Butted T6 6061	XC Geometry	Aluminum
+\.
+
+
+--
+-- TOC entry 2131 (class 0 OID 32993)
+-- Dependencies: 179
+-- Data for Name: frontshock; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY frontshock (frontshockid, fs_travel_mm) FROM stdin;
+Ohlins RXF 36	110
+FOX 34 Factory 29	120
+RockShox Reba RL 27.5	130
+RockShox BoXXer WC 27.5	200
+RockShox SID 29 Brain	100
+RockShox Reba RL 29	100
+FOX 32 Factory Float	100
+FOX 36 Performance Float	160
+Manitou Mastodon 34 Comp	120
+RockShox Lyrik RCT3	160
+RockShox Recon RL	130
+FOX Factory 40 FIT RC2	203
+FOX 34 Factory 29H	150
+FOX 34 Factory 29L	110
+FOX Float X2 Factory	200
+RockShox Recon Gold RL	130
+RockShox Revelation RC	120
+CrMo	110
+RockShox Recon Silver	100
+Rigid Alloy	150
+Suntour XCM	100
+HL Zoom 565 VB	100
+Suntour XCR-RL-R	100
+RockShox Yari RC Boost	170
+Suntour XCR 32	120
+Suntour XCT	100
+All Terra CH-525	80
+DB El Oso Custom	150
+RockShox Pike RC	150
+\.
+
+
+--
+-- TOC entry 2134 (class 0 OID 33135)
+-- Dependencies: 182
+-- Data for Name: handlebar; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY handlebar (handlebarid, width, handlebarmaterialtype) FROM stdin;
+S Works Carbon Mini Rise	720	Carbon
+Specialized DH	800	Carbon
+Specialized Trail	780	Carbon
+Specialized 6061 Alloy	750	Metal Alloy
+Specialized 7050 Alloy	720	Metal Alloy
+Specialized 6000 Alloy	720	Metal Alloy
+Bontrager XXX	780	Carbon
+Bontrager Line Pro	750	Carbon
+Bontrager Line Pro v2	780	Carbon
+Bontrager Alloy	750	Metal Alloy
+Bontrager Rhythm Pro	780	Carbon
+Bontrager Line	820	Metal
+Bontrager Race Lite	720	Metal
+Yeti Carbon	760	Carbon
+Yeti Long Carbon	800	Carbon
+Race Face Respond	785	Metal
+Race Face Evolve	750	Metal
+Deity DC31 Mohawk	787	Carbon
+Deity Blacklabel	800	Metal
+Marin Mini-Riser	780	Metal Alloy
+Marin Mini-Riser Small	720	Metal Alloy
+Syncros FL1.0 SL	720	Carbon
+Syncros FL2.0 Mini Riser	740	Metal Alloy
+Syncros DH1.5	800	Metal
+HL MTB-AL-325BT	680	Metal Alloy
+HL MTB-AL-312BT	720	Metal Alloy
+Syncros M3.0	680	Metal
+Race Face Aeffect	780	Metal
+Race Face Chester	780	Metal
+All Terra AL6061 DB	760	Metal Alloy
+All Terra Riser Bar	740	Metal
+DB Pro Bar	740	Metal
+DB35 Alloy	760	Metal Alloy
+DB Laser Bar	720	Metal
+Diamondback Pro Bar	740	Carbon
+DB SL318B	685	Metal
+\.
+
+
+--
+-- TOC entry 2129 (class 0 OID 32942)
+-- Dependencies: 177
+-- Data for Name: manufacturer; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY manufacturer (manufacturername, address, website) FROM stdin;
+Specalized	15130 Concord Circle, Morgan Hill, CA 95037	https://www.specialized.com/us/en
+Trek	801 W Madison Street, Waterloo, WI 53594	https://www.trekbikes.com/us/en_US/
+Yeti	621 Corporate Cir, Golden, CO 80401	http://www.yeticycles.com/
+Marin	265 Bel Marin Keys Blvd, Novato, CA 94949	https://www.marinbikes.com/
+Scott	2735 E. Parleys Way Suite #203, Salt Lake City, UT 84109	https://www.scott-sports.com/global/en/sports/bike
+GT	1 Cannondale Way, Wilton, CT 06897	http://www.gtbicycles.com/usa_en/
+Diamondback	6004 South 190th Street Suite 101, Kent, WA 98032	https://www.diamondback.com/
+\.
+
+
+--
+-- TOC entry 2130 (class 0 OID 32965)
+-- Dependencies: 178
+-- Data for Name: rearshock; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY rearshock (rearshockid, rs_travel_mm) FROM stdin;
+RockShox Specialized Micro Brain	257
+Ohlins STXH Custom	216
+Ohlins STX Custom	197
+FOX Factory Float	205
+FOX Performance Float	205
+Ohlins TTX Custom	200
+RockShox Brain	257
+FOX Specialized Van RC	200
+RockShox Deluxe RT3	230
+RockShox Deluxe RL	205
+RockShox Deluxe RT	210
+FOX Factory DHX 2 SLS	210
+FOX Performance Beti	210
+FOX 36 Performance Float	160
+FOX 36 Factory Float	110
+RockShox Monarch Plus RCT3	200
+FOX Nude Trunnion Scott	165
+FOX L Factory Float	185
+FOX Van R Coil	267
+RockShox Vivid Coil	225
+FOX Racing Shox Performance Elite	265
+X-Fusion 02 Pro RL	155
+All Terra AO-42 AR	135
+Kindshock Coil	190
+Suntour Raidon-R	184
+Hardtail	0
+\.
+
+
+--
+-- TOC entry 2126 (class 0 OID 32883)
+-- Dependencies: 174
+-- Data for Name: shifter; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY shifter (shifterid, family) FROM stdin;
+Shimano XTR Di2	Trigger
+SRAM XX1 Eagle	Trigger
+SRAM GX	Trigger
+SRAM X0 DH	Trigger
+SRAM X01 Eagle	Trigger
+SRAM X7	Trigger
+SRAM GX Eagle	Trigger
+Shimano SLX M7000	Trigger
+Shimano Saint	Trigger
+Shimano XT	Trigger
+SRAM NX	Trigger
+Shimano Deore	Twist
+SRAM XX1	Trigger
+SRAM X4	Trigger
+Shimano ST-EF	Twist
+Shimano SL-M2000-9R	Trigger
+Shimano Alivio	Twist
+SRAM X5	Trigger
+Shimano Altus	Twist
+\.
+
+
+--
+-- TOC entry 2133 (class 0 OID 33058)
+-- Dependencies: 181
+-- Data for Name: wheel; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY wheel (wheelid, wheelsize) FROM stdin;
+Fast Trak	29
+Butcher High	29
+Butcher	27.5
+Purgatory High	29
+Purgatory	27.5
+Bontrager XR2 Team Issue	29
+Bontrager XR4 Team Issue	29
+Bontrager XR1 Team Issue	29
+Bontrager SE4 Team Issue High	29
+Bontrager Hodag	27.5
+Bontrager SE4 Team Issue	27.5
+Schwalbe Nobby Nic Performance High	27.5
+Schwalbe Nobby Nic Performance	25
+Bontrager G4 Team Issue	27.5
+Maxxis Ardent EXO	27.5
+Maxxis Minion DHF EXO	29
+Maxxis Minion DHF 2.5	26
+Maxxis Rekon EXO	27.5
+WTB Vigilante	29
+WTB Convict	27.5
+Vee Tire Crown Gem	27.5
+WTB Trail Boss	29
+WTB Breakout	27.5
+Vee Tire Crown Gem High	29
+Schwalbe Tough Tom	27.5
+Maxxis Aspen High	29
+Schwalbe Jumbo Jim	26
+Schwalbe Downhill Evolution Line	27.5
+Kenda K-905	26
+Kenda Slant	26
+Maxxis Aspen	27
+Schwalbe Magic Mary Bikepark	27.5
+Schwalbe Magic Mary Snakeskin	27.5
+Schwalbe Magic Mary Performance	27.5
+WTB Ranger Comp	27.5
+Schwalbe Rocket Ron Performance	27.5
+WTB Trail Blazer	27.5
+All Terra Cypher	27.5
+Chaoyang Cruiser	26
+Chaoyang Big Daddy	27.5
+Schwalbe Rapid Rob	27.5
+Kenda Honey Badger High	29
+Kenda Honey Badger	27.5
+Kenda Nevegal Lite	27.5
+Schwalbe Hans Dampf Performance	27.5
+\.
+
+
+--
+-- TOC entry 2005 (class 2606 OID 33147)
+-- Name: bike_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_pkey PRIMARY KEY (modelname, manufacturername);
+
+
+--
+-- TOC entry 1989 (class 2606 OID 32897)
+-- Name: brake_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY brake
+    ADD CONSTRAINT brake_pkey PRIMARY KEY (brakeid);
+
+
+--
+-- TOC entry 1985 (class 2606 OID 32836)
+-- Name: crankset_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY crankset
+    ADD CONSTRAINT crankset_pkey PRIMARY KEY (cranksetid);
+
+
+--
+-- TOC entry 1991 (class 2606 OID 32941)
+-- Name: derailleur_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY derailleur
+    ADD CONSTRAINT derailleur_pkey PRIMARY KEY (derailleurid);
+
+
+--
+-- TOC entry 1999 (class 2606 OID 33057)
+-- Name: frame_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY frame
+    ADD CONSTRAINT frame_pkey PRIMARY KEY (frameid);
+
+
+--
+-- TOC entry 1997 (class 2606 OID 32997)
+-- Name: frontshock_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY frontshock
+    ADD CONSTRAINT frontshock_pkey PRIMARY KEY (frontshockid);
+
+
+--
+-- TOC entry 2003 (class 2606 OID 33139)
+-- Name: handlebar_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY handlebar
+    ADD CONSTRAINT handlebar_pkey PRIMARY KEY (handlebarid);
+
+
+--
+-- TOC entry 1993 (class 2606 OID 32946)
+-- Name: manufacturer_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY manufacturer
+    ADD CONSTRAINT manufacturer_pkey PRIMARY KEY (manufacturername);
+
+
+--
+-- TOC entry 1995 (class 2606 OID 32969)
+-- Name: rearshock_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY rearshock
+    ADD CONSTRAINT rearshock_pkey PRIMARY KEY (rearshockid);
+
+
+--
+-- TOC entry 1987 (class 2606 OID 32887)
+-- Name: shifter_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY shifter
+    ADD CONSTRAINT shifter_pkey PRIMARY KEY (shifterid);
+
+
+--
+-- TOC entry 2001 (class 2606 OID 33065)
+-- Name: wheel_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY wheel
+    ADD CONSTRAINT wheel_pkey PRIMARY KEY (wheelid);
+
+
+--
+-- TOC entry 2010 (class 2606 OID 33168)
+-- Name: bike_brakeid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_brakeid_fkey FOREIGN KEY (brakeid) REFERENCES brake(brakeid);
+
+
+--
+-- TOC entry 2014 (class 2606 OID 33188)
+-- Name: bike_cranksetid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_cranksetid_fkey FOREIGN KEY (cranksetid) REFERENCES crankset(cranksetid);
+
+
+--
+-- TOC entry 2007 (class 2606 OID 33153)
+-- Name: bike_derailleurid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_derailleurid_fkey FOREIGN KEY (derailleurid) REFERENCES derailleur(derailleurid);
+
+
+--
+-- TOC entry 2012 (class 2606 OID 33178)
+-- Name: bike_frameid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_frameid_fkey FOREIGN KEY (frameid) REFERENCES frame(frameid);
+
+
+--
+-- TOC entry 2009 (class 2606 OID 33163)
+-- Name: bike_frontshockid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_frontshockid_fkey FOREIGN KEY (frontshockid) REFERENCES frontshock(frontshockid);
+
+
+--
+-- TOC entry 2015 (class 2606 OID 33193)
+-- Name: bike_handlebarid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_handlebarid_fkey FOREIGN KEY (handlebarid) REFERENCES handlebar(handlebarid);
+
+
+--
+-- TOC entry 2006 (class 2606 OID 33148)
+-- Name: bike_manufacturername_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_manufacturername_fkey FOREIGN KEY (manufacturername) REFERENCES manufacturer(manufacturername);
+
+
+--
+-- TOC entry 2008 (class 2606 OID 33158)
+-- Name: bike_rearshockid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_rearshockid_fkey FOREIGN KEY (rearshockid) REFERENCES rearshock(rearshockid);
+
+
+--
+-- TOC entry 2011 (class 2606 OID 33173)
+-- Name: bike_shifterid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_shifterid_fkey FOREIGN KEY (shifterid) REFERENCES shifter(shifterid);
+
+
+--
+-- TOC entry 2013 (class 2606 OID 33183)
+-- Name: bike_wheelid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY bike
+    ADD CONSTRAINT bike_wheelid_fkey FOREIGN KEY (wheelid) REFERENCES wheel(wheelid);
+
+
+--
+-- TOC entry 2142 (class 0 OID 0)
+-- Dependencies: 6
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2017-12-04 19:16:04 EST
+
+--
+-- PostgreSQL database dump complete
+--
+

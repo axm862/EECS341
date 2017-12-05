@@ -24,9 +24,6 @@ public class AttributeName {
     }};
 
     public static String toReadableString(String attributeName){
-/*        if(attributeName.contains("ID")){
-            return "Name";
-        }*/
         if(dictionary.containsKey(attributeName)){
             return String.valueOf(dictionary.get(attributeName));
         }

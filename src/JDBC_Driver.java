@@ -126,7 +126,7 @@ public class JDBC_Driver {
             while (rs.next()) {
                 String[] bike = new String[14];
                 for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
-                    bike[i-1] = rs.getString(1);
+                    bike[i-1] = rs.getString(i);
                 }
                 bikeParts.add(bike);
 

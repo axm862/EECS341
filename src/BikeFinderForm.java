@@ -194,8 +194,7 @@ public class BikeFinderForm {
                     BikeFinder.getJdbc_driver().bikeList(qo.getQuery());
                 }
                 */
-                BikeFinder.getJdbc_driver().bikeList(QueryObject.getQueryObjects());
-
+                BikeFinder.displayOutput(BikeFinder.getJdbc_driver().bikeList(QueryObject.getQueryObjects()));
             }
         });
 

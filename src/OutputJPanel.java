@@ -11,8 +11,8 @@ public class OutputJPanel extends JPanel {
     LinkedList<String> attributes;
 
     OutputJPanel() {
-        attributes = new LinkedList<>();
-        this.setLayout(new GridLayout());
+        //attributes = new LinkedList<>();
+        //this.setLayout(new GridLayout());
     }
 
     public void initPanel(){

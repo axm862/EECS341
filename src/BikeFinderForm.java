@@ -58,8 +58,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (handlebarCheckBox.isSelected()) {
                     handlebar = new Handlebar(handlebarCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(handlebar);
                 }
             }
@@ -69,8 +68,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (cranksetCheckBox.isSelected()) {
                     crankset = new Crankset(cranksetCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(crankset);
                 }
             }
@@ -80,8 +78,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (wheelCheckBox.isSelected()) {
                     wheel = new Wheel(wheelCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(wheel);
                 }
             }
@@ -91,8 +88,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (frameCheckBox1.isSelected()) {
                     frame = new Frame(frameCheckBox1);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(frame);
                 }
             }
@@ -102,8 +98,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (brakeCheckBox.isSelected()) {
                     brake = new Brake(brakeCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(brake);
                 }
             }
@@ -113,8 +108,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (frontShockCheckBox.isSelected()) {
                     frontShock = new FrontShock(frontShockCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(frontShock);
                 }
             }
@@ -124,8 +118,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (rearShockCheckBox.isSelected()) {
                     rearShock = new RearShock(rearShockCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(rearShock);
                 }
             }
@@ -135,8 +128,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (derailleurCheckBox.isSelected()) {
                     derailleur = new Derailleur(derailleurCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(derailleur);
                 }
             }
@@ -146,8 +138,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (manufacturerCheckBox.isSelected()) {
                     manufacturer = new Manufacturer(manufacturerCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(manufacturer);
                 }
             }
@@ -157,8 +148,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (yearCheckBox.isSelected()) {
                     year = new Year(yearCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(year);
                 }
             }
@@ -168,8 +158,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (priceCheckBox.isSelected()) {
                     price = new Price(priceCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(price);
                 }
             }
@@ -179,8 +168,7 @@ public class BikeFinderForm {
             public void actionPerformed(ActionEvent e) {
                 if (modelNameCheckBox.isSelected()) {
                     modelName = new ModelName(modelNameCheckBox);
-                }
-                else {
+                } else {
                     QueryObject.getQueryObjects().remove(modelName);
                 }
             }
@@ -194,7 +182,11 @@ public class BikeFinderForm {
                     BikeFinder.getJdbc_driver().bikeList(qo.getQuery());
                 }
                 */
-                BikeFinder.displayOutput(BikeFinder.getJdbc_driver().bikeList(QueryObject.getQueryObjects()));
+                if (!QueryObject.getQueryObjects().isEmpty()) {
+                    BikeFinder.displayOutput(BikeFinder.getJdbc_driver().bikeList(QueryObject.getQueryObjects()));
+                } else {
+                    JOptionPane.showMessageDialog(null, "No Constraints Selected!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 

@@ -3,23 +3,23 @@ import java.util.HashMap;
 public class AttributeName {
 
     private static final HashMap dictionary = new HashMap<String, String>(){{
-        put("handlebarID", "Width");
+        put("handlebarID", "Handlebar Width");
         put("handlebarMaterialType", "Material");
-        put("cranksetID", "Name");
-        put("wheelID", "Name");
-        put("wheelSize", "Diameter");
-        put("frameID", "Name");
+        put("cranksetID", "Crankset Name");
+        put("wheelID", "Wheel Name");
+        put("wheelSize", "Wheel Diameter");
+        put("frameID", "Frame Name");
         put("frameType", "Type");
         put("frameMaterialType", "Material");
-        put("shifterID", "Name");
+        put("shifterID", "Shifter Name");
         put("family", "Family");
-        put("brakeID", "Name");
+        put("brakeID", "Brake Name");
         put("brakeType", "Mechanism");
-        put("frontShockID", "Name");
+        put("frontShockID", "Front Shock Name");
         put("fs_travel_mm", "Travel");
-        put("rearShockID", "Name");
+        put("rearShockID", "Rear Shock Name");
         put("rs_travel_mm", "Travel");
-        put("derailleurID", "Name");
+        put("derailleurID", "Derailleur Name");
         put("manufacturerName", "Manufacturer");
     }};
 

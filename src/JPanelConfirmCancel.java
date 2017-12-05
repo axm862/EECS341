@@ -27,7 +27,11 @@ public class JPanelConfirmCancel extends JPanel{
         confirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                queryObject.dispatchEvent(new WindowEvent(queryObject, WindowEvent.WINDOW_CLOSING));
+                if(queryObject.getQuery().length() != 0) {
+                    queryObject.dispatchEvent(new WindowEvent(queryObject, WindowEvent.WINDOW_CLOSING));
+                } else {
+                    JOptionPane.showMessageDialog(null, "No Constraints Selected!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
     }

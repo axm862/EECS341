@@ -52,16 +52,22 @@ public class JDBC_Driver {
                     switch(name){
                         case "handlebarMaterialType":
                             attributes.add(new JPanelEnumHandlebar(name));
+                            break;
                         case "frameType":
                             attributes.add(new JPanelEnumFrameGeometry(name));
+                            break;
                         case "frameMaterialType":
                             attributes.add(new JPanelEnumFrameMaterial(name));
+                            break;
                         case "family":
                             attributes.add(new JPanelEnumShifter(name));
+                            break;
                         case "brakeType":
                             attributes.add(new JPanelEnumBrake(name));
+                            break;
                         case "derailleurFamily":
                             attributes.add(new JPanelEnumDerailleur(name));
+                            break;
                         case "default":
                             attributes.add(new JPanelVarchar(name));
                     }

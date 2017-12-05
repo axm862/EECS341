@@ -8,8 +8,6 @@ import java.util.Properties;
  */
 public class JDBC_Driver {
 
-    private List<String> subQueries = new LinkedList<>();
-
     private final static int ENUM = 1;
 
     // This method will take the type of attribute and find the name and type of each attribute
@@ -91,10 +89,12 @@ public class JDBC_Driver {
     // RETURN TYPE: this will return a Linked List of String arrays if no error.  Else null if error.
     //  - Each String array = tuple.  Each element of String array = individual data entry.
     //INPUT TYPE: Should input the attribute query "Ex: SELECT RearShockID FROM RearShock WHERE RearShockID = 123"
-    public List<String[]> bikeList(String subQuery) {
-        subQueries.add(subQuery);
+    //public List<String[]> bikeList(String subQuery) {
+    public List<String[]> bikeList(List<QueryObject> queries) {
 
         List<String[]> bikeParts = new LinkedList<>();
+        String[] firstRow = new String[]{"modelName", "manufacturerName", "derailleurID", "rearShockID", "frontShockID", "brakeID", "shifterID",
+        "frameID", "wheelID", "cranksetID", "handlebarID", "price", "year", "picture"};
         Connection conn;
         Statement stat;
         try {
@@ -110,23 +110,22 @@ public class JDBC_Driver {
             stat = conn.createStatement();
             StringBuilder query = new StringBuilder();
             // Can add in NOT easily later by splitting up string and using a flag
-            query.append("SELECT * FROM BIKE WHERE EXISTS ((");
+            query.append("SELECT * FROM Bike WHERE EXISTS (");
             boolean start = true;
-            for (String nestedSubQuery : subQueries) {
+            for (QueryObject nestedSubQuery : queries) {
                 if (!start) {
-                    query.append(" AND (");
+                    query.append(" AND EXISTS (");
                 }
-                query.append(subQuery);
+                query.append(nestedSubQuery.getQuery());
                 query.append(")");
                 start = false;
             }
-            query.append(")");
+            System.out.println(query.toString());
             ResultSet rs = stat.executeQuery(query.toString());
-
             while (rs.next()) {
                 String[] bike = new String[14];
                 for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
-                    bike[i=1] = rs.getString(1);
+                    bike[i-1] = rs.getString(1);
                 }
                 bikeParts.add(bike);
 

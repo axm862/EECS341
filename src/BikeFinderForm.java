@@ -1,3 +1,4 @@
+import javax.management.Query;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -187,10 +188,13 @@ public class BikeFinderForm {
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                /*
                 for (QueryObject qo : QueryObject.getQueryObjects()) {
                     System.out.println(qo.getQuery());
                     BikeFinder.getJdbc_driver().bikeList(qo.getQuery());
                 }
+                */
+                BikeFinder.getJdbc_driver().bikeList(QueryObject.getQueryObjects());
 
             }
         });

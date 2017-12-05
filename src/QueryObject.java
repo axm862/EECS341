@@ -24,7 +24,11 @@ public abstract class QueryObject extends JFrame{
     public QueryObject(JCheckBox jCheckBox) {
         queryObjects.add(this);
         this.jCheckBox = jCheckBox;
+        this.initFrame();
 
+    }
+
+    public void initFrame() {
         attributeList = JDBC_Driver.attributeList(getName());
 
         this.setTitle(getName());
@@ -39,7 +43,6 @@ public abstract class QueryObject extends JFrame{
         this.pack();
         this.revalidate();
         this.setVisible(true);
-
     }
 
     public String getName() {

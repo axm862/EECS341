@@ -109,13 +109,11 @@ public class JDBC_Driver {
             stat = conn.createStatement();
             DatabaseMetaData dbmd = conn.getMetaData();
             for (QueryObject subQuery : queries) {
-                keys = dbmd.getPrimaryKeys(conn.getCatalog(), "public", subQuery.getName().toLowerCase());
-                keys.next();
-/*                for (JPanelAttribute attribute : subQuery.attributeList) {
-                    System.out.println(keys.getString(PRIMARY_KEY_INDEX));
-                    attribute.setPrimaryKey(keys.getString(PRIMARY_KEY_INDEX));
-                }*/
-                subQuery.setPrimaryKey(keys.getString(PRIMARY_KEY_INDEX));
+                if (!(subQuery instanceof NerfedQueryObject)) {
+                    keys = dbmd.getPrimaryKeys(conn.getCatalog(), "public", subQuery.getName().toLowerCase());
+                    keys.next();
+                    subQuery.setPrimaryKey(keys.getString(PRIMARY_KEY_INDEX));
+                }
             }
 
             stat = conn.createStatement();
@@ -127,17 +125,22 @@ public class JDBC_Driver {
                 if (!start) {
                     query.append(" AND ");
                 }
-                query.append("NOT EXISTS ((SELECT x.");
-                query.append(nestedSubQuery.getPrimaryKey());
-                query.append(" FROM ");
-                query.append(nestedSubQuery.getName().toLowerCase());
-                query.append(" x WHERE x.");
-                query.append(nestedSubQuery.getPrimaryKey());
-                query.append(" = b.");
-                query.append(nestedSubQuery.getPrimaryKey());
-                query.append(") EXCEPT ");
-                query.append(nestedSubQuery.getQuery());
-                query.append(")");
+                if (nestedSubQuery instanceof NerfedQueryObject) {
+                    query.append(nestedSubQuery.getQuery());
+                }
+                else {
+                    query.append("NOT EXISTS ((SELECT x.");
+                    query.append(nestedSubQuery.getPrimaryKey());
+                    query.append(" FROM ");
+                    query.append(nestedSubQuery.getName().toLowerCase());
+                    query.append(" x WHERE x.");
+                    query.append(nestedSubQuery.getPrimaryKey());
+                    query.append(" = b.");
+                    query.append(nestedSubQuery.getPrimaryKey());
+                    query.append(") EXCEPT ");
+                    query.append(nestedSubQuery.getQuery());
+                    query.append(")");
+                }
                 start = false;
             }
             System.out.println(query.toString());

@@ -22,7 +22,7 @@ public class JDBC_Driver {
 
             String url = "jdbc:postgresql://localhost/databaseproject"; // Name/port on localhost may need to change
             Properties props = new Properties();
-            props.setProperty("user", "jeffeben"); // May need to change username
+            props.setProperty("user", "postgres"); // May need to change username
             props.setProperty("password", "");
             props.setProperty("useSSL", "false");
             conn = DriverManager.getConnection(url, props);
@@ -35,7 +35,7 @@ public class JDBC_Driver {
             for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
                 String name = rs.getMetaData().getColumnName(i);
                 int type = rs.getMetaData().getColumnType(i);
-                System.out.println(type);
+                //System.out.println(type);
                 if (type == Types.VARCHAR) {
                     //enums
                     switch(name.toLowerCase()){
@@ -99,7 +99,7 @@ public class JDBC_Driver {
 
             String url = "jdbc:postgresql://localhost/databaseproject"; // Name/port on localhost may need to change
             Properties props = new Properties();
-            props.setProperty("user", "jeffeben"); // May need to change username
+            props.setProperty("user", "postgres"); // May need to change username
             props.setProperty("password", "");
             props.setProperty("useSSL", "false");
             conn = DriverManager.getConnection(url, props);

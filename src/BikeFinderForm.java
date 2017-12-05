@@ -46,6 +46,7 @@ public class BikeFinderForm {
         shifterCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (shifterCheckBox.isSelected()) {
                     shifter = new Shifter(shifterCheckBox);
                 } else {
@@ -56,6 +57,7 @@ public class BikeFinderForm {
         handlebarCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (handlebarCheckBox.isSelected()) {
                     handlebar = new Handlebar(handlebarCheckBox);
                 } else {
@@ -66,6 +68,7 @@ public class BikeFinderForm {
         cranksetCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (cranksetCheckBox.isSelected()) {
                     crankset = new Crankset(cranksetCheckBox);
                 } else {
@@ -76,6 +79,7 @@ public class BikeFinderForm {
         wheelCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (wheelCheckBox.isSelected()) {
                     wheel = new Wheel(wheelCheckBox);
                 } else {
@@ -86,6 +90,7 @@ public class BikeFinderForm {
         frameCheckBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (frameCheckBox1.isSelected()) {
                     frame = new Frame(frameCheckBox1);
                 } else {
@@ -96,6 +101,7 @@ public class BikeFinderForm {
         brakeCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (brakeCheckBox.isSelected()) {
                     brake = new Brake(brakeCheckBox);
                 } else {
@@ -106,6 +112,7 @@ public class BikeFinderForm {
         frontShockCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (frontShockCheckBox.isSelected()) {
                     frontShock = new FrontShock(frontShockCheckBox);
                 } else {
@@ -116,6 +123,7 @@ public class BikeFinderForm {
         rearShockCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (rearShockCheckBox.isSelected()) {
                     rearShock = new RearShock(rearShockCheckBox);
                 } else {
@@ -126,6 +134,7 @@ public class BikeFinderForm {
         derailleurCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (derailleurCheckBox.isSelected()) {
                     derailleur = new Derailleur(derailleurCheckBox);
                 } else {
@@ -136,6 +145,7 @@ public class BikeFinderForm {
         manufacturerCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (manufacturerCheckBox.isSelected()) {
                     manufacturer = new Manufacturer(manufacturerCheckBox);
                 } else {
@@ -156,6 +166,7 @@ public class BikeFinderForm {
         priceCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (priceCheckBox.isSelected()) {
                     price = new Price(priceCheckBox);
                 } else {
@@ -166,6 +177,7 @@ public class BikeFinderForm {
         modelNameCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 if (modelNameCheckBox.isSelected()) {
                     modelName = new ModelName(modelNameCheckBox);
                 } else {
@@ -182,7 +194,8 @@ public class BikeFinderForm {
                     BikeFinder.getJdbc_driver().bikeList(qo.getQuery());
                 }
                 */
-                System.out.println("Executing " + QueryObject.getQueryObjects().size() + " query objects.");
+
+                System.out.println(" ** Executing " + QueryObject.getQueryObjects().size() + " query object(s)");
                 if (!QueryObject.getQueryObjects().isEmpty()) {
                     BikeFinder.displayOutput(BikeFinder.getJdbc_driver().bikeList(QueryObject.getQueryObjects()));
                 } else {

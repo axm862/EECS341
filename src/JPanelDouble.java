@@ -21,6 +21,8 @@ public class JPanelDouble extends JPanelAttribute{
         combo.addItem(">");
         combo.addItem("<");
         combo.addItem("=");
+        combo.addItem(">=");
+        combo.addItem("<=");
         this.add(combo);
         data = new JTextField();
         this.add(data);

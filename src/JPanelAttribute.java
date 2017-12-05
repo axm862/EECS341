@@ -5,7 +5,7 @@ public abstract class JPanelAttribute extends JPanel{
 
     JPanelAttribute(String attributeName){
         this.attributeName = attributeName;
-        System.out.println("Generating window for " + attributeName);
+        System.out.println(" * Generating " + getAttributeName() + " JPanel");
     }
 
     public abstract void initPanel();

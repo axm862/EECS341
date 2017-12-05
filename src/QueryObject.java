@@ -37,7 +37,7 @@ public abstract class QueryObject extends JFrame{
         queryObjects.add(this);
         this.jCheckBox = jCheckBox;
         initFrame();
-
+        System.out.println(" * Created " + getName() + " jFrame");
     }
 
     public void initFrame() {
@@ -74,8 +74,8 @@ public abstract class QueryObject extends JFrame{
         stringBuilder.append(" WHERE ");
         for (JPanelAttribute j : attributeList) {
             if(j.getAttributeQuery().length() > 0) {
-                stringBuilder.append(j.getAttributeQuery());
                 stringBuilder.append(and);
+                stringBuilder.append(j.getAttributeQuery());
                 and = " AND ";
                 attributes++;
             }

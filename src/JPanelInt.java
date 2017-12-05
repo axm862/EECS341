@@ -22,6 +22,8 @@ public class JPanelInt extends JPanelAttribute{
         combo.addItem(">");
         combo.addItem("<");
         combo.addItem("=");
+        combo.addItem(">=");
+        combo.addItem("<=");
         this.add(combo);
         data = new JTextField();
         this.add(data);
